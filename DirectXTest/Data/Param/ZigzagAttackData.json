@@ -1,0 +1,96 @@
+{
+  "TotalNum": 50,
+  "Radius": 1,
+  "ZigzagAttackData": [
+    {
+	  "ID": 0,
+      "Num": 3,
+      "ShootVec": {
+        "x": 0.3,
+        "y": 0,
+        "z": -0.7
+      },
+      "AliveTime": 300,
+      "ShootIntervalForNumber": 0,
+      "Speed": 0.8,
+      "Angle": 0,
+      "AddPosX": 18,
+	  "AddPosZ": 0
+    },
+	{
+	  "ID": 1,
+      "Num": 3,
+      "ShootVec": {
+        "x": -0.3,
+        "y": 0,
+        "z": -0.7
+      },
+      "AliveTime": 300,
+      "ShootIntervalForNumber": 0,
+      "Speed": 0.8,
+      "Angle": 0,
+      "AddPosX": 18,
+	  "AddPosZ": 0
+    },
+	{
+	  "ID": 2,
+      "Num": 4,
+      "ShootVec": {
+        "x": 0.3,
+        "y": 0,
+        "z": -0.7
+      },
+      "AliveTime": 300,
+      "ShootIntervalForNumber": 0,
+      "Speed": 0.7,
+      "Angle": 0,
+      "AddPosX": 18,
+	  "AddPosZ": 0
+    },
+	{
+	  "ID": 3,
+      "Num": 4,
+      "ShootVec": {
+        "x": -0.3,
+        "y": 0,
+        "z": -0.7
+      },
+      "AliveTime": 300,
+      "ShootIntervalForNumber": 0,
+      "Speed": 0.7,
+      "Angle": 0,
+      "AddPosX": -18,
+	  "AddPosZ": 0
+    },
+	{
+	  "ID": 4,
+      "Num": 4,
+      "ShootVec": {
+        "x": 0,
+        "y": 0,
+        "z": -1
+      },
+      "AliveTime": 300,
+      "ShootIntervalForNumber": 0,
+      "Speed": 0.6,
+      "Angle": 0,
+      "AddPosX": 18,
+	  "AddPosZ": 0
+    },
+	{
+	  "ID": 5,
+      "Num": 4,
+      "ShootVec": {
+        "x": 0,
+        "y": 0,
+        "z": -1
+      },
+      "AliveTime": 300,
+      "ShootIntervalForNumber": 0,
+      "Speed": 0.6,
+      "Angle": 0,
+      "AddPosX": -18,
+	  "AddPosZ": 0
+    }
+  ]
+}

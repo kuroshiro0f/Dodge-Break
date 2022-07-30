@@ -1,0 +1,33 @@
+{
+  "TotalNum": 30,
+  "Radius": 1,
+  "FannelAttackData": [
+    {
+      "Num": 3,
+      "AliveTime": 600,
+      "ShootIntervalForNumber": 15,
+      "TrackingRate": 0.00001,
+      "ShootVec": [
+        {
+          "x": 0.1,
+          "y": 0.9,
+          "z": 0
+        },
+        {
+          "x": -0.3,
+          "y": 0.6,
+          "z": 0.1
+        },
+        {
+          "x": -0.2,
+          "y": 0.5,
+          "z": -0.3
+        }
+      ],
+      "TimeToStop": 80,
+      "SpeedToStop": 0.6,
+      "TimeAfterStop": 100,
+      "SpeedAfterStop": 0.65
+    }
+  ]
+}

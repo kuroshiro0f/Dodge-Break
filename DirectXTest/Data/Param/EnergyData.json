@@ -1,0 +1,7 @@
+{
+  "FirstEnergy": 20,
+  "MaxNum": 100,
+  "IncreaseForDodge": 8,
+  "IncreaseForDamage": 25,
+  "DecreaseForDeleteEnemy": -100
+}

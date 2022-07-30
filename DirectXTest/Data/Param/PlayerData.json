@@ -1,0 +1,9 @@
+{
+  "MaxSpeed": 2,
+  "Radius": 1,
+  "DodgeRadius": 6,
+  "DodgeInterval":60,
+  "MaxLife": 3,
+  "InvincibleTime": 300,
+  "ActualRadius": 3.5
+}

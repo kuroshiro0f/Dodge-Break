@@ -1,0 +1,10 @@
+{
+  "Radius": 6.0,
+  "ROTATION_SPEED": 0.015,
+  "MOVE_SPEED": 0.01,
+  "MOVE_DISTANCE": 2.0,
+  "EFFECT_TIME": 100,
+  "EFFECT_POS_Y": 10.0,
+  "TOTAL_NUM": 3,
+  "Pos":[125,129,142]
+}
