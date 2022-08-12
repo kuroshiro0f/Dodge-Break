@@ -13,6 +13,9 @@
 #include <d3d12_xs.h>
 #elif (defined(_XBOX_ONE) && defined(_TITLE)) || defined(_GAMING_XBOX)
 #include <d3d12_x.h>
+#elif defined(USING_DIRECTX_HEADERS)
+#include <directx/d3d12.h>
+#include <dxguids/dxguids.h>
 #else
 #include <d3d12.h>
 #endif
@@ -54,7 +57,7 @@ namespace DirectX
         size_t ResourceOffset() const noexcept { return mBufferOffset; }
         size_t Size() const noexcept { return mSize; }
 
-        explicit operator bool () const noexcept { return mResource != nullptr; }
+        explicit operator bool() const noexcept { return mResource != nullptr; }
 
         // Clear the pointer. Using operator -> will produce bad results.
         void __cdecl Reset() noexcept;
@@ -94,7 +97,7 @@ namespace DirectX
         size_t ResourceOffset() const noexcept { return mSharedResource->ResourceOffset(); }
         size_t Size() const noexcept { return mSharedResource->Size(); }
 
-        explicit operator bool () const noexcept { return mSharedResource != nullptr; }
+        explicit operator bool() const noexcept { return mSharedResource != nullptr; }
 
         bool operator == (const SharedGraphicsResource& other) const noexcept { return mSharedResource.get() == other.mSharedResource.get(); }
         bool operator != (const SharedGraphicsResource& other) const noexcept { return mSharedResource.get() != other.mSharedResource.get(); }
@@ -142,8 +145,8 @@ namespace DirectX
         // Special overload of Allocate that aligns to D3D12 constant buffer alignment requirements
         template<typename T> GraphicsResource AllocateConstant()
         {
-            const size_t alignment = D3D12_CONSTANT_BUFFER_DATA_PLACEMENT_ALIGNMENT;
-            const size_t alignedSize = (sizeof(T) + alignment - 1) & ~(alignment - 1);
+            constexpr size_t alignment = D3D12_CONSTANT_BUFFER_DATA_PLACEMENT_ALIGNMENT;
+            constexpr size_t alignedSize = (sizeof(T) + alignment - 1) & ~(alignment - 1);
             return Allocate(alignedSize, alignment);
         }
         template<typename T> GraphicsResource AllocateConstant(const T& setData)
