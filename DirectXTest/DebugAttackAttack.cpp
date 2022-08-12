@@ -23,7 +23,7 @@ DebugAttack::DebugAttack()
 {
     //  各パラメータの初期化
     m_pos = { 0,0,0 };  //  座標
-    m_radius = DebugAttackParam::RADIUS;   //  衝突判定用の半径
+    //m_radius = DebugAttackParam::RADIUS;   //  衝突判定用の半径
     m_isDisplay = false;    //  最初から登場はしていない
 }
 

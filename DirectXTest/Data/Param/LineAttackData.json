@@ -1,10 +1,10 @@
 {
-  "TotalNum": 120,
+  "TotalNum": 300,
   "Radius": 1,
   "LineAttackData": [
 	{
 	  "ID": 0,
-      "Num": 14,
+      "Num": 13,
       "AliveTime": 1000,
       "ShootIntervalForNumber": 15,
       "ShootVec": {
@@ -19,9 +19,9 @@
       },
 	  "AlignSpeed": 1.0,
       "Speed": 0.6,
-      "StopDistance": 160,
+      "StopDistance": 144,
       "DistanceIntervalForNumber": 12,
-      "TimeForRestartMove": 300
+      "TimeForRestartMove": 280
     },
 	{
 	  "ID": 1,
@@ -40,9 +40,9 @@
       },
 	  "AlignSpeed": 1.0,
       "Speed": 0.6,
-      "StopDistance": 155,
+      "StopDistance": 144,
       "DistanceIntervalForNumber": 12,
-      "TimeForRestartMove": 300
+      "TimeForRestartMove": 280
     },
 	{
 	  "ID": 2,
@@ -130,9 +130,9 @@
     },
 	{
 	  "ID": 6,
-      "Num": 4,
+      "Num": 14,
       "AliveTime": 1000,
-      "ShootIntervalForNumber": 15,
+      "ShootIntervalForNumber": 0,
       "ShootVec": {
         "x": -1,
         "y": 0,
@@ -141,19 +141,19 @@
       "RollVec": {
         "x": 0,
         "y": 0,
-        "z": 1
+        "z": -1
       },
 	  "AlignSpeed": 1.0,
-      "Speed": 0.5,
-      "StopDistance": 40,
+      "Speed": 0.4,
+      "StopDistance": 137.5,
       "DistanceIntervalForNumber": 10,
-      "TimeForRestartMove": 200
+      "TimeForRestartMove": 180
     },
 	{
 	  "ID": 7,
-      "Num": 4,
+      "Num": 11,
       "AliveTime": 1000,
-      "ShootIntervalForNumber": 15,
+      "ShootIntervalForNumber": 0,
       "ShootVec": {
         "x": 0,
         "y": 0,
@@ -165,16 +165,16 @@
         "z": 0
       },
 	  "AlignSpeed": 1.0,
-      "Speed": 0.5,
-      "StopDistance": 40,
-      "DistanceIntervalForNumber": 10,
-      "TimeForRestartMove": 200
+      "Speed": 0.4,
+      "StopDistance": 140,
+      "DistanceIntervalForNumber": 12.5,
+      "TimeForRestartMove": 580
     },
 	{
 	  "ID": 8,
-      "Num": 12,
+      "Num": 15,
       "AliveTime": 1000,
-      "ShootIntervalForNumber": 15,
+      "ShootIntervalForNumber": 0,
       "ShootVec": {
         "x": 1,
         "y": 0,
@@ -186,58 +186,184 @@
         "z": -1
       },
 	  "AlignSpeed": 1.0,
-      "Speed": 0.5,
-      "StopDistance": 120,
+      "Speed": 0.4,
+      "StopDistance": 140,
       "DistanceIntervalForNumber": 10,
-      "TimeForRestartMove": 200
+      "TimeForRestartMove": 180
     },
 	{
 	  "ID": 9,
       "Num": 12,
       "AliveTime": 1000,
-      "ShootIntervalForNumber": 15,
+      "ShootIntervalForNumber": 0,
       "ShootVec": {
         "x": 0,
         "y": 0,
         "z": -1
       },
       "RollVec": {
-        "x": -1,
+        "x": 1,
         "y": 0,
         "z": 0
       },
 	  "AlignSpeed": 1.0,
-      "Speed": 0.5,
-      "StopDistance": 120,
-      "DistanceIntervalForNumber": 10,
-      "TimeForRestartMove": 200
+      "Speed": 0.4,
+      "StopDistance": 137.5,
+      "DistanceIntervalForNumber": 12.5,
+      "TimeForRestartMove": 580
     },
 	{
 	  "ID": 10,
-      "Num": 4,
+      "Num": 10,
       "AliveTime": 1000,
-      "ShootIntervalForNumber": 15,
+      "ShootIntervalForNumber": 0,
       "ShootVec": {
-        "x": 0,
+        "x": -0.5,
         "y": 0,
-        "z": 1
+        "z": 0.5
       },
       "RollVec": {
-        "x": -1,
+        "x": 1,
         "y": 0,
         "z": 0
       },
 	  "AlignSpeed": 1.0,
-      "Speed": 0.5,
-      "StopDistance": 80,
-      "DistanceIntervalForNumber": 20,
-      "TimeForRestartMove": 200
+      "Speed": 0.4,
+      "StopDistance": 140,
+      "DistanceIntervalForNumber": 14,
+      "TimeForRestartMove": 180
     },
 	{
 	  "ID": 11,
-      "Num": 4,
+      "Num": 10,
       "AliveTime": 1000,
-      "ShootIntervalForNumber": 15,
+      "ShootIntervalForNumber": 0,
+      "ShootVec": {
+        "x": 0.5,
+        "y": 0,
+        "z": 0.5
+      },
+      "RollVec": {
+        "x": 0,
+        "y": 0,
+        "z": -1
+      },
+	  "AlignSpeed": 1.0,
+      "Speed": 0.4,
+      "StopDistance": 140,
+      "DistanceIntervalForNumber": 14,
+      "TimeForRestartMove": 180
+    },
+	{
+	  "ID": 12,
+      "Num": 10,
+      "AliveTime": 1000,
+      "ShootIntervalForNumber": 0,
+      "ShootVec": {
+        "x": -0.5,
+        "y": 0,
+        "z": -0.5
+      },
+      "RollVec": {
+        "x": 0,
+        "y": 0,
+        "z": 1
+      },
+	  "AlignSpeed": 1.0,
+      "Speed": 0.4,
+      "StopDistance": 140,
+      "DistanceIntervalForNumber": 14,
+      "TimeForRestartMove": 180
+    },
+	{
+	  "ID": 13,
+      "Num": 10,
+      "AliveTime": 1000,
+      "ShootIntervalForNumber": 0,
+      "ShootVec": {
+        "x": 0.5,
+        "y": 0,
+        "z": -0.5
+      },
+      "RollVec": {
+        "x": -1,
+        "y": 0,
+        "z": 0
+      },
+	  "AlignSpeed": 1.0,
+      "Speed": 0.4,
+      "StopDistance": 140,
+      "DistanceIntervalForNumber": 14,
+      "TimeForRestartMove": 180
+    },
+	{
+	  "ID": 14,
+      "Num": 13,
+      "AliveTime": 1000,
+      "ShootIntervalForNumber": 0,
+      "ShootVec": {
+        "x": 0,
+        "y": 0,
+        "z": -1
+      },
+      "RollVec": {
+        "x": -1,
+        "y": 0,
+        "z": 0
+      },
+	  "AlignSpeed": 1.0,
+      "Speed": 0.4,
+      "StopDistance": 142.2,
+      "DistanceIntervalForNumber": 12,
+      "TimeForRestartMove": 300
+    },
+	{
+	  "ID": 15,
+      "Num": 13,
+      "AliveTime": 1000,
+      "ShootIntervalForNumber": 0,
+      "ShootVec": {
+        "x": 0,
+        "y": 0,
+        "z": 1
+      },
+      "RollVec": {
+        "x": 1,
+        "y": 0,
+        "z": 0
+      },
+	  "AlignSpeed": 1.0,
+      "Speed": 0.4,
+      "StopDistance": 145.5,
+      "DistanceIntervalForNumber": 12,
+      "TimeForRestartMove": 300
+    },
+	{
+	  "ID": 16,
+      "Num": 14,
+      "AliveTime": 1000,
+      "ShootIntervalForNumber": 0,
+      "ShootVec": {
+        "x": 1,
+        "y": 0,
+        "z": 0
+      },
+      "RollVec": {
+        "x": 0,
+        "y": 0,
+        "z": -1
+      },
+	  "AlignSpeed": 1.0,
+      "Speed": 0.4,
+      "StopDistance": 140,
+      "DistanceIntervalForNumber": 10,
+      "TimeForRestartMove": 300
+    },
+	{
+	  "ID": 17,
+      "Num": 14,
+      "AliveTime": 1000,
+      "ShootIntervalForNumber": 0,
       "ShootVec": {
         "x": -1,
         "y": 0,
@@ -246,40 +372,145 @@
       "RollVec": {
         "x": 0,
         "y": 0,
-        "z": -1
+        "z": 1
       },
 	  "AlignSpeed": 1.0,
-      "Speed": 0.5,
-      "StopDistance": 80,
-      "DistanceIntervalForNumber": 20,
+      "Speed": 0.4,
+      "StopDistance": 142.2,
+      "DistanceIntervalForNumber": 10,
+      "TimeForRestartMove": 300
+    },
+	{
+	  "ID": 18,
+      "Num": 7,
+      "AliveTime": 1000,
+      "ShootIntervalForNumber": 0,
+      "ShootVec": {
+        "x": -0.5,
+        "y": 0,
+        "z": 0.5
+      },
+      "RollVec": {
+        "x": 0,
+        "y": 0,
+        "z": 1
+      },
+	  "AlignSpeed": 1.4,
+      "Speed": 0.4,
+      "StopDistance": 104,
+      "DistanceIntervalForNumber": 14,
       "TimeForRestartMove": 200
     },
 	{
-	  "ID": 12,
-      "Num": 4,
+	  "ID": 19,
+      "Num": 7,
       "AliveTime": 1000,
-      "ShootIntervalForNumber": 15,
+      "ShootIntervalForNumber": 0,
       "ShootVec": {
-        "x": 0,
+        "x": 0.5,
         "y": 0,
-        "z": -1
+        "z": 0.5
       },
       "RollVec": {
         "x": 1,
         "y": 0,
         "z": 0
       },
-	  "AlignSpeed": 1.0,
-      "Speed": 0.5,
-      "StopDistance": 80,
-      "DistanceIntervalForNumber": 20,
+	  "AlignSpeed": 1.4,
+      "Speed": 0.4,
+      "StopDistance": 104,
+      "DistanceIntervalForNumber": 14,
       "TimeForRestartMove": 200
     },
 	{
-	  "ID": 13,
-      "Num": 4,
+	  "ID": 20,
+      "Num": 7,
       "AliveTime": 1000,
-      "ShootIntervalForNumber": 15,
+      "ShootIntervalForNumber": 0,
+      "ShootVec": {
+        "x": -0.5,
+        "y": 0,
+        "z": -0.5
+      },
+      "RollVec": {
+        "x": -1,
+        "y": 0,
+        "z": 0
+      },
+	  "AlignSpeed": 1.4,
+      "Speed": 0.4,
+      "StopDistance": 104,
+      "DistanceIntervalForNumber": 14,
+      "TimeForRestartMove": 200
+    },
+	{
+	  "ID": 21,
+      "Num": 7,
+      "AliveTime": 1000,
+      "ShootIntervalForNumber": 0,
+      "ShootVec": {
+        "x": 0.5,
+        "y": 0,
+        "z": -0.5
+      },
+      "RollVec": {
+        "x": 0,
+        "y": 0,
+        "z": -1
+      },
+	  "AlignSpeed": 1.4,
+      "Speed": 0.4,
+      "StopDistance": 104,
+      "DistanceIntervalForNumber": 14,
+      "TimeForRestartMove": 200
+    },
+	{
+	  "ID": 22,
+      "Num": 14,
+      "AliveTime": 1000,
+      "ShootIntervalForNumber": 0,
+      "ShootVec": {
+        "x": -1,
+        "y": 0,
+        "z": 0
+      },
+      "RollVec": {
+        "x": 0,
+        "y": 0,
+        "z": 1
+      },
+	  "AlignSpeed": 1.0,
+      "Speed": 0.4,
+      "StopDistance": 137.5,
+      "DistanceIntervalForNumber": 10,
+      "TimeForRestartMove": 180
+    },
+	{
+	  "ID": 23,
+      "Num": 12,
+      "AliveTime": 1000,
+      "ShootIntervalForNumber": 0,
+      "ShootVec": {
+        "x": 0,
+        "y": 0,
+        "z": 1
+      },
+      "RollVec": {
+        "x": -1,
+        "y": 0,
+        "z": 0
+      },
+	  "AlignSpeed": 1.0,
+      "Speed": 0.4,
+      "StopDistance": 144,
+      "DistanceIntervalForNumber": 12.5,
+      "TimeForRestartMove": 580
+    },
+	{
+	  "ID": 24,
+      "Num": 15,
+      "AliveTime": 1000,
+      "ShootIntervalForNumber": 0,
       "ShootVec": {
         "x": 1,
         "y": 0,
@@ -291,10 +522,31 @@
         "z": 1
       },
 	  "AlignSpeed": 1.0,
-      "Speed": 0.5,
-      "StopDistance": 80,
-      "DistanceIntervalForNumber": 20,
-      "TimeForRestartMove": 200
+      "Speed": 0.4,
+      "StopDistance": 140,
+      "DistanceIntervalForNumber": 10,
+      "TimeForRestartMove": 180
+    },
+	{
+	  "ID": 25,
+      "Num": 12,
+      "AliveTime": 1000,
+      "ShootIntervalForNumber": 0,
+      "ShootVec": {
+        "x": 0,
+        "y": 0,
+        "z": -1
+      },
+      "RollVec": {
+        "x": -1,
+        "y": 0,
+        "z": 0
+      },
+	  "AlignSpeed": 1.0,
+      "Speed": 0.4,
+      "StopDistance": 142.5,
+      "DistanceIntervalForNumber": 12.5,
+      "TimeForRestartMove": 580
     }
   ]
 }

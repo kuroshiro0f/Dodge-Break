@@ -36,6 +36,20 @@ private:
     //  外部ファイルから読み取ったデータをロード
     void LoadFileData();
 
+    //  連続回避処理
+    void ConinuousDodge();
+
+    //  一度のみ回避するオブジェクトが衝突中になった際にリストに登録する処理
+    void RegisterOneTimeDodgeObjectCollideList(const CollisionObject& _class);
+
+    //  回避間隔を計測するためのタイマークラスへのポインタ
+    //  NOTE: 連続回避ができる攻撃を回避した場合のみ使用
+    class Timer* m_dodgeIntervalTimer;
+    //  回避間隔
+    //  NOTE: 外部ファイルで値を設定
+    //  NOTE: 連続回避ができる攻撃を回避した場合のみ使用
+    float m_dodgeInterval;
+
     //  イベント通知クラスへのポインタ
     std::shared_ptr<EventNotificator> m_eventNotificator;
 

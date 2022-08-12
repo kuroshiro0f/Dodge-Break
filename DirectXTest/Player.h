@@ -29,6 +29,9 @@ public:
     //  描画
     void Draw();
 
+    //  移動
+    void Move();
+
     //  回避時の処理
     void Dodge();
 
@@ -55,9 +58,6 @@ public:
 private:
     //  衝突した際の処理
     void OnCollisionEnter(const CollisionObject& _class)override;
-
-    //  移動
-    void Move();
 
     //  無敵時間の更新
     void UpdateInvincibleTime();
@@ -118,6 +118,7 @@ private:
     class PMDModel& m_model;            //  PMDモデルの管理
     class EffekseerManager& m_effect;   //  Effekseerで読み込んだエフェクトの管理
     class Sound& m_sound;               //  音の管理
+    class UserInputHandler& m_userInputHandler; //  入力検知
 
     //  プレイヤーのパラメータ
     struct Param

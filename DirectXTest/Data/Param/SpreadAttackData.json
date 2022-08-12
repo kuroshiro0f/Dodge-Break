@@ -1,31 +1,34 @@
 {
-  "TotalNum": 60,
+  "TotalNum": 300,
   "Radius": 1,
   "SpreadAttackData": [
     {
+	  "ID": 0,
       "Num": 5,
       "AliveTime": 800,
       "Speed": 0.5,
-      "StartSpreadDistance": 35,
+      "StartSpreadDistance": 25,
       "SpreadAngle": 0.5,
-      "SpreadStartAngle": 0.25,
+      "SpreadStartAngle": 0,
       "CenterBulletSizeMagnification": 1.2,
       "FirstMoveDistace": 2
     },
 	{
+	  "ID": 1,
       "Num": 5,
       "AliveTime": 800,
       "Speed": 0.5,
-      "StartSpreadDistance": 35,
+      "StartSpreadDistance": 50,
       "SpreadAngle": 0.5,
-      "SpreadStartAngle": 0.25,
+      "SpreadStartAngle": 0,
       "CenterBulletSizeMagnification": 1.2,
       "FirstMoveDistace": 2
     },
 	{
+	  "ID": 2,
       "Num": 6,
       "AliveTime": 800,
-      "Speed": 0.5,
+      "Speed": 0.4,
       "StartSpreadDistance": 30,
       "SpreadAngle": 0.4,
       "SpreadStartAngle": 0,
@@ -33,12 +36,35 @@
       "FirstMoveDistace": 2
     },
 	{
+	  "ID": 3,
       "Num": 7,
+      "AliveTime": 800,
+      "Speed": 0.4,
+      "StartSpreadDistance": 30,
+      "SpreadAngle": 0.3,
+      "SpreadStartAngle": 0.25,
+      "CenterBulletSizeMagnification": 1.2,
+      "FirstMoveDistace": 2
+    },
+	{
+	  "ID": 4,
+      "Num": 8,
+      "AliveTime": 800,
+      "Speed": 0.3,
+      "StartSpreadDistance": 0,
+      "SpreadAngle": 0.3,
+      "SpreadStartAngle": 0,
+      "CenterBulletSizeMagnification": 1.2,
+      "FirstMoveDistace": 2
+    },
+	{
+	  "ID": 5,
+      "Num": 8,
       "AliveTime": 800,
       "Speed": 0.5,
       "StartSpreadDistance": 30,
       "SpreadAngle": 0.3,
-      "SpreadStartAngle": 0.25,
+      "SpreadStartAngle": 0,
       "CenterBulletSizeMagnification": 1.2,
       "FirstMoveDistace": 2
     }

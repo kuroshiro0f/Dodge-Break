@@ -6,13 +6,13 @@
 	  "ID": 0,
       "Num": 3,
       "ShootVec": {
-        "x": 0.3,
+        "x": 0,
         "y": 0,
-        "z": -0.7
+        "z": -1
       },
       "AliveTime": 300,
       "ShootIntervalForNumber": 0,
-      "Speed": 0.8,
+      "Speed": 0.6,
       "Angle": 0,
       "AddPosX": 18,
 	  "AddPosZ": 0
@@ -21,13 +21,13 @@
 	  "ID": 1,
       "Num": 3,
       "ShootVec": {
-        "x": -0.3,
+        "x": 0,
         "y": 0,
-        "z": -0.7
+        "z": -1
       },
       "AliveTime": 300,
       "ShootIntervalForNumber": 0,
-      "Speed": 0.8,
+      "Speed": 0.6,
       "Angle": 0,
       "AddPosX": 18,
 	  "AddPosZ": 0

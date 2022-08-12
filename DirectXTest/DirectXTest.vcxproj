@@ -89,17 +89,18 @@
       <SDLCheck>false</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)inc\Debug;$(SolutionDir)inc\Debug\DirectXTex;$(SolutionDir)inc\Debug\DirectXTK12;$(SolutionDir)inc\Debug\Effekseer</AdditionalIncludeDirectories>
-      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <AdditionalIncludeDirectories>$(SolutionDir)inc\Debug</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <AdditionalOptions>/source-charset:utf-8 %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(SolutionDir)lib\Debug;$(SolutionDir)lib\Debug\DirectXTex;$(SolutionDir)lib\Debug\DirectXTK12;$(SolutionDir)lib\Debug\Effekseer</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)lib\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <FxCompile>
-      <ShaderType>Effect</ShaderType>
+      <ShaderType>
+      </ShaderType>
     </FxCompile>
     <FxCompile>
       <ShaderModel>5.1</ShaderModel>
@@ -113,8 +114,8 @@
       <SDLCheck>false</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)inc\Release;$(SolutionDir)inc\Release\DirectXTex;$(SolutionDir)inc\Release\DirectXTK12;$(SolutionDir)inc\Release\Effekseer</AdditionalIncludeDirectories>
-      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <AdditionalIncludeDirectories>$(SolutionDir)inc\Release</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <AdditionalOptions>/source-charset:utf-8 %(AdditionalOptions)</AdditionalOptions>
       <Optimization>MaxSpeed</Optimization>
     </ClCompile>
@@ -123,13 +124,14 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>false</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(SolutionDir)lib\Release;$(SolutionDir)lib\Release\DirectXTex;$(SolutionDir)lib\Release\DirectXTK12;$(SolutionDir)lib\Release\Effekseer</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)lib\Release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateMapFile>false</GenerateMapFile>
       <MapFileName>ReleaseMap</MapFileName>
       <LinkTimeCodeGeneration>UseFastLinkTimeCodeGeneration</LinkTimeCodeGeneration>
     </Link>
     <FxCompile>
-      <ShaderType>Effect</ShaderType>
+      <ShaderType>
+      </ShaderType>
     </FxCompile>
     <FxCompile>
       <ShaderModel>5.1</ShaderModel>
@@ -148,13 +150,14 @@
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>DebugFull</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(SolutionDir)lib\Debug;$(SolutionDir)lib\Debug\DirectXTex;$(SolutionDir)lib\Debug\DirectXTK12;$(SolutionDir)lib\Debug\Effekseer</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)lib\Debug;$(SolutionDir)lib\Debug\DirectXTex;$(SolutionDir)lib\Debug\DirectXTK12;$(SolutionDir)lib\Debug\Effekseer;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <FxCompile>
-      <ShaderType>Effect</ShaderType>
+      <ShaderType>
+      </ShaderType>
     </FxCompile>
     <FxCompile>
-      <ShaderModel>5.0</ShaderModel>
+      <ShaderModel>5.1</ShaderModel>
     </FxCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -176,22 +179,24 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>DebugFull</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(SolutionDir)lib\Release;$(SolutionDir)lib\Release\DirectXTex;$(SolutionDir)lib\Release\DirectXTK12;$(SolutionDir)lib\Release\Effekseer</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)lib\Release;$(SolutionDir)lib\Release\DirectXTex;$(SolutionDir)lib\Release\DirectXTK12;$(SolutionDir)lib\Release\Effekseer;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateMapFile>true</GenerateMapFile>
       <MapFileName>ReleaseMap</MapFileName>
       <LinkTimeCodeGeneration>UseFastLinkTimeCodeGeneration</LinkTimeCodeGeneration>
       <DataExecutionPrevention>false</DataExecutionPrevention>
     </Link>
     <FxCompile>
-      <ShaderType>Effect</ShaderType>
+      <ShaderType>
+      </ShaderType>
     </FxCompile>
     <FxCompile>
-      <ShaderModel>5.0</ShaderModel>
+      <ShaderModel>5.1</ShaderModel>
       <DisableOptimizations>false</DisableOptimizations>
       <EnableDebuggingInformation>false</EnableDebuggingInformation>
     </FxCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="BeamAttack.cpp" />
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="CheckError.cpp" />
     <ClCompile Include="ColorValue.cpp" />
@@ -218,7 +223,7 @@
     <ClCompile Include="LoadJson.cpp" />
     <ClCompile Include="PMDDrawer.cpp" />
     <ClCompile Include="PMDLoader.cpp" />
-    <ClCompile Include="PMDShifter.cpp" />
+    <ClCompile Include="PMDModelTransform.cpp" />
     <ClCompile Include="ResultScoreUI.cpp" />
     <ClCompile Include="ResultUI.cpp" />
     <ClCompile Include="LineAttack.cpp" />
@@ -233,6 +238,7 @@
     <ClCompile Include="TipsUI.cpp" />
     <ClCompile Include="TitleUI.cpp" />
     <ClCompile Include="FannelAttack.cpp" />
+    <ClCompile Include="UserInputHandler.cpp" />
     <ClCompile Include="WaveDirector.cpp" />
     <ClCompile Include="XMFLOATHelper.cpp" />
     <ClCompile Include="AppearEnemyDirector.cpp" />
@@ -247,7 +253,6 @@
     <ClCompile Include="GameLoop.cpp" />
     <ClCompile Include="GameScene.cpp" />
     <ClCompile Include="Ground.cpp" />
-    <ClCompile Include="KeyBoard.cpp" />
     <ClCompile Include="PMDModel.cpp" />
     <ClCompile Include="SpriteDrawer.cpp" />
     <ClCompile Include="main.cpp" />
@@ -264,18 +269,42 @@
     <ClCompile Include="ZigzagAttack.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <FxCompile Include="BasicShader.hlsl">
-      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Effect</ShaderType>
-      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Effect</ShaderType>
-      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Effect</ShaderType>
-      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Effect</ShaderType>
-      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">5.0</ShaderModel>
-      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">5.0</ShaderModel>
-      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">5.0</ShaderModel>
-      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Release|x64'">5.0</ShaderModel>
+    <FxCompile Include="PixelShader.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Pixel</ShaderType>
+      <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">BasicPS</EntryPointName>
+      <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">BasicPS</EntryPointName>
+      <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">BasicPS</EntryPointName>
+      <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">BasicPS</EntryPointName>
+      <EnableUnboundedDescriptorTables Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</EnableUnboundedDescriptorTables>
+      <EnableUnboundedDescriptorTables Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</EnableUnboundedDescriptorTables>
+      <EnableUnboundedDescriptorTables Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</EnableUnboundedDescriptorTables>
+      <EnableUnboundedDescriptorTables Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</EnableUnboundedDescriptorTables>
+    </FxCompile>
+    <FxCompile Include="VertexShader.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Vertex</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Vertex</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Vertex</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Vertex</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">5.1</ShaderModel>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">5.1</ShaderModel>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">5.1</ShaderModel>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Release|x64'">5.1</ShaderModel>
+      <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">BasicVS</EntryPointName>
+      <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">BasicVS</EntryPointName>
+      <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">BasicVS</EntryPointName>
+      <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">BasicVS</EntryPointName>
+      <EnableUnboundedDescriptorTables Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</EnableUnboundedDescriptorTables>
+      <EnableUnboundedDescriptorTables Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</EnableUnboundedDescriptorTables>
+      <EnableUnboundedDescriptorTables Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</EnableUnboundedDescriptorTables>
+      <EnableUnboundedDescriptorTables Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</EnableUnboundedDescriptorTables>
     </FxCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BeamAttack.h" />
+    <ClInclude Include="BoxData.h" />
     <ClInclude Include="Camera.h" />
     <ClInclude Include="CheckError.h" />
     <ClInclude Include="DataReLoader.h" />
@@ -297,6 +326,8 @@
     <ClInclude Include="FailedResultUI.h" />
     <ClInclude Include="FailedResultUIData.h" />
     <ClInclude Include="GameSceneParam.h" />
+    <ClInclude Include="IncetancedDrawData.h" />
+    <ClInclude Include="ObjectTagName.h" />
     <ClInclude Include="PlayerData.h" />
     <ClInclude Include="ResultScoreUIData.h" />
     <ClInclude Include="ResultUIData.h" />
@@ -321,12 +352,11 @@
     <ClInclude Include="MaterialData.h" />
     <ClInclude Include="IPlayerParameterGetter.h" />
     <ClInclude Include="PMDDrawer.h" />
-    <ClInclude Include="PMDDrawData.h" />
-    <ClInclude Include="PMDLoader.h" />
     <ClInclude Include="PMDModelData.h" />
+    <ClInclude Include="PMDLoader.h" />
+    <ClInclude Include="PMDModelFilePathData.h" />
     <ClInclude Include="PMDModelType.h" />
-    <ClInclude Include="PMDShifter.h" />
-    <ClInclude Include="RestartData.h" />
+    <ClInclude Include="PMDModelTransform.h" />
     <ClInclude Include="ResultScoreUI.h" />
     <ClInclude Include="ResultUI.h" />
     <ClInclude Include="LineAttack.h" />
@@ -338,6 +368,7 @@
     <ClInclude Include="GameSceneScoreUI.h" />
     <ClInclude Include="SingletonFinalizer.h" />
     <ClInclude Include="SoundType.h" />
+    <ClInclude Include="SphereData.h" />
     <ClInclude Include="SpreadAttack.h" />
     <ClInclude Include="SpriteType.h" />
     <ClInclude Include="EnemyDefeater.h" />
@@ -346,6 +377,7 @@
     <ClInclude Include="TipsUI.h" />
     <ClInclude Include="TitleUI.h" />
     <ClInclude Include="FannelAttack.h" />
+    <ClInclude Include="UserInputHandler.h" />
     <ClInclude Include="WaveDirector.h" />
     <ClInclude Include="XMFLOATHelper.h" />
     <ClInclude Include="AppearEnemyDirector.h" />
@@ -378,7 +410,6 @@
     <ClInclude Include="EnemyData.h" />
     <ClInclude Include="GameLoop.h" />
     <ClInclude Include="GameScene.h" />
-    <ClInclude Include="KeyBoard.h" />
     <ClInclude Include="PMDModel.h" />
     <ClInclude Include="PlayerManager.h" />
     <ClInclude Include="PMDRenderer.h" />

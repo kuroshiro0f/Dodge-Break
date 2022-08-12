@@ -38,7 +38,7 @@
 #include "SceneController.h"
 #include "Sound.h"
 #include "GameSpeedOperator.h"
-#include "KeyBoard.h"
+#include "UserInputHandler.h"
 
 #if _DEBUG
 #include "DataReLoader.h"
@@ -52,8 +52,8 @@ GameScene::GameScene()
     , m_collision(Singleton<CollisionManager>::GetInstance())
     , m_sound(Singleton<Sound>::GetInstance())
     , m_sceneController(Singleton<SceneController>::GetInstance())
+    , m_userInputHandler(Singleton<UserInputHandler>::GetInstance())
     , m_speedOperator(Singleton<GameSpeedOperator>::GetInstance())
-    , m_keyboard(Singleton<KeyBoard>::GetInstance())
     , m_camera(new Camera())
     , m_enemyManager(new EnemyManager())
     , m_enemyDefeaterManager(new EnemyDefeaterManager())
@@ -68,6 +68,7 @@ GameScene::GameScene()
     , m_ui(new GameSceneUI())
     , m_enemyAttack(new EnemyAttackDirector())
     , m_failedResultUI(new FailedResultUI())
+    , m_gameOverState(GameOverState::None)
     , m_bgmHandle(0)
     , m_cameraMovementAmount({ 0,0,0 })
 {
@@ -144,6 +145,19 @@ void GameScene::Init()
 //  リセット
 void GameScene::Reset()
 {
+    //  入力検知をリセット
+    m_userInputHandler.ResetOperationFunc();
+    //  各関数を入力検知時の命令として登録
+    m_userInputHandler.RegisterOperation(UserInputHandler::OperationType::ToNext, std::bind(&GameScene::ChangeTitle, this));    //  タイトルへ移行
+    m_userInputHandler.RegisterOperation(UserInputHandler::OperationType::Retry, std::bind(&GameScene::RetryGameScene, this));  //  ゲームシーンのやり直し
+#if _DEBUG
+    m_userInputHandler.RegisterOperation(UserInputHandler::OperationType::Pause, std::bind(&GameScene::Pause, this));       //  一時停止
+    m_userInputHandler.RegisterOperation(UserInputHandler::OperationType::Restart, std::bind(&GameScene::Restart, this));   //  再開
+    m_userInputHandler.RegisterOperation(UserInputHandler::OperationType::RestartNextPoint, std::bind(&GameScene::RestartNextCheckPoint, this));    //  次のチェックポイントへ
+    m_userInputHandler.RegisterOperation(UserInputHandler::OperationType::RestartPreviousPoint, std::bind(&GameScene::RestartPrevCheckPoint, this));//  前のチェックポイントへ
+    m_userInputHandler.RegisterOperation(UserInputHandler::OperationType::ReLoadFile, std::bind(&GameScene::ReloadFile, this)); //  外部ファイルの再読み込み
+#endif
+
     //  各オブジェクトのマネージャーリセット
     m_playerManager->Reset();
     m_enemyManager->Reset();
@@ -180,11 +194,6 @@ void GameScene::Reset()
 //  更新
 void GameScene::Update(const float _deltaTime)
 {
-#if _DEBUG
-    //  デバッグ用の処理を行う
-    DebugUpdate();
-#endif
-
     //  DeltaTimeの更新
     m_deltaTime = _deltaTime;
 
@@ -276,13 +285,13 @@ void GameScene::UpdateGameOverScene()
         //  失敗時のリザルトUIを更新
         m_failedResultUI->Update();
         //  キーが押されたらシーン移行
-        if (m_keyboard.IsPressKey(m_keyboard.KeyBind::ChangeTitle))
+        if (m_gameOverState == GameOverState::ChangeTitle)
         {
             m_sound.Stop(SoundType::GameSceneBGM, m_bgmHandle);
             //  タイトルへ移行
             m_sceneController.ChangeScene(SceneType::Title);
         }
-        else if (m_keyboard.IsPressKey(m_keyboard.KeyBind::ChangeGameScene))
+        else if (m_gameOverState == GameOverState::RetryGameScene)
         {
             m_sound.Stop(SoundType::GameSceneBGM, m_bgmHandle);
             //  ゲームシーンへ移行
@@ -362,7 +371,10 @@ void GameScene::DrawString()
   //m_string->DrawStringBlackAndYellowForFewNumber(m_playerManager->GetPlayerPos().z, { 0,100 });
 
     ////  デルタタイムの表示
-    //m_string->DrawStringBlackAndYellowForFewNumber(m_deltaTime, { 0,200 });
+    //m_string->DrawStringBlackAndYellowForFewNumber(m_deltaTime * 0.01, { 0,200 });
+
+    ////  デルタタイムの表示
+    //m_string->DrawStringBlackAndYellowForFewNumber(model.Get(), { 0,200 });
 
     ////  回避数の表示
     //m_string->DrawStringBlackAndYellowForNumber(m_dodgeRange->count, { 0,0 });
@@ -378,6 +390,24 @@ void GameScene::StartBGM()
 {
     //  BGMの再生
     m_bgmHandle = m_sound.Play(SoundType::GameSceneBGM, true, true);
+}
+
+//  タイトルへ移行
+void GameScene::ChangeTitle()
+{
+    if (m_state == GameSceneState::GameOver)
+    {
+        m_gameOverState = GameOverState::ChangeTitle;
+    }
+}
+
+//  ゲームシーンをやり直し
+void GameScene::RetryGameScene()
+{
+    if (m_state == GameSceneState::GameOver)
+    {
+        m_gameOverState = GameOverState::RetryGameScene;
+    }
 }
 
 //  スコアを得るためのクラスのインスタンスを返す
@@ -415,49 +445,29 @@ void GameScene::GameOver()
     m_directSceneTimer->Start();
 }
 
-//  チェックポイントからゲームシーンを再開
 #if _DEBUG
-void GameScene::DebugUpdate()
+//  ゲームの一時停止
+//  NOTE: 現在の仕様ではゲーム内のオブジェクトの動きを止めるだけで、
+//        ゲームそのものの経過時間を止めることはできないため、
+//        一時停止しても、時間が経過すれば新しいエネミーが登場します。
+//        そのため、デバッグ専用の機能としております。
+void GameScene::Pause()
 {
-    //  ゲームの一時停止
-    //  NOTE: 現在の仕様ではゲーム内のオブジェクトの動きを止めるだけで、
-    //        ゲームそのものの経過時間を止めることはできないため、
-    //        一時停止しても、時間が経過すれば新しいエネミーが登場します。
-    //        そのため、デバッグ専用の機能としております。
-    //  Pauseボタンを押したらゲームを一時停止
-    if (m_keyboard.IsPressKey(m_keyboard.KeyBind::Pause) && !m_speedOperator.IsPause())
+    if (!m_speedOperator.IsPause())
     {
         m_speedOperator.Pause();
     }
-    //  一時停止中にRestartボタンを押したらゲームを再開
-    else if (m_keyboard.IsPressKey(m_keyboard.KeyBind::Restart) && m_speedOperator.IsPause())
+}
+
+//  一時停止中にRestartボタンを押したらゲームを再開
+void GameScene::Restart()
+{
+    if (m_speedOperator.IsPause())
     {
         m_speedOperator.ReStart();
     }
-
-    //  チェックポイントからゲームシーンを再開
-    //  次のチェックポイント
-    if (m_keyboard.IsPressKey(m_keyboard.KeyBind::RestartNextPoint))
-    {
-        RestartNextCheckPoint();
-    }
-    //  前のチェックポイント
-    if (m_keyboard.IsPressKey(m_keyboard.KeyBind::RestartPreviousPoint))
-    {
-        RestartPrevCheckPoint();
-    }
-
-    //  外部ファイルの再読み込みを行う
-    if (m_keyboard.IsPressKey(m_keyboard.KeyBind::ReLoadFile))
-    {
-        //  jsonファイルの再読み込み
-        LoadJson& loadJson = Singleton<LoadJson>::GetInstance();
-        loadJson.Load();
-        //  ファイルから読み込んだデータをロード
-        DataReLoader& dataReLoader = Singleton<DataReLoader>::GetInstance();
-        dataReLoader.ReLoad();
-    }
 }
+
 //  次のチェックポイントへ
 void GameScene::RestartNextCheckPoint()
 {
@@ -477,5 +487,15 @@ void GameScene::RestartPrevCheckPoint()
     m_enemyManager->Reset();
     m_state = GameSceneState::PlayGame;
     m_appearDirector->RestartCheckPoint(GameSceneParam::PREV_CHECK_POINT);
+}
+
+//  jsonファイルの再読み込み
+void GameScene::ReloadFile()
+{
+    LoadJson& loadJson = Singleton<LoadJson>::GetInstance();
+    loadJson.Load();
+    //  ファイルから読み込んだデータをロード
+    DataReLoader& dataReLoader = Singleton<DataReLoader>::GetInstance();
+    dataReLoader.ReLoad();
 }
 #endif

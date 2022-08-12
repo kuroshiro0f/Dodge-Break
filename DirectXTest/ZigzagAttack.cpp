@@ -1,6 +1,6 @@
 #include "ZigzagAttack.h"
 
-#include "CollisionType.h"
+#include "ObjectTagName.h"
 #include "EnemyAttackType.h"
 #include "XMFLOATHelper.h"
 #include "PMDModelType.h"
@@ -146,7 +146,7 @@ void ZigzagAttack::LoadFileData()
     }
 
     //  衝突判定用の半径
-    m_radius = fileData.GetFloatData(JsonDataType::ZigzagAttack, "Radius");
+    m_sphereData->radius = fileData.GetFloatData(JsonDataType::ZigzagAttack, "Radius");
 }
 
 //  衝突時の処理
@@ -155,7 +155,7 @@ void ZigzagAttack::OnCollisionEnter(const CollisionObject& _class)
     //  プレイヤーと衝突したら下部のモデルのみ消去
     //  NOTE: プレイヤーとの衝突後に「衝突した後のジグザグ攻撃」のモデルと差し替えて、
     //        衝突判定などを消し、生存時間が終わるまでモデルを表示します。
-    if (_class.GetType() == CollisionType::Player)
+    if (_class.GetObjectTagName() == ObjectTagName::Player)
     {
         //  衝突判定などを消す
         m_isDisplay = false;

@@ -1,6 +1,7 @@
 #include "Enemy.h"
 
 #include "CollisionType.h"
+#include "ObjectTagName.h"
 #include "EnemyType.h"
 #include "EnemyData.h"
 #include "EnemyState.h"
@@ -74,7 +75,10 @@ void Enemy::OnCollisionEnter(const CollisionObject& _class)
 void Enemy::Init(const std::shared_ptr<class EventNotificator> _eventClass, std::function<void()> _increaseDefeatEnemyNum)
 {
     //  衝突判定に登録
-    CollisionObject::Init(CollisionType::Enemy);
+    CollisionObject::Init(CollisionType::Sphere, ObjectTagName::Enemy);
+
+    //  球状オブジェクトであるため、球状オブジェクトのデータを使用
+    m_sphereData = new SphereData();
 
     //  エネミーの撃破数を増加させる関数へのポインタを取得
     m_increaseDefeatEnemyNumFunc = _increaseDefeatEnemyNum;
@@ -93,11 +97,6 @@ void Enemy::Init(const std::shared_ptr<class EventNotificator> _eventClass, std:
 
     //  プレイヤーが被弾したときに攻撃行動をやめるように関数を登録
     _eventClass->Register(EventType::DamagePlayer, std::bind(&Enemy::StopAttack, this));
-    //  再開したときに攻撃行動も再開するように関数を登録
-    _eventClass->Register(EventType::Restart, std::bind(&Enemy::RestartAttack, this));
-
-    //  エネミーのロード
-    m_model.SetUp(2);
 
     //  攻撃クラスの初期化
     m_attackDirector->Init();
@@ -135,7 +134,7 @@ void Enemy::LoadFileData()
         m_movePosData[i] = fileData.GetXMFLOAT3Data(JsonDataType::Stage, "MovePosData", i);
     }
     m_centerPos = fileData.GetXMFLOAT3Data(JsonDataType::Stage, "CenterPos");
-    m_radius = EnemyData::RADIUS;
+    m_sphereData->radius = EnemyData::RADIUS;
 }
 
 //  エネミーの座標の移動を計算する
@@ -414,26 +413,8 @@ void Enemy::Exit()
 //  攻撃の停止
 void Enemy::StopAttack()
 {
-    if (m_isDisplay)
-    {
-        //  再開後の攻撃開始までの時間を決定
-        m_restartShootTimeAdd = m_param->shootInterval - m_shootTimer->GetElapseTime() + EnemyData::RESTART_SHOOT_TIME_ADD;
-        //  攻撃を止める
-        m_shootTimer->Stop();
-    }
     //  攻撃を削除
     m_attackDirector->Delete();
-}
-//  攻撃の再開
-void Enemy::RestartAttack()
-{
-    if (m_isDisplay)
-    {
-        //  再開後の最初の攻撃はまだしていない
-        m_isShootFirstAttack = false;
-        //  発射時間の計測を開始
-        m_shootTimer->Start();
-    }
 }
 
 //  エネミーの種類のゲッター

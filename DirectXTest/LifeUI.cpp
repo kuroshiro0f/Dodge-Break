@@ -2,7 +2,7 @@
 
 #include "SpriteType.h"
 #include "Timer.h"
-#include "RestartData.h"
+#include "PlayerData.h"
 
 #include "IPlayerParameterGetter.h"
 
@@ -95,7 +95,7 @@ void LifeUI::PlayAnimationDecreaseLife()
     {
         m_displayLifeNum--;
         //  プレイヤーの再登場までアニメーションしたら、アニメーション終了
-        if (m_PlayAnimationTimer->GetElapseTime() >= RestartData::RESTART_TIME)
+        if (m_PlayAnimationTimer->GetElapseTime() >= PlayerData::RESTART_TIME)
         {
             m_isPlayAnimation = false;
         }

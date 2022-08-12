@@ -1,6 +1,7 @@
 #include "EnemyDefeater.h"
 
 #include "CollisionType.h"
+#include "ObjectTagName.h"
 #include "EnemyType.h"
 #include "JsonDataType.h"
 #include "EffectType.h"
@@ -58,7 +59,10 @@ void EnemyDefeater::Init(const std::shared_ptr<class EventNotificator> _eventCla
     , const std::function <void(const EnemyType&)> _defeatFunc, int _num)
 {
     //  衝突判定に登録
-    CollisionObject::Init(CollisionType::EnemyDefeater);
+    CollisionObject::Init(CollisionType::Sphere, ObjectTagName::EnemyDefeater);
+
+    //  球状オブジェクトであるため、球状オブジェクトのデータを使用
+    m_sphereData = new SphereData();
 
     //  イベント通知クラスのインスタンスを取得
     m_eventNotificator = _eventClass;
@@ -66,10 +70,6 @@ void EnemyDefeater::Init(const std::shared_ptr<class EventNotificator> _eventCla
     m_defeatEnemyFunc = _defeatFunc;
     //  番号を登録
     m_num = _num;
-
-    //  塔のモデルをロード
-    //  土台と本体の2つ
-    m_model.SetUp(MODEL_NUM);
 
     //  番号によって種類分け
     m_type = static_cast<EnemyType>(_num);
@@ -122,7 +122,7 @@ void EnemyDefeater::Load()
     //  取得したデータを元に座標を決定
     m_pos = fileData.GetXMFLOAT3Data(JsonDataType::Stage, "MovePosData", fileData.GetIntData(JsonDataType::EnemyDefeater, "Pos", m_num));
     //  取得したデータを元にパラメータを決定
-    m_radius = fileData.GetFloatData(JsonDataType::EnemyDefeater, "Radius");
+    m_sphereData->radius = fileData.GetFloatData(JsonDataType::EnemyDefeater, "Radius");
     m_param.RotationSpeed = fileData.GetFloatData(JsonDataType::EnemyDefeater, "ROTATION_SPEED");
     m_param.MoveSpeed = fileData.GetFloatData(JsonDataType::EnemyDefeater, "MOVE_SPEED");
     m_param.MoveDistance = fileData.GetFloatData(JsonDataType::EnemyDefeater, "MOVE_DISTANCE");
@@ -264,7 +264,7 @@ void EnemyDefeater::PlayChargeEnergyEffect()
 void EnemyDefeater::OnCollisionEnter(const CollisionObject& _class)
 {
     //  衝突した相手がプレイヤー且つエネルギーが必要量溜まっていたら
-    if (_class.GetType() == CollisionType::Player && m_state == State::Active)
+    if (_class.GetObjectTagName() == ObjectTagName::Player && m_state == State::Active)
     {
         //  破壊音を再生
         m_sound.Play(SoundType::UseEnemyDefeaterSE, false, true);

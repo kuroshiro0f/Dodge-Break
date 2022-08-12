@@ -2,7 +2,6 @@
 
 #include "Timer.h"
 #include "JsonDataType.h"
-#include "RestartData.h"
 #include "EventNotificator.h"
 #include "EventType.h"
 
@@ -20,8 +19,6 @@ WaveDirector::WaveDirector()
     , m_exitEnemy(nullptr)
     , m_finishWaveFunc(nullptr)
     , m_waveNum(0)
-    , m_extendNum(0)
-    , m_extendTime(0)
     , m_aliveTime(0)
     , m_isInterval(false)
     , m_param({})
@@ -48,10 +45,6 @@ void WaveDirector::Init(const std::function<void(int)> _startAppearEnemy, const 
 
     //  外部ファイルからデータをロード
     LoadFileData();
-
-    //  プレイヤーの被弾時にウェーブを延長するように登録
-    _eventClass->Register(EventType::DamagePlayer, std::bind(&WaveDirector::ExtendWave, this));
-
 #if _DEBUG
     //  ファイルをロードする関数を、
     //  データの再読み込みを行うクラスに渡す
@@ -65,9 +58,6 @@ void WaveDirector::Reset()
 {
     //  最初のウェーブから
     m_waveNum = 0;
-    //  延長時間をリセット
-    m_extendNum = 0;
-    m_extendTime = 0;
     //  生存時間をリセット
     m_aliveTime = 0;
     //  インターバルではない
@@ -106,13 +96,13 @@ void WaveDirector::Update()
     if (!m_isInterval)
     {
         //  ウェーブ終了時間になったら、エネミーを退場させてインターバルへ変更
-        if (m_changeWaveTimer->GetElapseTime() >= m_param.waveTime[m_waveNum - 1] + m_extendTime)
+        if (m_changeWaveTimer->GetElapseTime() >= m_param.waveTime[m_waveNum - 1])
         {
             m_exitEnemy();
             if (!m_isDisplayEnemy())
             {
                 m_isInterval = true;
-                m_aliveTime += m_changeWaveTimer->GetElapseTime() - m_extendTime; 
+                m_aliveTime += m_changeWaveTimer->GetElapseTime(); 
                 m_changeWaveTimer->Start();
                 //  最終ウェーブまで終わった場合は、終了時に実行する関数を呼ぶ
                 if (m_waveNum >= m_param.waveTotalNum)
@@ -130,18 +120,9 @@ void WaveDirector::Update()
         {
             m_isInterval = false;
             m_startAppearEnemy(++m_waveNum);
-            m_extendNum = 0;
-            m_extendTime = 0;
             m_changeWaveTimer->Start();
         }
     }
-}
-
-//  ウェーブの延長
-void WaveDirector::ExtendWave()
-{
-    m_extendNum++;
-    m_extendTime = m_extendNum * (RestartData::RETURN_TIME + RestartData::RESTART_TIME);
 }
 
 //  生存時間を得る
@@ -149,7 +130,7 @@ float WaveDirector::GetAliveTime()
 {
     if (!m_isInterval)
     {
-        m_aliveTime += m_changeWaveTimer->GetElapseTime() - m_extendTime + (RestartData::RETURN_TIME + RestartData::RESTART_TIME);
+        m_aliveTime += m_changeWaveTimer->GetElapseTime();
     }
 
     return m_aliveTime;

@@ -34,6 +34,7 @@ void LoadJson::Init()
         { JsonDataType::ZigzagAttack,"Data/Param/ZigzagAttackData.json" },
         { JsonDataType::SpreadAttack,"Data/Param/SpreadAttackData.json" },
         { JsonDataType::LineAttack,"Data/Param/LineAttackData.json" },
+        { JsonDataType::BeamAttack,"Data/Param/BeamAttackData.json" },
         { JsonDataType::Wave,"Data/Param/WaveData.json" },
         { JsonDataType::Stage,"Data/Param/StageData.json" }
     };

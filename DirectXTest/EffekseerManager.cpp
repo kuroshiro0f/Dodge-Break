@@ -12,10 +12,10 @@
 #include "Device.h"
 
 //  画面上に一度に表示する最大エフェクト数
-static const int DISPLAY_EFFECT_NUM_MAX = 500;
+static const int DISPLAY_EFFECT_NUM_MAX = 800;
 
 //  画面上に一度に表示する最大パーティクル数
-static const int DESPLAY_PARTICLE_NUM_MAX = 10000;
+static const int DESPLAY_PARTICLE_NUM_MAX = 25000;
 
 EffekseerManager::EffekseerManager()
     :m_efkRenderer(nullptr)

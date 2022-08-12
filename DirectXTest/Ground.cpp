@@ -25,9 +25,6 @@ void Ground::Init()
     LoadJson& fileData = Singleton<LoadJson>::GetInstance();
     //  取得したデータを元に地面の座標を決定
     m_groundPos = fileData.GetXMFLOAT3Data(JsonDataType::Stage, "CenterPos");
-
-    //  モデルを描画するための設定
-    m_model.SetUp(2);
 }
 
 //  描画

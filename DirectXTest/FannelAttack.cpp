@@ -1,6 +1,6 @@
 #include "FannelAttack.h"
 
-#include "CollisionType.h"
+#include "ObjectTagName.h"
 #include "EnemyAttackType.h"
 #include "XMFLOATHelper.h"
 #include "PMDModelType.h"
@@ -130,14 +130,14 @@ void FannelAttack::LoadFileData()
     }
 
     //  衝突判定用の半径
-    m_radius = fileData.GetFloatData(JsonDataType::FannelAttack, "Radius");
+    m_sphereData->radius = fileData.GetFloatData(JsonDataType::FannelAttack, "Radius");
 }
 
 //  衝突時の処理
 void FannelAttack::OnCollisionEnter(const CollisionObject& _class)
 {
     //  プレイヤーと衝突したら攻撃を消す
-    if (_class.GetType() == CollisionType::Player)
+    if (_class.GetObjectTagName() == ObjectTagName::Player)
     {
         Delete();
     }

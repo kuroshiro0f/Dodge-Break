@@ -4,6 +4,7 @@
 
 #include "EnemyAttackType.h"
 #include "EnemyAttackBase.h"
+#include "BeamAttack.h"
 #include "EnumIterator.h"
 #include "XMFLOATHelper.h"
 
@@ -20,18 +21,24 @@ EnemyAttackDirector::EnemyAttackDirector()
     , m_returnPoolFunc(nullptr)
     , m_enemyAttack({})
     , m_deleteAttack({})
+    , m_beamAttackList({})
+    , m_deleteBeamAttackList({})
     , m_straightData({})
     , m_fannelData({})
     , m_zigzagData({})
     , m_spreadData({})
     , m_lineData({})
+    , m_isAttack(false)
 {
+    //  処理なし
 }
 
 EnemyAttackDirector::~EnemyAttackDirector()
 {
     m_deleteAttack.clear();
     m_enemyAttack.clear();
+    m_beamAttackList.clear();
+    m_deleteBeamAttackList.clear();
 }
 
 //  初期化
@@ -42,6 +49,7 @@ void EnemyAttackDirector::Init()
 
     //  オブジェクトプールにエネミーの攻撃を戻すための関数を設定
     m_returnPoolFunc = std::bind(&EnemyAttackDirector::ReturnPool, this, std::placeholders::_1);
+    m_returnPoolForBeamAttackFunc = std::bind(&EnemyAttackDirector::ReturnPoolForBeamAttack, this, std::placeholders::_1);
 
     //  ファイルをロードする関数を、
     //  データの再読み込みを行うクラスに渡す
@@ -135,14 +143,20 @@ void EnemyAttackDirector::LoadFileData()
 //  更新
 void EnemyAttackDirector::Update(const XMFLOAT3& _targetPos, const float _deltaTime)
 {
+    //  各攻撃の更新と描画
     for (auto itr : m_enemyAttack)
     {
         itr->Update(_targetPos, _deltaTime);
         itr->DeleteOutsideBullet();
         itr->Draw();
     }
+    for (auto itr : m_beamAttackList)
+    {
+        itr->Update(_deltaTime);
+    }
+
     //  Poolに再登録されたインスタンスをlistから削除
-    //  NOTE: Delete関数内で行うと、m_enemyAttackのイテレータを使ってUpdateを順番に実行している際に、
+    //  NOTE: Delete関数内で行うと、m_enemyAttackやm_beamAttackListのイテレータを使ってUpdateを順番に実行している際に、
     //        listのサイズが変化してしまい、ループにエラーが発生してしまうため、
     //        list内の全Update実行後にまとめて削除
     for (auto itr : m_deleteAttack)
@@ -151,6 +165,18 @@ void EnemyAttackDirector::Update(const XMFLOAT3& _targetPos, const float _deltaT
         m_enemyAttack.erase(findItr);
     }
     m_deleteAttack.clear();
+    for (auto itr : m_deleteBeamAttackList)
+    {
+        auto findItr = std::find(m_beamAttackList.begin(), m_beamAttackList.end(), itr);
+        m_beamAttackList.erase(findItr);
+    }
+    m_deleteBeamAttackList.clear();
+
+    //  処理中の攻撃がなければ攻撃中か確認するフラグをfalseに
+    if (m_enemyAttack.empty() && m_beamAttackList.empty())
+    {
+        m_isAttack = false;
+    }
 }
 
 //  生成して攻撃を開始する
@@ -173,6 +199,9 @@ void EnemyAttackDirector::Shoot(const EnemyAttackType _type, const int _attackPe
     case EnemyAttackType::Line:
         ShootLineAttack(_attackPetternID, _pos, _deltaTime);
         break;
+    case EnemyAttackType::Beam:
+        ShootBeamAttack(_attackPetternID, _pos);
+        break;
 #if _DEBUG
     case EnemyAttackType::Debug:
         ShootDebugAttack(_pos, _deltaTime);
@@ -181,6 +210,9 @@ void EnemyAttackDirector::Shoot(const EnemyAttackType _type, const int _attackPe
     default:
         break;
     }
+
+    //  攻撃中か確認するフラグをtrueに
+    m_isAttack = true;
 }
 
 //  攻撃の削除
@@ -190,6 +222,12 @@ void EnemyAttackDirector::Delete()
     {
         itr->Delete();
     }
+    for (auto itr : m_beamAttackList)
+    {
+        itr->Delete();
+    }
+
+    m_isAttack = false;
 }
 
 //  使用中の攻撃を、プール内に戻す
@@ -197,6 +235,12 @@ void EnemyAttackDirector::ReturnPool(EnemyAttackBase* _class)
 {
     m_pool.RegisterStandByEnemyAttack(_class);
     m_deleteAttack.emplace_back(_class);
+}
+//  使用中のビーム攻撃を、プール内に戻す
+void EnemyAttackDirector::ReturnPoolForBeamAttack(BeamAttack* _beamAttackClass)
+{
+    m_pool.RegisterStandByEnemyAttack(_beamAttackClass);
+    m_deleteBeamAttackList.emplace_back(_beamAttackClass);
 }
 
 //  直線攻撃の発射
@@ -268,6 +312,15 @@ void EnemyAttackDirector::ShootLineAttack(const int _attackPetternID, const XMFL
         //  発射
         m_enemyAttack.back()->Shoot(_attackPetternID, _pos, m_lineData[_attackPetternID].shootVec, i, _deltaTime, m_returnPoolFunc);
     }
+}
+
+//  ビーム攻撃の発射
+void EnemyAttackDirector::ShootBeamAttack(const int _attackPetternID, const XMFLOAT3& _pos)
+{
+    //  ビーム攻撃をEnemyAttackPool内から取り出す
+    m_beamAttackList.emplace_back(m_pool.GetBeamAttack());
+    //  発射
+    m_beamAttackList.back()->Shoot(_attackPetternID, _pos, m_returnPoolForBeamAttackFunc);
 }
 
 #if _DEBUG

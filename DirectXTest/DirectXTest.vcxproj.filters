@@ -184,6 +184,12 @@
     <Filter Include="ソース ファイル\ヘッダー ファイル\UI\Data">
       <UniqueIdentifier>{1038025f-8d4b-4c63-8301-6a2911d3ce94}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\ヘッダー ファイル\InputHandler">
+      <UniqueIdentifier>{3d881386-112d-4081-a441-99cb7b1bd155}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\C++ファイル\InputHandler">
+      <UniqueIdentifier>{763cd5e8-4414-4ffd-9dca-8ef254b32cc2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Dx12Wrapper.cpp">
@@ -202,9 +208,6 @@
       <Filter>ソース ファイル\C++ファイル\System</Filter>
     </ClCompile>
     <ClCompile Include="Mouse.cpp">
-      <Filter>ソース ファイル\C++ファイル\Tool</Filter>
-    </ClCompile>
-    <ClCompile Include="KeyBoard.cpp">
       <Filter>ソース ファイル\C++ファイル\Tool</Filter>
     </ClCompile>
     <ClCompile Include="Ground.cpp">
@@ -264,7 +267,7 @@
     <ClCompile Include="PMDModel.cpp">
       <Filter>ソース ファイル\C++ファイル\LoadClass\PMDModel</Filter>
     </ClCompile>
-    <ClCompile Include="PMDShifter.cpp">
+    <ClCompile Include="PMDModelTransform.cpp">
       <Filter>ソース ファイル\C++ファイル\LoadClass\PMDModel</Filter>
     </ClCompile>
     <ClCompile Include="PMDDrawer.cpp">
@@ -396,6 +399,12 @@
     <ClCompile Include="EffekseerManager.cpp">
       <Filter>ソース ファイル\C++ファイル\LoadClass</Filter>
     </ClCompile>
+    <ClCompile Include="UserInputHandler.cpp">
+      <Filter>ソース ファイル\C++ファイル\InputHandler</Filter>
+    </ClCompile>
+    <ClCompile Include="BeamAttack.cpp">
+      <Filter>ソース ファイル\C++ファイル\EnemyAttack</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Dx12Wrapper.h">
@@ -411,9 +420,6 @@
       <Filter>ソース ファイル\ヘッダー ファイル\System</Filter>
     </ClInclude>
     <ClInclude Include="Mouse.h">
-      <Filter>ソース ファイル\ヘッダー ファイル\Tool</Filter>
-    </ClInclude>
-    <ClInclude Include="KeyBoard.h">
       <Filter>ソース ファイル\ヘッダー ファイル\Tool</Filter>
     </ClInclude>
     <ClInclude Include="Ground.h">
@@ -509,7 +515,7 @@
     <ClInclude Include="PMDDrawer.h">
       <Filter>ソース ファイル\ヘッダー ファイル\LoadClass\PMDModel</Filter>
     </ClInclude>
-    <ClInclude Include="PMDShifter.h">
+    <ClInclude Include="PMDModelTransform.h">
       <Filter>ソース ファイル\ヘッダー ファイル\LoadClass\PMDModel</Filter>
     </ClInclude>
     <ClInclude Include="EnemyDefeaterManager.h">
@@ -524,10 +530,10 @@
     <ClInclude Include="TitleUI.h">
       <Filter>ソース ファイル\ヘッダー ファイル\UI</Filter>
     </ClInclude>
-    <ClInclude Include="PMDModelData.h">
+    <ClInclude Include="PMDModelFilePathData.h">
       <Filter>ソース ファイル\ヘッダー ファイル\LoadClass\PMDModel\Data</Filter>
     </ClInclude>
-    <ClInclude Include="PMDDrawData.h">
+    <ClInclude Include="PMDModelData.h">
       <Filter>ソース ファイル\ヘッダー ファイル\LoadClass\PMDModel\Data</Filter>
     </ClInclude>
     <ClInclude Include="Singleton.h">
@@ -635,9 +641,6 @@
     <ClInclude Include="EnergyEffect.h">
       <Filter>ソース ファイル\ヘッダー ファイル\Energy</Filter>
     </ClInclude>
-    <ClInclude Include="RestartData.h">
-      <Filter>ソース ファイル\ヘッダー ファイル\System</Filter>
-    </ClInclude>
     <ClInclude Include="Sound.h">
       <Filter>ソース ファイル\ヘッダー ファイル\LoadClass\Sound</Filter>
     </ClInclude>
@@ -719,9 +722,30 @@
     <ClInclude Include="ResultScoreUIData.h">
       <Filter>ソース ファイル\ヘッダー ファイル\UI\Data</Filter>
     </ClInclude>
+    <ClInclude Include="IncetancedDrawData.h">
+      <Filter>ソース ファイル\ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="UserInputHandler.h">
+      <Filter>ソース ファイル\ヘッダー ファイル\InputHandler</Filter>
+    </ClInclude>
+    <ClInclude Include="BoxData.h">
+      <Filter>ソース ファイル\ヘッダー ファイル\Collision\Data</Filter>
+    </ClInclude>
+    <ClInclude Include="SphereData.h">
+      <Filter>ソース ファイル\ヘッダー ファイル\Collision\Data</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectTagName.h">
+      <Filter>ソース ファイル\ヘッダー ファイル\Collision\Data</Filter>
+    </ClInclude>
+    <ClInclude Include="BeamAttack.h">
+      <Filter>ソース ファイル\ヘッダー ファイル\EnemyAttack</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <FxCompile Include="BasicShader.hlsl">
+    <FxCompile Include="VertexShader.hlsl">
+      <Filter>ソース ファイル\シェーダーファイル</Filter>
+    </FxCompile>
+    <FxCompile Include="PixelShader.hlsl">
       <Filter>ソース ファイル\シェーダーファイル</Filter>
     </FxCompile>
   </ItemGroup>

@@ -12,9 +12,9 @@ public:
     PMDDrawer();
     ~PMDDrawer();
 
-    //  描画
-    void Draw(const struct PMDDrawData& _data,const ComPtr<ID3D12DescriptorHeap> _transformHeap);
+    //  描画命令の発行
+    void IssueDrawCommand(const struct PMDModelData& _data,const ComPtr<ID3D12DescriptorHeap> _transformHeap, const int _num);
 private:
     //  シングルトンクラスへの参照
-    class Device& m_device; //  デバイスの管理
+    class Device& m_device; //  Device
 };

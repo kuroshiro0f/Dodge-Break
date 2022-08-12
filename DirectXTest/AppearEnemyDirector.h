@@ -30,10 +30,6 @@ public:
 
     //  更新
     void Update();
-
-    //  出現時間の延長
-    void ExtendAppearTime();
-    
 #if _DEBUG
     //  指定された時間から再開
     void RestartCheckPoint(const int _num);
@@ -68,13 +64,6 @@ private:
 
     //  出現させるエネミーのウェーブの番号
     int m_appearWaveNum;
-
-    //  NOTE: ウェーブ中での延長回数に応じて延長時間を算出し、
-    //        エネミーの出現時間を延長する
-    //  出現時間の延長回数
-    int m_extendCount;
-    //  出現時間の延長時間
-    float m_extendTime;
 #if _DEBUG
     //  リスタートの時間
     float m_restartTime;

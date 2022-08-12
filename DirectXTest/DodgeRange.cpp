@@ -1,8 +1,10 @@
 #include "DodgeRange.h"
 
 #include "CollisionType.h"
+#include "ObjectTagName.h"
 #include "EventNotificator.h"
 #include "EventType.h"
+#include "Timer.h"
 
 #include "Singleton.h"
 #include "LoadJson.h"
@@ -13,21 +15,31 @@
 
 DodgeRange::DodgeRange()
     :m_eventNotificator(nullptr)
+    , m_dodgeIntervalTimer(nullptr)
+    , m_dodgeInterval(0)
     , m_collideList({})
 {
+    //  処理なし
 }
 
 DodgeRange::~DodgeRange()
 {
     //  メモリの解放
     m_collideList.clear();
+    delete m_dodgeIntervalTimer;
 }
 
 //  初期化
 void DodgeRange::Init(const std::shared_ptr<class EventNotificator> _eventClass)
 {
     //  衝突判定に登録
-    CollisionObject::Init(CollisionType::DodgeRange);
+    CollisionObject::Init(CollisionType::Sphere, ObjectTagName::DodgeRange);
+
+    //  球状オブジェクトであるため、球状オブジェクトのデータを使用
+    m_sphereData = new SphereData();
+
+    //  回避間隔計測タイマーのインスタンスを生成
+    m_dodgeIntervalTimer = new Timer();
 
     //  イベント通知クラスのインスタンスを取得
     m_eventNotificator = _eventClass;
@@ -57,9 +69,13 @@ void DodgeRange::LoadFileData()
     //  外部ファイルのデータを取得
     LoadJson& fileData = Singleton<LoadJson>::GetInstance();
 
+    //  回避間隔の秒数
+    //  NOTE: 連続回避ができる攻撃を回避した場合のみ使用
+    m_dodgeInterval = fileData.GetFloatData(JsonDataType::Player, "DodgeInterval");
+
     //  衝突判定の広さ（半径）を設定
     //  NOTE: プレイヤーの衝突範囲の半径に加算
-    m_radius = fileData.GetFloatData(JsonDataType::Player, "Radius") + fileData.GetFloatData(JsonDataType::Player, "DodgeRadius");
+    m_sphereData->radius = fileData.GetFloatData(JsonDataType::Player, "Radius") + fileData.GetFloatData(JsonDataType::Player, "DodgeRadius");
 }
 
 //  更新
@@ -144,6 +160,33 @@ void DodgeRange::UpdateInvincible(const XMFLOAT3& _playerPos)
 
 //  衝突時の処理
 void DodgeRange::OnCollisionEnter(const CollisionObject& _class)
+{
+    //  ビーム攻撃は連続回避処理を行う
+    if (_class.GetObjectTagName() == ObjectTagName::BeamAttack)
+    {
+        ConinuousDodge();
+    }
+    //  上記以外は回避範囲に衝突後、プレイヤーに衝突せずに離れたら回避するように
+    else
+    {
+        RegisterOneTimeDodgeObjectCollideList(_class);
+    }
+}
+
+//  連続回避処理用の関数
+void DodgeRange::ConinuousDodge()
+{
+    //  最初の回避か、直前の回避から一定時間経過していれば
+    if (m_dodgeIntervalTimer->GetElapseTime() >= m_dodgeInterval || !m_dodgeIntervalTimer->IsStart())
+    {
+        //  回避したことを通知
+        m_eventNotificator->Notificate(EventType::Dodge);
+        m_dodgeIntervalTimer->Start();
+    }
+}
+
+//  一度のみ回避するオブジェクトが衝突中になった際にリストに登録する処理
+void DodgeRange::RegisterOneTimeDodgeObjectCollideList(const CollisionObject& _class)
 {
     //  衝突したオブジェクトを検索して、判定済でなければステートを衝突中に
     auto itr = m_collideList.find(&_class);
