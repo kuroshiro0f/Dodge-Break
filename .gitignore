@@ -39,3 +39,9 @@
 *.txt
 /DirectXTest/ReleaseMap
 .vs
+
+# Tracking
+*
+!/inc
+*
+!/lib
