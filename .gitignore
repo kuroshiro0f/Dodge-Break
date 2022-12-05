@@ -41,7 +41,5 @@
 .vs
 
 # Tracking
-*
-!/inc
-*
-!/lib
+!/inc/**
+!/lib/**

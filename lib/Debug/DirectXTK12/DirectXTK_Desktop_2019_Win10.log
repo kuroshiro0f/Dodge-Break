@@ -1,0 +1,367 @@
+﻿  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" AlphaTestEffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tvs_6_0 /EVSAlphaTest /FhCompiled\AlphaTestEffect_VSAlphaTest.inc /FdCompiled\AlphaTestEffect_VSAlphaTest.pdb /VnAlphaTestEffect_VSAlphaTest
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" AlphaTestEffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tvs_6_0 /EVSAlphaTestNoFog /FhCompiled\AlphaTestEffect_VSAlphaTestNoFog.inc /FdCompiled\AlphaTestEffect_VSAlphaTestNoFog.pdb /VnAlphaTestEffect_VSAlphaTestNoFog
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" AlphaTestEffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tvs_6_0 /EVSAlphaTestVc /FhCompiled\AlphaTestEffect_VSAlphaTestVc.inc /FdCompiled\AlphaTestEffect_VSAlphaTestVc.pdb /VnAlphaTestEffect_VSAlphaTestVc
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" AlphaTestEffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tvs_6_0 /EVSAlphaTestVcNoFog /FhCompiled\AlphaTestEffect_VSAlphaTestVcNoFog.inc /FdCompiled\AlphaTestEffect_VSAlphaTestVcNoFog.pdb /VnAlphaTestEffect_VSAlphaTestVcNoFog
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" AlphaTestEffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tps_6_0 /EPSAlphaTestLtGt /FhCompiled\AlphaTestEffect_PSAlphaTestLtGt.inc /FdCompiled\AlphaTestEffect_PSAlphaTestLtGt.pdb /VnAlphaTestEffect_PSAlphaTestLtGt
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" AlphaTestEffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tps_6_0 /EPSAlphaTestLtGtNoFog /FhCompiled\AlphaTestEffect_PSAlphaTestLtGtNoFog.inc /FdCompiled\AlphaTestEffect_PSAlphaTestLtGtNoFog.pdb /VnAlphaTestEffect_PSAlphaTestLtGtNoFog
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" AlphaTestEffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tps_6_0 /EPSAlphaTestEqNe /FhCompiled\AlphaTestEffect_PSAlphaTestEqNe.inc /FdCompiled\AlphaTestEffect_PSAlphaTestEqNe.pdb /VnAlphaTestEffect_PSAlphaTestEqNe
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" AlphaTestEffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tps_6_0 /EPSAlphaTestEqNeNoFog /FhCompiled\AlphaTestEffect_PSAlphaTestEqNeNoFog.inc /FdCompiled\AlphaTestEffect_PSAlphaTestEqNeNoFog.pdb /VnAlphaTestEffect_PSAlphaTestEqNeNoFog
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" BasicEffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tvs_6_0 /EVSBasic /FhCompiled\BasicEffect_VSBasic.inc /FdCompiled\BasicEffect_VSBasic.pdb /VnBasicEffect_VSBasic
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" BasicEffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tvs_6_0 /EVSBasicNoFog /FhCompiled\BasicEffect_VSBasicNoFog.inc /FdCompiled\BasicEffect_VSBasicNoFog.pdb /VnBasicEffect_VSBasicNoFog
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" BasicEffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tvs_6_0 /EVSBasicVc /FhCompiled\BasicEffect_VSBasicVc.inc /FdCompiled\BasicEffect_VSBasicVc.pdb /VnBasicEffect_VSBasicVc
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" BasicEffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tvs_6_0 /EVSBasicVcNoFog /FhCompiled\BasicEffect_VSBasicVcNoFog.inc /FdCompiled\BasicEffect_VSBasicVcNoFog.pdb /VnBasicEffect_VSBasicVcNoFog
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" BasicEffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tvs_6_0 /EVSBasicTx /FhCompiled\BasicEffect_VSBasicTx.inc /FdCompiled\BasicEffect_VSBasicTx.pdb /VnBasicEffect_VSBasicTx
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" BasicEffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tvs_6_0 /EVSBasicTxNoFog /FhCompiled\BasicEffect_VSBasicTxNoFog.inc /FdCompiled\BasicEffect_VSBasicTxNoFog.pdb /VnBasicEffect_VSBasicTxNoFog
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" BasicEffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tvs_6_0 /EVSBasicTxVc /FhCompiled\BasicEffect_VSBasicTxVc.inc /FdCompiled\BasicEffect_VSBasicTxVc.pdb /VnBasicEffect_VSBasicTxVc
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" BasicEffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tvs_6_0 /EVSBasicTxVcNoFog /FhCompiled\BasicEffect_VSBasicTxVcNoFog.inc /FdCompiled\BasicEffect_VSBasicTxVcNoFog.pdb /VnBasicEffect_VSBasicTxVcNoFog
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" BasicEffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tvs_6_0 /EVSBasicVertexLighting /FhCompiled\BasicEffect_VSBasicVertexLighting.inc /FdCompiled\BasicEffect_VSBasicVertexLighting.pdb /VnBasicEffect_VSBasicVertexLighting
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" BasicEffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tvs_6_0 /EVSBasicVertexLightingBn /FhCompiled\BasicEffect_VSBasicVertexLightingBn.inc /FdCompiled\BasicEffect_VSBasicVertexLightingBn.pdb /VnBasicEffect_VSBasicVertexLightingBn
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" BasicEffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tvs_6_0 /EVSBasicVertexLightingVc /FhCompiled\BasicEffect_VSBasicVertexLightingVc.inc /FdCompiled\BasicEffect_VSBasicVertexLightingVc.pdb /VnBasicEffect_VSBasicVertexLightingVc
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" BasicEffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tvs_6_0 /EVSBasicVertexLightingVcBn /FhCompiled\BasicEffect_VSBasicVertexLightingVcBn.inc /FdCompiled\BasicEffect_VSBasicVertexLightingVcBn.pdb /VnBasicEffect_VSBasicVertexLightingVcBn
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" BasicEffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tvs_6_0 /EVSBasicVertexLightingTx /FhCompiled\BasicEffect_VSBasicVertexLightingTx.inc /FdCompiled\BasicEffect_VSBasicVertexLightingTx.pdb /VnBasicEffect_VSBasicVertexLightingTx
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" BasicEffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tvs_6_0 /EVSBasicVertexLightingTxBn /FhCompiled\BasicEffect_VSBasicVertexLightingTxBn.inc /FdCompiled\BasicEffect_VSBasicVertexLightingTxBn.pdb /VnBasicEffect_VSBasicVertexLightingTxBn
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" BasicEffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tvs_6_0 /EVSBasicVertexLightingTxVc /FhCompiled\BasicEffect_VSBasicVertexLightingTxVc.inc /FdCompiled\BasicEffect_VSBasicVertexLightingTxVc.pdb /VnBasicEffect_VSBasicVertexLightingTxVc
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" BasicEffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tvs_6_0 /EVSBasicVertexLightingTxVcBn /FhCompiled\BasicEffect_VSBasicVertexLightingTxVcBn.inc /FdCompiled\BasicEffect_VSBasicVertexLightingTxVcBn.pdb /VnBasicEffect_VSBasicVertexLightingTxVcBn
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" BasicEffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tvs_6_0 /EVSBasicPixelLighting /FhCompiled\BasicEffect_VSBasicPixelLighting.inc /FdCompiled\BasicEffect_VSBasicPixelLighting.pdb /VnBasicEffect_VSBasicPixelLighting
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" BasicEffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tvs_6_0 /EVSBasicPixelLightingBn /FhCompiled\BasicEffect_VSBasicPixelLightingBn.inc /FdCompiled\BasicEffect_VSBasicPixelLightingBn.pdb /VnBasicEffect_VSBasicPixelLightingBn
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" BasicEffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tvs_6_0 /EVSBasicPixelLightingVc /FhCompiled\BasicEffect_VSBasicPixelLightingVc.inc /FdCompiled\BasicEffect_VSBasicPixelLightingVc.pdb /VnBasicEffect_VSBasicPixelLightingVc
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" BasicEffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tvs_6_0 /EVSBasicPixelLightingVcBn /FhCompiled\BasicEffect_VSBasicPixelLightingVcBn.inc /FdCompiled\BasicEffect_VSBasicPixelLightingVcBn.pdb /VnBasicEffect_VSBasicPixelLightingVcBn
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" BasicEffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tvs_6_0 /EVSBasicPixelLightingTx /FhCompiled\BasicEffect_VSBasicPixelLightingTx.inc /FdCompiled\BasicEffect_VSBasicPixelLightingTx.pdb /VnBasicEffect_VSBasicPixelLightingTx
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" BasicEffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tvs_6_0 /EVSBasicPixelLightingTxBn /FhCompiled\BasicEffect_VSBasicPixelLightingTxBn.inc /FdCompiled\BasicEffect_VSBasicPixelLightingTxBn.pdb /VnBasicEffect_VSBasicPixelLightingTxBn
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" BasicEffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tvs_6_0 /EVSBasicPixelLightingTxVc /FhCompiled\BasicEffect_VSBasicPixelLightingTxVc.inc /FdCompiled\BasicEffect_VSBasicPixelLightingTxVc.pdb /VnBasicEffect_VSBasicPixelLightingTxVc
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" BasicEffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tvs_6_0 /EVSBasicPixelLightingTxVcBn /FhCompiled\BasicEffect_VSBasicPixelLightingTxVcBn.inc /FdCompiled\BasicEffect_VSBasicPixelLightingTxVcBn.pdb /VnBasicEffect_VSBasicPixelLightingTxVcBn
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" BasicEffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tps_6_0 /EPSBasic /FhCompiled\BasicEffect_PSBasic.inc /FdCompiled\BasicEffect_PSBasic.pdb /VnBasicEffect_PSBasic
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" BasicEffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tps_6_0 /EPSBasicNoFog /FhCompiled\BasicEffect_PSBasicNoFog.inc /FdCompiled\BasicEffect_PSBasicNoFog.pdb /VnBasicEffect_PSBasicNoFog
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" BasicEffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tps_6_0 /EPSBasicTx /FhCompiled\BasicEffect_PSBasicTx.inc /FdCompiled\BasicEffect_PSBasicTx.pdb /VnBasicEffect_PSBasicTx
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" BasicEffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tps_6_0 /EPSBasicTxNoFog /FhCompiled\BasicEffect_PSBasicTxNoFog.inc /FdCompiled\BasicEffect_PSBasicTxNoFog.pdb /VnBasicEffect_PSBasicTxNoFog
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" BasicEffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tps_6_0 /EPSBasicVertexLighting /FhCompiled\BasicEffect_PSBasicVertexLighting.inc /FdCompiled\BasicEffect_PSBasicVertexLighting.pdb /VnBasicEffect_PSBasicVertexLighting
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" BasicEffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tps_6_0 /EPSBasicVertexLightingNoFog /FhCompiled\BasicEffect_PSBasicVertexLightingNoFog.inc /FdCompiled\BasicEffect_PSBasicVertexLightingNoFog.pdb /VnBasicEffect_PSBasicVertexLightingNoFog
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" BasicEffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tps_6_0 /EPSBasicVertexLightingTx /FhCompiled\BasicEffect_PSBasicVertexLightingTx.inc /FdCompiled\BasicEffect_PSBasicVertexLightingTx.pdb /VnBasicEffect_PSBasicVertexLightingTx
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" BasicEffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tps_6_0 /EPSBasicVertexLightingTxNoFog /FhCompiled\BasicEffect_PSBasicVertexLightingTxNoFog.inc /FdCompiled\BasicEffect_PSBasicVertexLightingTxNoFog.pdb /VnBasicEffect_PSBasicVertexLightingTxNoFog
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" BasicEffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tps_6_0 /EPSBasicPixelLighting /FhCompiled\BasicEffect_PSBasicPixelLighting.inc /FdCompiled\BasicEffect_PSBasicPixelLighting.pdb /VnBasicEffect_PSBasicPixelLighting
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" BasicEffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tps_6_0 /EPSBasicPixelLightingTx /FhCompiled\BasicEffect_PSBasicPixelLightingTx.inc /FdCompiled\BasicEffect_PSBasicPixelLightingTx.pdb /VnBasicEffect_PSBasicPixelLightingTx
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" DualTextureEffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tvs_6_0 /EVSDualTexture /FhCompiled\DualTextureEffect_VSDualTexture.inc /FdCompiled\DualTextureEffect_VSDualTexture.pdb /VnDualTextureEffect_VSDualTexture
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" DualTextureEffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tvs_6_0 /EVSDualTextureNoFog /FhCompiled\DualTextureEffect_VSDualTextureNoFog.inc /FdCompiled\DualTextureEffect_VSDualTextureNoFog.pdb /VnDualTextureEffect_VSDualTextureNoFog
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" DualTextureEffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tvs_6_0 /EVSDualTextureVc /FhCompiled\DualTextureEffect_VSDualTextureVc.inc /FdCompiled\DualTextureEffect_VSDualTextureVc.pdb /VnDualTextureEffect_VSDualTextureVc
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" DualTextureEffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tvs_6_0 /EVSDualTextureVcNoFog /FhCompiled\DualTextureEffect_VSDualTextureVcNoFog.inc /FdCompiled\DualTextureEffect_VSDualTextureVcNoFog.pdb /VnDualTextureEffect_VSDualTextureVcNoFog
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" DualTextureEffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tps_6_0 /EPSDualTexture /FhCompiled\DualTextureEffect_PSDualTexture.inc /FdCompiled\DualTextureEffect_PSDualTexture.pdb /VnDualTextureEffect_PSDualTexture
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" DualTextureEffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tps_6_0 /EPSDualTextureNoFog /FhCompiled\DualTextureEffect_PSDualTextureNoFog.inc /FdCompiled\DualTextureEffect_PSDualTextureNoFog.pdb /VnDualTextureEffect_PSDualTextureNoFog
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" EnvironmentMapEffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tvs_6_0 /EVSEnvMap /FhCompiled\EnvironmentMapEffect_VSEnvMap.inc /FdCompiled\EnvironmentMapEffect_VSEnvMap.pdb /VnEnvironmentMapEffect_VSEnvMap
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" EnvironmentMapEffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tvs_6_0 /EVSEnvMapBn /FhCompiled\EnvironmentMapEffect_VSEnvMapBn.inc /FdCompiled\EnvironmentMapEffect_VSEnvMapBn.pdb /VnEnvironmentMapEffect_VSEnvMapBn
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" EnvironmentMapEffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tvs_6_0 /EVSEnvMapFresnel /FhCompiled\EnvironmentMapEffect_VSEnvMapFresnel.inc /FdCompiled\EnvironmentMapEffect_VSEnvMapFresnel.pdb /VnEnvironmentMapEffect_VSEnvMapFresnel
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" EnvironmentMapEffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tvs_6_0 /EVSEnvMapFresnelBn /FhCompiled\EnvironmentMapEffect_VSEnvMapFresnelBn.inc /FdCompiled\EnvironmentMapEffect_VSEnvMapFresnelBn.pdb /VnEnvironmentMapEffect_VSEnvMapFresnelBn
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" EnvironmentMapEffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tvs_6_0 /EVSEnvMapPixelLighting /FhCompiled\EnvironmentMapEffect_VSEnvMapPixelLighting.inc /FdCompiled\EnvironmentMapEffect_VSEnvMapPixelLighting.pdb /VnEnvironmentMapEffect_VSEnvMapPixelLighting
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" EnvironmentMapEffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tvs_6_0 /EVSEnvMapPixelLightingBn /FhCompiled\EnvironmentMapEffect_VSEnvMapPixelLightingBn.inc /FdCompiled\EnvironmentMapEffect_VSEnvMapPixelLightingBn.pdb /VnEnvironmentMapEffect_VSEnvMapPixelLightingBn
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" EnvironmentMapEffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tps_6_0 /EPSEnvMap /FhCompiled\EnvironmentMapEffect_PSEnvMap.inc /FdCompiled\EnvironmentMapEffect_PSEnvMap.pdb /VnEnvironmentMapEffect_PSEnvMap
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" EnvironmentMapEffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tps_6_0 /EPSEnvMapNoFog /FhCompiled\EnvironmentMapEffect_PSEnvMapNoFog.inc /FdCompiled\EnvironmentMapEffect_PSEnvMapNoFog.pdb /VnEnvironmentMapEffect_PSEnvMapNoFog
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" EnvironmentMapEffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tps_6_0 /EPSEnvMapSpecular /FhCompiled\EnvironmentMapEffect_PSEnvMapSpecular.inc /FdCompiled\EnvironmentMapEffect_PSEnvMapSpecular.pdb /VnEnvironmentMapEffect_PSEnvMapSpecular
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" EnvironmentMapEffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tps_6_0 /EPSEnvMapSpecularNoFog /FhCompiled\EnvironmentMapEffect_PSEnvMapSpecularNoFog.inc /FdCompiled\EnvironmentMapEffect_PSEnvMapSpecularNoFog.pdb /VnEnvironmentMapEffect_PSEnvMapSpecularNoFog
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" EnvironmentMapEffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tps_6_0 /EPSEnvMapPixelLighting /FhCompiled\EnvironmentMapEffect_PSEnvMapPixelLighting.inc /FdCompiled\EnvironmentMapEffect_PSEnvMapPixelLighting.pdb /VnEnvironmentMapEffect_PSEnvMapPixelLighting
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" EnvironmentMapEffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tps_6_0 /EPSEnvMapPixelLightingNoFog /FhCompiled\EnvironmentMapEffect_PSEnvMapPixelLightingNoFog.inc /FdCompiled\EnvironmentMapEffect_PSEnvMapPixelLightingNoFog.pdb /VnEnvironmentMapEffect_PSEnvMapPixelLightingNoFog
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" EnvironmentMapEffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tps_6_0 /EPSEnvMapPixelLightingFresnel /FhCompiled\EnvironmentMapEffect_PSEnvMapPixelLightingFresnel.inc /FdCompiled\EnvironmentMapEffect_PSEnvMapPixelLightingFresnel.pdb /VnEnvironmentMapEffect_PSEnvMapPixelLightingFresnel
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" EnvironmentMapEffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tps_6_0 /EPSEnvMapPixelLightingFresnelNoFog /FhCompiled\EnvironmentMapEffect_PSEnvMapPixelLightingFresnelNoFog.inc /FdCompiled\EnvironmentMapEffect_PSEnvMapPixelLightingFresnelNoFog.pdb /VnEnvironmentMapEffect_PSEnvMapPixelLightingFresnelNoFog
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" EnvironmentMapEffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tps_6_0 /EPSEnvMapSpherePixelLighting /FhCompiled\EnvironmentMapEffect_PSEnvMapSpherePixelLighting.inc /FdCompiled\EnvironmentMapEffect_PSEnvMapSpherePixelLighting.pdb /VnEnvironmentMapEffect_PSEnvMapSpherePixelLighting
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" EnvironmentMapEffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tps_6_0 /EPSEnvMapSpherePixelLightingNoFog /FhCompiled\EnvironmentMapEffect_PSEnvMapSpherePixelLightingNoFog.inc /FdCompiled\EnvironmentMapEffect_PSEnvMapSpherePixelLightingNoFog.pdb /VnEnvironmentMapEffect_PSEnvMapSpherePixelLightingNoFog
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" EnvironmentMapEffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tps_6_0 /EPSEnvMapSpherePixelLightingFresnel /FhCompiled\EnvironmentMapEffect_PSEnvMapSpherePixelLightingFresnel.inc /FdCompiled\EnvironmentMapEffect_PSEnvMapSpherePixelLightingFresnel.pdb /VnEnvironmentMapEffect_PSEnvMapSpherePixelLightingFresnel
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" EnvironmentMapEffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tps_6_0 /EPSEnvMapSpherePixelLightingFresnelNoFog /FhCompiled\EnvironmentMapEffect_PSEnvMapSpherePixelLightingFresnelNoFog.inc /FdCompiled\EnvironmentMapEffect_PSEnvMapSpherePixelLightingFresnelNoFog.pdb /VnEnvironmentMapEffect_PSEnvMapSpherePixelLightingFresnelNoFog
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" EnvironmentMapEffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tps_6_0 /EPSEnvMapDualParabolaPixelLighting /FhCompiled\EnvironmentMapEffect_PSEnvMapDualParabolaPixelLighting.inc /FdCompiled\EnvironmentMapEffect_PSEnvMapDualParabolaPixelLighting.pdb /VnEnvironmentMapEffect_PSEnvMapDualParabolaPixelLighting
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" EnvironmentMapEffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tps_6_0 /EPSEnvMapDualParabolaPixelLightingNoFog /FhCompiled\EnvironmentMapEffect_PSEnvMapDualParabolaPixelLightingNoFog.inc /FdCompiled\EnvironmentMapEffect_PSEnvMapDualParabolaPixelLightingNoFog.pdb /VnEnvironmentMapEffect_PSEnvMapDualParabolaPixelLightingNoFog
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" EnvironmentMapEffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tps_6_0 /EPSEnvMapDualParabolaPixelLightingFresnel /FhCompiled\EnvironmentMapEffect_PSEnvMapDualParabolaPixelLightingFresnel.inc /FdCompiled\EnvironmentMapEffect_PSEnvMapDualParabolaPixelLightingFresnel.pdb /VnEnvironmentMapEffect_PSEnvMapDualParabolaPixelLightingFresnel
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" EnvironmentMapEffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tps_6_0 /EPSEnvMapDualParabolaPixelLightingFresnelNoFog /FhCompiled\EnvironmentMapEffect_PSEnvMapDualParabolaPixelLightingFresnelNoFog.inc /FdCompiled\EnvironmentMapEffect_PSEnvMapDualParabolaPixelLightingFresnelNoFog.pdb /VnEnvironmentMapEffect_PSEnvMapDualParabolaPixelLightingFresnelNoFog
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" SkinnedEffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tvs_6_0 /EVSSkinnedVertexLightingFourBones /FhCompiled\SkinnedEffect_VSSkinnedVertexLightingFourBones.inc /FdCompiled\SkinnedEffect_VSSkinnedVertexLightingFourBones.pdb /VnSkinnedEffect_VSSkinnedVertexLightingFourBones
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" SkinnedEffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tvs_6_0 /EVSSkinnedVertexLightingFourBonesBn /FhCompiled\SkinnedEffect_VSSkinnedVertexLightingFourBonesBn.inc /FdCompiled\SkinnedEffect_VSSkinnedVertexLightingFourBonesBn.pdb /VnSkinnedEffect_VSSkinnedVertexLightingFourBonesBn
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" SkinnedEffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tvs_6_0 /EVSSkinnedPixelLightingFourBones /FhCompiled\SkinnedEffect_VSSkinnedPixelLightingFourBones.inc /FdCompiled\SkinnedEffect_VSSkinnedPixelLightingFourBones.pdb /VnSkinnedEffect_VSSkinnedPixelLightingFourBones
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" SkinnedEffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tvs_6_0 /EVSSkinnedPixelLightingFourBonesBn /FhCompiled\SkinnedEffect_VSSkinnedPixelLightingFourBonesBn.inc /FdCompiled\SkinnedEffect_VSSkinnedPixelLightingFourBonesBn.pdb /VnSkinnedEffect_VSSkinnedPixelLightingFourBonesBn
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" SkinnedEffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tps_6_0 /EPSSkinnedVertexLighting /FhCompiled\SkinnedEffect_PSSkinnedVertexLighting.inc /FdCompiled\SkinnedEffect_PSSkinnedVertexLighting.pdb /VnSkinnedEffect_PSSkinnedVertexLighting
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" SkinnedEffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tps_6_0 /EPSSkinnedVertexLightingNoFog /FhCompiled\SkinnedEffect_PSSkinnedVertexLightingNoFog.inc /FdCompiled\SkinnedEffect_PSSkinnedVertexLightingNoFog.pdb /VnSkinnedEffect_PSSkinnedVertexLightingNoFog
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" SkinnedEffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tps_6_0 /EPSSkinnedPixelLighting /FhCompiled\SkinnedEffect_PSSkinnedPixelLighting.inc /FdCompiled\SkinnedEffect_PSSkinnedPixelLighting.pdb /VnSkinnedEffect_PSSkinnedPixelLighting
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" NormalMapEffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tvs_6_0 /EVSNormalPixelLightingTx /FhCompiled\NormalMapEffect_VSNormalPixelLightingTx.inc /FdCompiled\NormalMapEffect_VSNormalPixelLightingTx.pdb /VnNormalMapEffect_VSNormalPixelLightingTx
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" NormalMapEffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tvs_6_0 /EVSNormalPixelLightingTxBn /FhCompiled\NormalMapEffect_VSNormalPixelLightingTxBn.inc /FdCompiled\NormalMapEffect_VSNormalPixelLightingTxBn.pdb /VnNormalMapEffect_VSNormalPixelLightingTxBn
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" NormalMapEffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tvs_6_0 /EVSNormalPixelLightingTxVc /FhCompiled\NormalMapEffect_VSNormalPixelLightingTxVc.inc /FdCompiled\NormalMapEffect_VSNormalPixelLightingTxVc.pdb /VnNormalMapEffect_VSNormalPixelLightingTxVc
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" NormalMapEffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tvs_6_0 /EVSNormalPixelLightingTxVcBn /FhCompiled\NormalMapEffect_VSNormalPixelLightingTxVcBn.inc /FdCompiled\NormalMapEffect_VSNormalPixelLightingTxVcBn.pdb /VnNormalMapEffect_VSNormalPixelLightingTxVcBn
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" NormalMapEffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tvs_6_0 /EVSNormalPixelLightingTxNoSpec /FhCompiled\NormalMapEffect_VSNormalPixelLightingTxNoSpec.inc /FdCompiled\NormalMapEffect_VSNormalPixelLightingTxNoSpec.pdb /VnNormalMapEffect_VSNormalPixelLightingTxNoSpec
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" NormalMapEffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tvs_6_0 /EVSNormalPixelLightingTxNoSpecBn /FhCompiled\NormalMapEffect_VSNormalPixelLightingTxNoSpecBn.inc /FdCompiled\NormalMapEffect_VSNormalPixelLightingTxNoSpecBn.pdb /VnNormalMapEffect_VSNormalPixelLightingTxNoSpecBn
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" NormalMapEffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tvs_6_0 /EVSNormalPixelLightingTxVcNoSpec /FhCompiled\NormalMapEffect_VSNormalPixelLightingTxVcNoSpec.inc /FdCompiled\NormalMapEffect_VSNormalPixelLightingTxVcNoSpec.pdb /VnNormalMapEffect_VSNormalPixelLightingTxVcNoSpec
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" NormalMapEffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tvs_6_0 /EVSNormalPixelLightingTxVcNoSpecBn /FhCompiled\NormalMapEffect_VSNormalPixelLightingTxVcNoSpecBn.inc /FdCompiled\NormalMapEffect_VSNormalPixelLightingTxVcNoSpecBn.pdb /VnNormalMapEffect_VSNormalPixelLightingTxVcNoSpecBn
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" NormalMapEffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tvs_6_0 /EVSNormalPixelLightingTxInst /FhCompiled\NormalMapEffect_VSNormalPixelLightingTxInst.inc /FdCompiled\NormalMapEffect_VSNormalPixelLightingTxInst.pdb /VnNormalMapEffect_VSNormalPixelLightingTxInst
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" NormalMapEffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tvs_6_0 /EVSNormalPixelLightingTxBnInst /FhCompiled\NormalMapEffect_VSNormalPixelLightingTxBnInst.inc /FdCompiled\NormalMapEffect_VSNormalPixelLightingTxBnInst.pdb /VnNormalMapEffect_VSNormalPixelLightingTxBnInst
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" NormalMapEffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tvs_6_0 /EVSNormalPixelLightingTxVcInst /FhCompiled\NormalMapEffect_VSNormalPixelLightingTxVcInst.inc /FdCompiled\NormalMapEffect_VSNormalPixelLightingTxVcInst.pdb /VnNormalMapEffect_VSNormalPixelLightingTxVcInst
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" NormalMapEffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tvs_6_0 /EVSNormalPixelLightingTxVcBnInst /FhCompiled\NormalMapEffect_VSNormalPixelLightingTxVcBnInst.inc /FdCompiled\NormalMapEffect_VSNormalPixelLightingTxVcBnInst.pdb /VnNormalMapEffect_VSNormalPixelLightingTxVcBnInst
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" NormalMapEffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tvs_6_0 /EVSNormalPixelLightingTxNoSpecInst /FhCompiled\NormalMapEffect_VSNormalPixelLightingTxNoSpecInst.inc /FdCompiled\NormalMapEffect_VSNormalPixelLightingTxNoSpecInst.pdb /VnNormalMapEffect_VSNormalPixelLightingTxNoSpecInst
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" NormalMapEffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tvs_6_0 /EVSNormalPixelLightingTxNoSpecBnInst /FhCompiled\NormalMapEffect_VSNormalPixelLightingTxNoSpecBnInst.inc /FdCompiled\NormalMapEffect_VSNormalPixelLightingTxNoSpecBnInst.pdb /VnNormalMapEffect_VSNormalPixelLightingTxNoSpecBnInst
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" NormalMapEffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tvs_6_0 /EVSNormalPixelLightingTxVcNoSpecInst /FhCompiled\NormalMapEffect_VSNormalPixelLightingTxVcNoSpecInst.inc /FdCompiled\NormalMapEffect_VSNormalPixelLightingTxVcNoSpecInst.pdb /VnNormalMapEffect_VSNormalPixelLightingTxVcNoSpecInst
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" NormalMapEffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tvs_6_0 /EVSNormalPixelLightingTxVcNoSpecBnInst /FhCompiled\NormalMapEffect_VSNormalPixelLightingTxVcNoSpecBnInst.inc /FdCompiled\NormalMapEffect_VSNormalPixelLightingTxVcNoSpecBnInst.pdb /VnNormalMapEffect_VSNormalPixelLightingTxVcNoSpecBnInst
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" NormalMapEffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tvs_6_0 /EVSSkinnedPixelLightingTx /FhCompiled\NormalMapEffect_VSSkinnedPixelLightingTx.inc /FdCompiled\NormalMapEffect_VSSkinnedPixelLightingTx.pdb /VnNormalMapEffect_VSSkinnedPixelLightingTx
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" NormalMapEffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tvs_6_0 /EVSSkinnedPixelLightingTxBn /FhCompiled\NormalMapEffect_VSSkinnedPixelLightingTxBn.inc /FdCompiled\NormalMapEffect_VSSkinnedPixelLightingTxBn.pdb /VnNormalMapEffect_VSSkinnedPixelLightingTxBn
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" NormalMapEffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tvs_6_0 /EVSSkinnedPixelLightingTxNoSpec /FhCompiled\NormalMapEffect_VSSkinnedPixelLightingTxNoSpec.inc /FdCompiled\NormalMapEffect_VSSkinnedPixelLightingTxNoSpec.pdb /VnNormalMapEffect_VSSkinnedPixelLightingTxNoSpec
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" NormalMapEffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tvs_6_0 /EVSSkinnedPixelLightingTxNoSpecBn /FhCompiled\NormalMapEffect_VSSkinnedPixelLightingTxNoSpecBn.inc /FdCompiled\NormalMapEffect_VSSkinnedPixelLightingTxNoSpecBn.pdb /VnNormalMapEffect_VSSkinnedPixelLightingTxNoSpecBn
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" NormalMapEffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tps_6_0 /EPSNormalPixelLightingTx /FhCompiled\NormalMapEffect_PSNormalPixelLightingTx.inc /FdCompiled\NormalMapEffect_PSNormalPixelLightingTx.pdb /VnNormalMapEffect_PSNormalPixelLightingTx
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" NormalMapEffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tps_6_0 /EPSNormalPixelLightingTxNoFog /FhCompiled\NormalMapEffect_PSNormalPixelLightingTxNoFog.inc /FdCompiled\NormalMapEffect_PSNormalPixelLightingTxNoFog.pdb /VnNormalMapEffect_PSNormalPixelLightingTxNoFog
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" NormalMapEffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tps_6_0 /EPSNormalPixelLightingTxNoSpec /FhCompiled\NormalMapEffect_PSNormalPixelLightingTxNoSpec.inc /FdCompiled\NormalMapEffect_PSNormalPixelLightingTxNoSpec.pdb /VnNormalMapEffect_PSNormalPixelLightingTxNoSpec
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" NormalMapEffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tps_6_0 /EPSNormalPixelLightingTxNoFogSpec /FhCompiled\NormalMapEffect_PSNormalPixelLightingTxNoFogSpec.inc /FdCompiled\NormalMapEffect_PSNormalPixelLightingTxNoFogSpec.pdb /VnNormalMapEffect_PSNormalPixelLightingTxNoFogSpec
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" PBREffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tvs_6_0 /EVSConstant /FhCompiled\PBREffect_VSConstant.inc /FdCompiled\PBREffect_VSConstant.pdb /VnPBREffect_VSConstant
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" PBREffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tvs_6_0 /EVSConstantInst /FhCompiled\PBREffect_VSConstantInst.inc /FdCompiled\PBREffect_VSConstantInst.pdb /VnPBREffect_VSConstantInst
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" PBREffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tvs_6_0 /EVSConstantVelocity /FhCompiled\PBREffect_VSConstantVelocity.inc /FdCompiled\PBREffect_VSConstantVelocity.pdb /VnPBREffect_VSConstantVelocity
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" PBREffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tvs_6_0 /EVSConstantBn /FhCompiled\PBREffect_VSConstantBn.inc /FdCompiled\PBREffect_VSConstantBn.pdb /VnPBREffect_VSConstantBn
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" PBREffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tvs_6_0 /EVSConstantBnInst /FhCompiled\PBREffect_VSConstantBnInst.inc /FdCompiled\PBREffect_VSConstantBnInst.pdb /VnPBREffect_VSConstantBnInst
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" PBREffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tvs_6_0 /EVSConstantVelocityBn /FhCompiled\PBREffect_VSConstantVelocityBn.inc /FdCompiled\PBREffect_VSConstantVelocityBn.pdb /VnPBREffect_VSConstantVelocityBn
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" PBREffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tvs_6_0 /EVSSkinned /FhCompiled\PBREffect_VSSkinned.inc /FdCompiled\PBREffect_VSSkinned.pdb /VnPBREffect_VSSkinned
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" PBREffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tvs_6_0 /EVSSkinnedBn /FhCompiled\PBREffect_VSSkinnedBn.inc /FdCompiled\PBREffect_VSSkinnedBn.pdb /VnPBREffect_VSSkinnedBn
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" PBREffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tps_6_0 /EPSConstant /FhCompiled\PBREffect_PSConstant.inc /FdCompiled\PBREffect_PSConstant.pdb /VnPBREffect_PSConstant
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" PBREffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tps_6_0 /EPSTextured /FhCompiled\PBREffect_PSTextured.inc /FdCompiled\PBREffect_PSTextured.pdb /VnPBREffect_PSTextured
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" PBREffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tps_6_0 /EPSTexturedEmissive /FhCompiled\PBREffect_PSTexturedEmissive.inc /FdCompiled\PBREffect_PSTexturedEmissive.pdb /VnPBREffect_PSTexturedEmissive
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" PBREffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tps_6_0 /EPSTexturedVelocity /FhCompiled\PBREffect_PSTexturedVelocity.inc /FdCompiled\PBREffect_PSTexturedVelocity.pdb /VnPBREffect_PSTexturedVelocity
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" PBREffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tps_6_0 /EPSTexturedEmissiveVelocity /FhCompiled\PBREffect_PSTexturedEmissiveVelocity.inc /FdCompiled\PBREffect_PSTexturedEmissiveVelocity.pdb /VnPBREffect_PSTexturedEmissiveVelocity
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" DebugEffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tvs_6_0 /EVSDebug /FhCompiled\DebugEffect_VSDebug.inc /FdCompiled\DebugEffect_VSDebug.pdb /VnDebugEffect_VSDebug
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" DebugEffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tvs_6_0 /EVSDebugBn /FhCompiled\DebugEffect_VSDebugBn.inc /FdCompiled\DebugEffect_VSDebugBn.pdb /VnDebugEffect_VSDebugBn
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" DebugEffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tvs_6_0 /EVSDebugVc /FhCompiled\DebugEffect_VSDebugVc.inc /FdCompiled\DebugEffect_VSDebugVc.pdb /VnDebugEffect_VSDebugVc
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" DebugEffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tvs_6_0 /EVSDebugVcBn /FhCompiled\DebugEffect_VSDebugVcBn.inc /FdCompiled\DebugEffect_VSDebugVcBn.pdb /VnDebugEffect_VSDebugVcBn
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" DebugEffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tvs_6_0 /EVSDebugInst /FhCompiled\DebugEffect_VSDebugInst.inc /FdCompiled\DebugEffect_VSDebugInst.pdb /VnDebugEffect_VSDebugInst
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" DebugEffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tvs_6_0 /EVSDebugBnInst /FhCompiled\DebugEffect_VSDebugBnInst.inc /FdCompiled\DebugEffect_VSDebugBnInst.pdb /VnDebugEffect_VSDebugBnInst
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" DebugEffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tvs_6_0 /EVSDebugVcInst /FhCompiled\DebugEffect_VSDebugVcInst.inc /FdCompiled\DebugEffect_VSDebugVcInst.pdb /VnDebugEffect_VSDebugVcInst
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" DebugEffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tvs_6_0 /EVSDebugVcBnInst /FhCompiled\DebugEffect_VSDebugVcBnInst.inc /FdCompiled\DebugEffect_VSDebugVcBnInst.pdb /VnDebugEffect_VSDebugVcBnInst
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" DebugEffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tps_6_0 /EPSHemiAmbient /FhCompiled\DebugEffect_PSHemiAmbient.inc /FdCompiled\DebugEffect_PSHemiAmbient.pdb /VnDebugEffect_PSHemiAmbient
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" DebugEffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tps_6_0 /EPSRGBNormals /FhCompiled\DebugEffect_PSRGBNormals.inc /FdCompiled\DebugEffect_PSRGBNormals.pdb /VnDebugEffect_PSRGBNormals
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" DebugEffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tps_6_0 /EPSRGBTangents /FhCompiled\DebugEffect_PSRGBTangents.inc /FdCompiled\DebugEffect_PSRGBTangents.pdb /VnDebugEffect_PSRGBTangents
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" DebugEffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tps_6_0 /EPSRGBBiTangents /FhCompiled\DebugEffect_PSRGBBiTangents.inc /FdCompiled\DebugEffect_PSRGBBiTangents.pdb /VnDebugEffect_PSRGBBiTangents
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" SpriteEffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tvs_6_0 /ESpriteVertexShader /FhCompiled\SpriteEffect_SpriteVertexShader.inc /FdCompiled\SpriteEffect_SpriteVertexShader.pdb /VnSpriteEffect_SpriteVertexShader
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" SpriteEffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tps_6_0 /ESpritePixelShader /FhCompiled\SpriteEffect_SpritePixelShader.inc /FdCompiled\SpriteEffect_SpritePixelShader.pdb /VnSpriteEffect_SpritePixelShader
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" SpriteEffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tvs_6_0 /ESpriteVertexShaderHeap /FhCompiled\SpriteEffect_SpriteVertexShaderHeap.inc /FdCompiled\SpriteEffect_SpriteVertexShaderHeap.pdb /VnSpriteEffect_SpriteVertexShaderHeap
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" SpriteEffect.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tps_6_0 /ESpritePixelShaderHeap /FhCompiled\SpriteEffect_SpritePixelShaderHeap.inc /FdCompiled\SpriteEffect_SpritePixelShaderHeap.pdb /VnSpriteEffect_SpritePixelShaderHeap
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" PostProcess.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tvs_6_0 /EVSQuad /FhCompiled\PostProcess_VSQuad.inc /FdCompiled\PostProcess_VSQuad.pdb /VnPostProcess_VSQuad
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" PostProcess.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tvs_6_0 /EVSQuadNoCB /FhCompiled\PostProcess_VSQuadNoCB.inc /FdCompiled\PostProcess_VSQuadNoCB.pdb /VnPostProcess_VSQuadNoCB
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" PostProcess.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tvs_6_0 /EVSQuadDual /FhCompiled\PostProcess_VSQuadDual.inc /FdCompiled\PostProcess_VSQuadDual.pdb /VnPostProcess_VSQuadDual
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" PostProcess.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tps_6_0 /EPSCopy /FhCompiled\PostProcess_PSCopy.inc /FdCompiled\PostProcess_PSCopy.pdb /VnPostProcess_PSCopy
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" PostProcess.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tps_6_0 /EPSMonochrome /FhCompiled\PostProcess_PSMonochrome.inc /FdCompiled\PostProcess_PSMonochrome.pdb /VnPostProcess_PSMonochrome
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" PostProcess.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tps_6_0 /EPSSepia /FhCompiled\PostProcess_PSSepia.inc /FdCompiled\PostProcess_PSSepia.pdb /VnPostProcess_PSSepia
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" PostProcess.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tps_6_0 /EPSDownScale2x2 /FhCompiled\PostProcess_PSDownScale2x2.inc /FdCompiled\PostProcess_PSDownScale2x2.pdb /VnPostProcess_PSDownScale2x2
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" PostProcess.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tps_6_0 /EPSDownScale4x4 /FhCompiled\PostProcess_PSDownScale4x4.inc /FdCompiled\PostProcess_PSDownScale4x4.pdb /VnPostProcess_PSDownScale4x4
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" PostProcess.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tps_6_0 /EPSGaussianBlur5x5 /FhCompiled\PostProcess_PSGaussianBlur5x5.inc /FdCompiled\PostProcess_PSGaussianBlur5x5.pdb /VnPostProcess_PSGaussianBlur5x5
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" PostProcess.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tps_6_0 /EPSBloomExtract /FhCompiled\PostProcess_PSBloomExtract.inc /FdCompiled\PostProcess_PSBloomExtract.pdb /VnPostProcess_PSBloomExtract
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" PostProcess.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tps_6_0 /EPSBloomBlur /FhCompiled\PostProcess_PSBloomBlur.inc /FdCompiled\PostProcess_PSBloomBlur.pdb /VnPostProcess_PSBloomBlur
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" PostProcess.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tps_6_0 /EPSMerge /FhCompiled\PostProcess_PSMerge.inc /FdCompiled\PostProcess_PSMerge.pdb /VnPostProcess_PSMerge
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" PostProcess.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tps_6_0 /EPSBloomCombine /FhCompiled\PostProcess_PSBloomCombine.inc /FdCompiled\PostProcess_PSBloomCombine.pdb /VnPostProcess_PSBloomCombine
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" GenerateMips.hlsl /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tcs_6_0 /Emain /FhCompiled\GenerateMips_main.inc /FdCompiled\GenerateMips_main.pdb /VnGenerateMips_main
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" ToneMap.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tvs_6_0 /EVSQuad /FhCompiled\ToneMap_VSQuad.inc /FdCompiled\ToneMap_VSQuad.pdb /VnToneMap_VSQuad
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" ToneMap.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tps_6_0 /EPSCopy /FhCompiled\ToneMap_PSCopy.inc /FdCompiled\ToneMap_PSCopy.pdb /VnToneMap_PSCopy
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" ToneMap.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tps_6_0 /EPSSaturate /FhCompiled\ToneMap_PSSaturate.inc /FdCompiled\ToneMap_PSSaturate.pdb /VnToneMap_PSSaturate
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" ToneMap.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tps_6_0 /EPSReinhard /FhCompiled\ToneMap_PSReinhard.inc /FdCompiled\ToneMap_PSReinhard.pdb /VnToneMap_PSReinhard
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" ToneMap.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tps_6_0 /EPSACESFilmic /FhCompiled\ToneMap_PSACESFilmic.inc /FdCompiled\ToneMap_PSACESFilmic.pdb /VnToneMap_PSACESFilmic
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" ToneMap.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tps_6_0 /EPS_SRGB /FhCompiled\ToneMap_PS_SRGB.inc /FdCompiled\ToneMap_PS_SRGB.pdb /VnToneMap_PS_SRGB
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" ToneMap.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tps_6_0 /EPSSaturate_SRGB /FhCompiled\ToneMap_PSSaturate_SRGB.inc /FdCompiled\ToneMap_PSSaturate_SRGB.pdb /VnToneMap_PSSaturate_SRGB
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" ToneMap.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tps_6_0 /EPSReinhard_SRGB /FhCompiled\ToneMap_PSReinhard_SRGB.inc /FdCompiled\ToneMap_PSReinhard_SRGB.pdb /VnToneMap_PSReinhard_SRGB
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" ToneMap.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tps_6_0 /EPSACESFilmic_SRGB /FhCompiled\ToneMap_PSACESFilmic_SRGB.inc /FdCompiled\ToneMap_PSACESFilmic_SRGB.pdb /VnToneMap_PSACESFilmic_SRGB
+  
+  "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\dxc.exe" ToneMap.fx /nologo /WX /Ges /Zi /Zpc /Qstrip_reflect /Qstrip_debug /Tps_6_0 /EPSHDR10 /FhCompiled\ToneMap_PSHDR10.inc /FdCompiled\ToneMap_PSHDR10.pdb /VnToneMap_PSHDR10
+  
+  Shaders compiled ok
+  pch.cpp
+  AudioEngine.cpp
+  DynamicSoundEffectInstance.cpp
+  SoundCommon.cpp
+  SoundEffect.cpp
+  SoundEffectInstance.cpp
+  SoundStreamInstance.cpp
+  WaveBank.cpp
+  WaveBankReader.cpp
+  WAVFileReader.cpp
+  AlphaTestEffect.cpp
+  BasicEffect.cpp
+  BasicPostProcess.cpp
+  BufferHelpers.cpp
+  CommonStates.cpp
+  DDSTextureLoader.cpp
+  DebugEffect.cpp
+  DescriptorHeap.cpp
+  DirectXHelpers.cpp
+  DualPostProcess.cpp
+  DualTextureEffect.cpp
+  コードを生成中...
+  コンパイル中...
+  BinaryReader.cpp
+  EffectCommon.cpp
+  EffectFactory.cpp
+  EffectPipelineStateDescription.cpp
+  EffectTextureFactory.cpp
+  EnvironmentMapEffect.cpp
+  GamePad.cpp
+  GeometricPrimitive.cpp
+  Geometry.cpp
+  Keyboard.cpp
+  LinearAllocator.cpp
+  Model.cpp
+  ModelLoadCMO.cpp
+  ModelLoadSDKMESH.cpp
+  ModelLoadVBO.cpp
+  Mouse.cpp
+  GraphicsMemory.cpp
+  NormalMapEffect.cpp
+  PBREffect.cpp
+  PBREffectFactory.cpp
+  コードを生成中...
+  コンパイル中...
+  ResourceUploadBatch.cpp
+  ScreenGrab.cpp
+  SimpleMath.cpp
+  SkinnedEffect.cpp
+  SpriteBatch.cpp
+  PrimitiveBatch.cpp
+  SpriteFont.cpp
+  ToneMapPostProcess.cpp
+  VertexTypes.cpp
+  WICTextureLoader.cpp
+  コードを生成中...
+  DirectXTK_Desktop_2019_Win10.vcxproj -> C:\Users\takat\Desktop\tool\DirectX12Tool\DXTK12\DirectXTK12\Bin\Desktop_2019_Win10\x64\Debug\DirectXTK12.lib

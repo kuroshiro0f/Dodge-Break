@@ -13,10 +13,6 @@
 #include <d3d12_xs.h>
 #elif (defined(_XBOX_ONE) && defined(_TITLE)) || defined(_GAMING_XBOX)
 #include <d3d12_x.h>
-#elif defined(USING_DIRECTX_HEADERS)
-#include <directx/d3d12.h>
-#include <directx/dxgiformat.h>
-#include <dxguids/dxguids.h>
 #else
 #include <d3d12.h>
 #include <dxgiformat.h>
@@ -29,7 +25,6 @@
 #include <iterator>
 #include <memory>
 #include <new>
-#include <stdexcept>
 #include <string>
 #include <type_traits>
 #include <utility>
@@ -56,11 +51,11 @@ namespace DirectX
     // Model loading options
     enum ModelLoaderFlags : uint32_t
     {
-        ModelLoader_Default = 0x0,
-        ModelLoader_MaterialColorsSRGB = 0x1,
-        ModelLoader_AllowLargeModels = 0x2,
-        ModelLoader_IncludeBones = 0x4,
-        ModelLoader_DisableSkinning = 0x8,
+        ModelLoader_Default             = 0x0,
+        ModelLoader_MaterialColorsSRGB  = 0x1,
+        ModelLoader_AllowLargeModels    = 0x2,
+        ModelLoader_IncludeBones        = 0x4,
+        ModelLoader_DisableSkinning     = 0x8,
     };
 
     //----------------------------------------------------------------------------------
@@ -71,15 +66,13 @@ namespace DirectX
             parentIndex(c_Invalid),
             childIndex(c_Invalid),
             siblingIndex(c_Invalid)
-        {
-        }
+        {}
 
         ModelBone(uint32_t parent, uint32_t child, uint32_t sibling) noexcept :
             parentIndex(parent),
             childIndex(child),
             siblingIndex(sibling)
-        {
-        }
+        {}
 
         uint32_t            parentIndex;
         uint32_t            childIndex;
@@ -405,7 +398,7 @@ namespace DirectX
 
         template<typename... TForwardArgs> void Draw(_In_ ID3D12GraphicsCommandList* commandList, TForwardArgs&&... args) const
         {
-            DrawOpaque(commandList, args...);
+            DrawOpaque(commandList, std::forward<TForwardArgs>(args)...);
             DrawAlpha(commandList, std::forward<TForwardArgs>(args)...);
         }
 
@@ -436,7 +429,7 @@ namespace DirectX
 
         template<typename... TForwardArgs> void DrawSkinned(_In_ ID3D12GraphicsCommandList* commandList, TForwardArgs&&... args) const
         {
-            DrawSkinnedOpaque(commandList, args...);
+            DrawSkinnedOpaque(commandList, std::forward<TForwardArgs>(args)...);
             DrawSkinnedAlpha(commandList, std::forward<TForwardArgs>(args)...);
         }
 
@@ -534,15 +527,11 @@ namespace DirectX
             if (materialIndex >= materials.size())
                 return handle;
 
-            const int textureIndex = materials[materialIndex].diffuseTextureIndex;
+            int textureIndex = materials[materialIndex].diffuseTextureIndex;
             if (textureIndex == -1)
                 return handle;
 
-        #if defined(_MSC_VER) || !defined(_WIN32)
             handle = heap->GetGPUDescriptorHandleForHeapStart();
-        #else
-            std::ignore = heap->GetGPUDescriptorHandleForHeapStart(&handle);
-        #endif
             handle.ptr += static_cast<UINT64>(descriptorSize * (UINT64(textureIndex) + UINT64(descriptorOffset)));
 
             return handle;
@@ -581,8 +570,8 @@ namespace DirectX
             int samplerDescriptorOffset,
             _In_ const ModelMeshPart* part) const;
 
-        void __cdecl ComputeAbsolute(uint32_t index,
-            CXMMATRIX local, size_t nbones,
+        void XM_CALLCONV ComputeAbsolute(uint32_t index,
+            FXMMATRIX local, size_t nbones,
             _In_reads_(nbones) const XMMATRIX* inBoneTransforms,
             _Inout_updates_(nbones) XMMATRIX* outBoneTransforms,
             size_t& visited) const;

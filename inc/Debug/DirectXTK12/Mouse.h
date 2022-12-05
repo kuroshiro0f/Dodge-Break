@@ -10,15 +10,9 @@
 
 #pragma once
 
-#if (defined(WINAPI_FAMILY) && (WINAPI_FAMILY == WINAPI_FAMILY_APP)) || (defined(_XBOX_ONE) && defined(_TITLE))
-#ifndef USING_COREWINDOW
-#define USING_COREWINDOW
-#endif
-#endif
-
 #include <memory>
 
-#ifdef USING_COREWINDOW
+#if (defined(WINAPI_FAMILY) && (WINAPI_FAMILY == WINAPI_FAMILY_APP)) || (defined(_XBOX_ONE) && defined(_TITLE) && (_XDK_VER >= 0x42D907D1))
 namespace ABI { namespace Windows { namespace UI { namespace Core { struct ICoreWindow; } } } }
 #endif
 
@@ -79,7 +73,7 @@ namespace DirectX
             ButtonState xButton1;
             ButtonState xButton2;
 
-        #pragma prefast(suppress: 26495, "Reset() performs the initialization")
+            #pragma prefast(suppress: 26495, "Reset() performs the initialization")
             ButtonStateTracker() noexcept { Reset(); }
 
             void __cdecl Update(const State& state) noexcept;
@@ -108,7 +102,17 @@ namespace DirectX
         bool __cdecl IsVisible() const noexcept;
         void __cdecl SetVisible(bool visible);
 
-    #ifdef USING_COREWINDOW
+    #ifdef WM_USER
+    #if !defined(WINAPI_FAMILY) || (WINAPI_FAMILY == WINAPI_FAMILY_DESKTOP_APP)
+        void __cdecl SetWindow(HWND window);
+        static void __cdecl ProcessMessage(UINT message, WPARAM wParam, LPARAM lParam);
+    #elif (WINAPI_FAMILY == WINAPI_FAMILY_GAMES)
+        static void __cdecl ProcessMessage(UINT message, WPARAM wParam, LPARAM lParam);
+        static void __cdecl SetResolution(float scale);
+    #endif
+    #endif
+
+    #if (defined(WINAPI_FAMILY) && (WINAPI_FAMILY == WINAPI_FAMILY_APP)) || (defined(_XBOX_ONE) && defined(_TITLE) && (_XDK_VER >= 0x42D907D1))
         void __cdecl SetWindow(ABI::Windows::UI::Core::ICoreWindow* window);
     #ifdef __cplusplus_winrt
         void __cdecl SetWindow(Windows::UI::Core::CoreWindow^ window)
@@ -126,14 +130,7 @@ namespace DirectX
     #endif
 
         static void __cdecl SetDpi(float dpi);
-    #elif defined(WM_USER)
-        void __cdecl SetWindow(HWND window);
-        static void __cdecl ProcessMessage(UINT message, WPARAM wParam, LPARAM lParam);
-
-    #ifdef _GAMING_XBOX
-        static void __cdecl SetResolution(float scale);
-    #endif
-    #endif
+    #endif // WINAPI_FAMILY == WINAPI_FAMILY_APP
 
         // Singleton
         static Mouse& __cdecl Get();

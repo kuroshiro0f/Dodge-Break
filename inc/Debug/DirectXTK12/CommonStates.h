@@ -13,9 +13,6 @@
 #include <d3d12_xs.h>
 #elif (defined(_XBOX_ONE) && defined(_TITLE)) || defined(_GAMING_XBOX)
 #include <d3d12_x.h>
-#elif defined(USING_DIRECTX_HEADERS)
-#include <directx/d3d12.h>
-#include <dxguids/dxguids.h>
 #else
 #include <d3d12.h>
 #endif
@@ -43,7 +40,7 @@ namespace DirectX
         static const D3D12_BLEND_DESC AlphaBlend;
         static const D3D12_BLEND_DESC Additive;
         static const D3D12_BLEND_DESC NonPremultiplied;
-
+        
         // Depth stencil states.
         static const D3D12_DEPTH_STENCIL_DESC DepthNone;
         static const D3D12_DEPTH_STENCIL_DESC DepthDefault;

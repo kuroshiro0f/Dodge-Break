@@ -1,0 +1,2 @@
+C:\Users\takat\Desktop\DirectX12Tool\DXTK12\DirectXTK12\Bin\Desktop_2019_Win10\x64\Debug\DirectXTK12.lib
+C:\Users\takat\Desktop\tool\DirectX12Tool\DXTK12\DirectXTK12\Bin\Desktop_2019_Win10\x64\Debug\DirectXTK12.lib

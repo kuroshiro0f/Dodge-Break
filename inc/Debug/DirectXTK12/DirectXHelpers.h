@@ -13,9 +13,6 @@
 #include <d3d12_xs.h>
 #elif (defined(_XBOX_ONE) && defined(_TITLE)) || defined(_GAMING_XBOX)
 #include <d3d12_x.h>
-#elif defined(USING_DIRECTX_HEADERS)
-#include <directx/d3d12.h>
-#include <dxguids/dxguids.h>
 #else
 #include <d3d12.h>
 #endif
@@ -131,7 +128,7 @@ namespace DirectX
         {
             hr = device->CreateRootSignature(0, pSignature->GetBufferPointer(), pSignature->GetBufferSize(),
                 IID_GRAPHICS_PPV_ARGS(rootSignature)
-            );
+                );
         }
         return hr;
     }
@@ -139,12 +136,7 @@ namespace DirectX
     // Helper for obtaining texture size
     inline XMUINT2 GetTextureSize(_In_ ID3D12Resource* tex) noexcept
     {
-#if defined(_MSC_VER) || !defined(_WIN32)
         const auto desc = tex->GetDesc();
-#else
-        D3D12_RESOURCE_DESC tmpDesc;
-        const auto& desc = *tex->GetDesc(&tmpDesc);
-#endif
         return XMUINT2(static_cast<uint32_t>(desc.Width), static_cast<uint32_t>(desc.Height));
     }
 
@@ -169,34 +161,32 @@ namespace DirectX
 #endif
 
     // Helper sets a D3D resource name string (used by PIX and debug layer leak reporting).
-    #if !defined(NO_D3D12_DEBUG_NAME) && (defined(_DEBUG) || defined(PROFILE))
     template<UINT TNameLength>
     inline void SetDebugObjectName(_In_ ID3D12DeviceChild* resource, _In_z_ const char(&name)[TNameLength]) noexcept
     {
+    #if !defined(NO_D3D12_DEBUG_NAME) && (defined(_DEBUG) || defined(PROFILE))
         wchar_t wname[MAX_PATH];
         int result = MultiByteToWideChar(CP_UTF8, 0, name, TNameLength, wname, MAX_PATH);
         if (result > 0)
         {
             resource->SetName(wname);
         }
+    #else
+        UNREFERENCED_PARAMETER(resource);
+        UNREFERENCED_PARAMETER(name);
+    #endif
     }
 
     template<UINT TNameLength>
     inline void SetDebugObjectName(_In_ ID3D12DeviceChild* resource, _In_z_ const wchar_t(&name)[TNameLength]) noexcept
     {
+    #if !defined(NO_D3D12_DEBUG_NAME) && (defined(_DEBUG) || defined(PROFILE))
         resource->SetName(name);
-    }
     #else
-    template<UINT TNameLength>
-    inline void SetDebugObjectName(_In_ ID3D12DeviceChild*, _In_z_ const char(&)[TNameLength]) noexcept
-    {
-    }
-
-    template<UINT TNameLength>
-    inline void SetDebugObjectName(_In_ ID3D12DeviceChild*, _In_z_ const wchar_t(&)[TNameLength]) noexcept
-    {
-    }
+        UNREFERENCED_PARAMETER(resource);
+        UNREFERENCED_PARAMETER(name);
     #endif
+    }
 
     // Helper for resource barrier.
     inline void TransitionResource(

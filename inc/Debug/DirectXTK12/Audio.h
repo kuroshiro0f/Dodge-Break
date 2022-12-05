@@ -80,9 +80,9 @@ namespace DirectX
         size_t  allocatedVoicesOneShot; // Number of XAudio2 voices allocated for one-shot sounds
         size_t  allocatedVoicesIdle;    // Number of XAudio2 voices allocated for one-shot sounds but not currently in use
         size_t  audioBytes;             // Total wave data (in bytes) in SoundEffects and in-memory WaveBanks
-    #if (defined(_XBOX_ONE) && defined(_TITLE)) || defined(_GAMING_XBOX)
+#if (defined(_XBOX_ONE) && defined(_TITLE)) || defined(_GAMING_XBOX)
         size_t  xmaAudioBytes;          // Total wave data (in bytes) in SoundEffects and in-memory WaveBanks allocated with ApuAlloc
-    #endif
+#endif
         size_t  streamingBytes;         // Total size of streaming buffers (in bytes) in streaming WaveBanks
     };
 
@@ -131,26 +131,26 @@ namespace DirectX
     //----------------------------------------------------------------------------------
     enum AUDIO_ENGINE_FLAGS : uint32_t
     {
-        AudioEngine_Default = 0x0,
+        AudioEngine_Default             = 0x0,
 
         AudioEngine_EnvironmentalReverb = 0x1,
-        AudioEngine_ReverbUseFilters = 0x2,
+        AudioEngine_ReverbUseFilters    = 0x2,
         AudioEngine_UseMasteringLimiter = 0x4,
 
-        AudioEngine_Debug = 0x10000,
-        AudioEngine_ThrowOnNoAudioHW = 0x20000,
-        AudioEngine_DisableVoiceReuse = 0x40000,
+        AudioEngine_Debug               = 0x10000,
+        AudioEngine_ThrowOnNoAudioHW    = 0x20000,
+        AudioEngine_DisableVoiceReuse   = 0x40000,
     };
 
     enum SOUND_EFFECT_INSTANCE_FLAGS : uint32_t
     {
-        SoundEffectInstance_Default = 0x0,
+        SoundEffectInstance_Default             = 0x0,
 
-        SoundEffectInstance_Use3D = 0x1,
-        SoundEffectInstance_ReverbUseFilters = 0x2,
-        SoundEffectInstance_NoSetPitch = 0x4,
+        SoundEffectInstance_Use3D               = 0x1,
+        SoundEffectInstance_ReverbUseFilters    = 0x2,
+        SoundEffectInstance_NoSetPitch          = 0x4,
 
-        SoundEffectInstance_UseRedirectLFE = 0x10000,
+        SoundEffectInstance_UseRedirectLFE      = 0x10000,
     };
 
     enum AUDIO_ENGINE_REVERB : unsigned int
@@ -333,7 +333,6 @@ namespace DirectX
         bool __cdecl IsPrepared() const noexcept;
         bool __cdecl IsInUse() const noexcept;
         bool __cdecl IsStreamingBank() const noexcept;
-        bool __cdecl IsAdvancedFormat() const noexcept;
 
         size_t __cdecl GetSampleSizeInBytes(unsigned int index) const noexcept;
         // Returns size of wave audio data
@@ -348,11 +347,11 @@ namespace DirectX
 
         int __cdecl Find(_In_z_ const char* name) const;
 
-    #ifdef USING_XAUDIO2_9
+#ifdef USING_XAUDIO2_9
         bool __cdecl FillSubmitBuffer(unsigned int index, _Out_ XAUDIO2_BUFFER& buffer, _Out_ XAUDIO2_BUFFER_WMA& wmaBuffer) const;
-    #else
+#else
         void __cdecl FillSubmitBuffer(unsigned int index, _Out_ XAUDIO2_BUFFER& buffer) const;
-    #endif
+#endif
 
         void __cdecl UnregisterInstance(_In_ IVoiceNotify* instance);
 
@@ -381,13 +380,13 @@ namespace DirectX
             _In_ const WAVEFORMATEX* wfx, _In_reads_bytes_(audioBytes) const uint8_t* startAudio, size_t audioBytes,
             uint32_t loopStart, uint32_t loopLength);
 
-    #ifdef USING_XAUDIO2_9
+#ifdef USING_XAUDIO2_9
 
         SoundEffect(_In_ AudioEngine* engine, _Inout_ std::unique_ptr<uint8_t[]>& wavData,
             _In_ const WAVEFORMATEX* wfx, _In_reads_bytes_(audioBytes) const uint8_t* startAudio, size_t audioBytes,
             _In_reads_(seekCount) const uint32_t* seekTable, size_t seekCount);
 
-    #endif
+#endif
 
         SoundEffect(SoundEffect&&) noexcept;
         SoundEffect& operator= (SoundEffect&&) noexcept;
@@ -415,11 +414,11 @@ namespace DirectX
 
         const WAVEFORMATEX* __cdecl GetFormat() const noexcept;
 
-    #ifdef USING_XAUDIO2_9
+#ifdef USING_XAUDIO2_9
         bool __cdecl FillSubmitBuffer(_Out_ XAUDIO2_BUFFER& buffer, _Out_ XAUDIO2_BUFFER_WMA& wmaBuffer) const;
-    #else
+#else
         void __cdecl FillSubmitBuffer(_Out_ XAUDIO2_BUFFER& buffer) const;
-    #endif
+#endif
 
         void __cdecl UnregisterInstance(_In_ IVoiceNotify* instance);
 
@@ -479,10 +478,10 @@ namespace DirectX
 
         void XM_CALLCONV SetOrientationFromQuaternion(FXMVECTOR quat) noexcept
         {
-            const XMVECTOR forward = XMVector3Rotate(g_XMIdentityR2, quat);
+            XMVECTOR forward = XMVector3Rotate(g_XMIdentityR2, quat);
             XMStoreFloat3(reinterpret_cast<XMFLOAT3*>(&OrientFront), forward);
 
-            const XMVECTOR up = XMVector3Rotate(g_XMIdentityR1, quat);
+            XMVECTOR up = XMVector3Rotate(g_XMIdentityR1, quat);
             XMStoreFloat3(reinterpret_cast<XMFLOAT3*>(&OrientTop), up);
         }
 
@@ -491,10 +490,10 @@ namespace DirectX
         {
             if (dt > 0.f)
             {
-                const XMVECTOR lastPos = XMLoadFloat3(reinterpret_cast<const XMFLOAT3*>(&Position));
+                XMVECTOR lastPos = XMLoadFloat3(reinterpret_cast<const XMFLOAT3*>(&Position));
 
                 XMVECTOR vDelta = XMVectorSubtract(newPos, lastPos);
-                const XMVECTOR vt = XMVectorReplicate(dt);
+                XMVECTOR vt = XMVectorReplicate(dt);
                 XMVECTOR v = XMVectorDivide(vDelta, vt);
                 XMStoreFloat3(reinterpret_cast<XMFLOAT3*>(&Velocity), v);
 
@@ -573,10 +572,10 @@ namespace DirectX
 
         void XM_CALLCONV SetOrientationFromQuaternion(FXMVECTOR quat) noexcept
         {
-            const XMVECTOR forward = XMVector3Rotate(g_XMIdentityR2, quat);
+            XMVECTOR forward = XMVector3Rotate(g_XMIdentityR2, quat);
             XMStoreFloat3(reinterpret_cast<XMFLOAT3*>(&OrientFront), forward);
 
-            const XMVECTOR up = XMVector3Rotate(g_XMIdentityR1, quat);
+            XMVECTOR up = XMVector3Rotate(g_XMIdentityR1, quat);
             XMStoreFloat3(reinterpret_cast<XMFLOAT3*>(&OrientTop), up);
         }
 
@@ -585,10 +584,10 @@ namespace DirectX
         {
             if (dt > 0.f)
             {
-                const XMVECTOR lastPos = XMLoadFloat3(reinterpret_cast<const XMFLOAT3*>(&Position));
+                XMVECTOR lastPos = XMLoadFloat3(reinterpret_cast<const XMFLOAT3*>(&Position));
 
                 XMVECTOR vDelta = XMVectorSubtract(newPos, lastPos);
-                const XMVECTOR vt = XMVectorReplicate(dt);
+                XMVECTOR vt = XMVectorReplicate(dt);
                 XMVECTOR v = XMVectorDivide(vDelta, vt);
                 XMStoreFloat3(reinterpret_cast<XMFLOAT3*>(&Velocity), v);
 
