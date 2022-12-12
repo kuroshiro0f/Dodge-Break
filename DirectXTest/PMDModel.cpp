@@ -1,33 +1,25 @@
 #include "PMDModel.h"
 
-#include <vector>
-
 #include "EnumIterator.h"
-#include "PMDDrawData.h"
+#include "PMDModelData.h"
+#include "PMDModelFilePathData.h"
 #include "PMDModelType.h"
 #include "PMDModelData.h"
 #include "PMDDrawer.h"
 #include "PMDLoader.h"
-#include "PMDShifter.h"
+#include "PMDModelTransform.h"
 
 PMDModel::PMDModel()
-    :m_drawClassIndexNumber(0)
-    , m_drawData({})
-    , m_loader({})
-    , m_shifter({})
-    , m_drawer({})
+    :m_drawData({})
+    , m_drawer(new PMDDrawer())
 {
+    //  処理なし
 }
 
 PMDModel::~PMDModel()
 {
     //  メモリの解放
     m_drawData.clear();
-    m_loader.clear();
-    m_shifter.clear();
-    m_shifter.shrink_to_fit();
-    m_drawer.clear();
-    m_drawer.shrink_to_fit();
 }
 
 //  初期化
@@ -40,77 +32,96 @@ void PMDModel::Init()
     for (auto itr : typeItr())
     {
         Load(itr);
+        m_drawData[itr].drawNum = 0;
     }
 }
 
-//  更新
-void PMDModel::Update()
+//  1ループ中の描画命令の一斉発行
+void PMDModel::IssueAllDrawCommand()
 {
-    //  次のループ用に初期化
-    //  NOTE: 座標変換と描画を行うクラスを配列化しており、
-    //        ループごとに配列の先頭にあるクラスから描画処理を行うために、
-    //        配列の添え字に指定するこの変数を毎ループ0で初期化しています。
-    m_drawClassIndexNumber = 0;
+    //  列挙型PMDModelTypeのイテレータを作成
+    typedef EnumIterator<PMDModelType, PMDModelType::Player, PMDModelType::BackGround> typeItr;
+    //  各種モデルの描画命令を発行
+    for (auto itr : typeItr())
+    {
+        //  使いまわす値を変数に格納
+        DrawData* drawData = &m_drawData[itr];
+        int* drawNum = &drawData->drawNum;
+
+        //  現在のループで描画を行わないモデルの描画命令の発行処理をスキップ
+        if (*drawNum == 0)
+        {
+            continue;
+        }
+        //  描画命令を発行
+        m_drawer->IssueDrawCommand(*drawData->modelData, drawData->transformClass->GetTransformHeap(), *drawNum);
+
+        //  次のループのために描画数をリセット
+        *drawNum = 0;
+    }
 }
 
-//  描画
+//  座標を変更して描画
 void PMDModel::Draw(const XMFLOAT3& _pos, const PMDModelType _type)
 {
-    //  座標変換用の情報を作成
-    PMDShifter* temp = m_shifter[m_drawClassIndexNumber];
-    temp->Update(_pos);
-    //  描画用の情報を作成
-    m_drawer[m_drawClassIndexNumber]->Draw(*m_drawData[_type], temp->GetTransformHeap());
-    //  次の描画用に番号を加算
-    m_drawClassIndexNumber++;
+    //  使いまわす値を変数に格納
+    DrawData* drawData = &m_drawData[_type];
+
+    //  指定されたモデルの座標変換用の情報を作成
+    PMDModelTransform* tempTransformClass = drawData->transformClass;
+    tempTransformClass->Update(_pos, drawData->drawNum);
+
+    //  指定されたモデルの描画数を増やす
+    drawData->drawNum++;
 }
+//  座標と角度を変更して描画
 void PMDModel::Draw(const XMFLOAT3& _pos, const float _angle, const PMDModelType _type)
 {
-    //  座標変換用の情報を作成
-    PMDShifter* temp = m_shifter[m_drawClassIndexNumber];
-    temp->Update(_pos,_angle);
-    //  描画用の情報を作成
-    m_drawer[m_drawClassIndexNumber]->Draw(*m_drawData[_type], temp->GetTransformHeap());
-    //  次の描画用に番号を加算
-    m_drawClassIndexNumber++;
+    //  使いまわす値を変数に格納
+    DrawData* drawData = &m_drawData[_type];
+
+    //  指定されたモデルの座標変換用の情報を作成
+    PMDModelTransform* tempTransformClass = drawData->transformClass;
+    tempTransformClass->Update(_pos,_angle, drawData->drawNum);
+
+    //  指定されたモデルの描画数を増やす
+    drawData->drawNum++;
 }
 
 //  拡大率と座標を変更して描画
 void PMDModel::DrawChangePosAndScale(const XMFLOAT3& _pos, const float _scale, const PMDModelType _type)
 {
-      //  座標変換用の情報を作成
-    PMDShifter* temp = m_shifter[m_drawClassIndexNumber];
-    temp->UpdatePosAndScale(_pos, _scale);
-    //  描画用の情報を作成
-    m_drawer[m_drawClassIndexNumber]->Draw(*m_drawData[_type], temp->GetTransformHeap());
-    //  次の描画用に番号を加算
-    m_drawClassIndexNumber++;
-}
+    //  使いまわす値を変数に格納
+    DrawData* drawData = &m_drawData[_type];
 
-//  モデルを描画するための設定
-void PMDModel::SetUp(const int _modelNum)
-{
-    //  指定数クラスのインスタンスを生成
-    for (int i = 0; i < _modelNum; i++)
-    {
-        m_shifter.emplace_back(new PMDShifter());
-        m_shifter.back()->Init();
-        m_drawer.emplace_back(new PMDDrawer());
-    }
+    //  指定されたモデルの座標変換用の情報を作成
+    PMDModelTransform* tempTransformClass = drawData->transformClass;
+    tempTransformClass->UpdatePosAndScale(_pos, _scale, drawData->drawNum);
+
+    //  指定されたモデルの描画数を増やす
+    drawData->drawNum++;
 }
 
 //  ロード
 void PMDModel::Load(const PMDModelType _type)
 {
-    PMDDrawData* tempData = new PMDDrawData();
-    PMDLoader* tempLoader = new PMDLoader();
+    //  各種インスタンスを一時的な変数に取得
+    PMDModelData* tempData = new PMDModelData();
+    PMDModelTransform* tempTransformClass = new PMDModelTransform();
+    PMDLoader* loader = new PMDLoader();
+
     //  モデルのファイルから情報をロード
-    tempLoader->LoadModel(PMDModelData::FILE_PATH[_type].c_str());
-    //  読み込んだ情報を構造体にコピーして保存
-    tempData->vbView = tempLoader->GetVbView();
-    tempData->ibView = tempLoader->GetIbView();
-    tempData->materials = tempLoader->GetMaterials();
-    tempData->materialHeap = tempLoader->GetMaterialHeap();
-    m_drawData[_type] = tempData;
-    m_loader[_type] = tempLoader;
+    loader->LoadModel(PMDModelFilePathData::FILE_PATH[_type].c_str());
+    //  読み込んだ情報を構造体に保存
+    tempData->vbView = loader->GetVbView();     //  頂点情報
+    tempData->ibView = loader->GetIbView();     //  Index情報(頂点のつなぎ方など)
+    tempData->materials = loader->GetMaterials();   //  マテリアルの情報
+    tempData->materialHeap = loader->GetMaterialHeap();     //  マテリアルの情報の扱い方を知るためのDescriptorHeap
+
+    //  TransformPMDModelClassを初期化
+    tempTransformClass->Init();
+
+    //  各種インスタンスを配列に格納
+    m_drawData[_type].modelData = tempData;
+    m_drawData[_type].transformClass = tempTransformClass;
 }

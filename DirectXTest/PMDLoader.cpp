@@ -10,7 +10,7 @@
 
 namespace
 {
-    ///  テクスチャのパスをセパレータ文字で分離する
+    ///  Textureのパスをセパレータ文字で分離する
     ///  @param path 対象のパス文字列
     ///  @param splitter 区切り文字
     ///  @return 分離前後の文字列ペア
@@ -30,10 +30,10 @@ namespace
         int idx = _path.rfind('.');
         return _path.substr(idx + 1, _path.length() - idx - 1);
     }
-    ///  モデルのパスとテクスチャのパスから合成パスを得る
+    ///  モデルのパスとTextureのパスから合成パスを得る
     ///  @param modelPath アプリケーションから見たpmdモデルのパス
-    ///  @param texPath PMDモデルから見たテクスチャのパス
-    ///  @return アプリケーションから見たテクスチャのパス
+    ///  @param texPath PMDモデルから見たTextureのパス
+    ///  @return アプリケーションから見たTextureのパス
     std::string GetTexturePathFromModelAndTexPath(const std::string& _modelPath, const char* _texPath) {
         //  ファイルのフォルダ区切りは\と/の二種類が使用される可能性があり
         //  ともかく末尾の\か/を得られればいいので、双方のrfindをとり比較する
@@ -73,31 +73,34 @@ void PMDLoader::LoadModel(const char* _filepath)
 {
     //  PMDをロード
     LoadPMDFile(_filepath);
-    //  マテリアルの情報を作成
+    //  Materialの情報を作成
     CreateMaterialData();
-    //  マテリアルとテクスチャのビューを作成
+    //  MaterialとTextureのViewを作成
     CreateMaterialAndTextureView();
 }
 
-//  マテリアル構造体のゲッター
+//  Material構造体のゲッター
 std::vector<Material> PMDLoader::GetMaterials()const
 {
     return m_materials;
 }
 
-//  読み込んだマテリアルをもとにマテリアルバッファを作成
+//  読み込んだMaterialをもとにMaterialBufferを作成
 HRESULT PMDLoader::CreateMaterialData()
 {
-    //  マテリアルバッファを作成
+    //  MaterialBufferのサイズは1つあたり256アライメント区切りでまとめる
     auto materialBuffSize = sizeof(MaterialForHlsl);
     materialBuffSize = (materialBuffSize + 0xff) & ~0xff;
+    //  HeapPropertiesはUpload用に設定
     auto temp1 = CD3DX12_HEAP_PROPERTIES(D3D12_HEAP_TYPE_UPLOAD);
+    //  ResourceDescを設定
     auto temp2 = CD3DX12_RESOURCE_DESC::Buffer(materialBuffSize * m_materials.size());
+    //  MaterialBufferを作成
     auto result = m_device.dx12->GetDevice()->CreateCommittedResource(
         &temp1,
-        D3D12_HEAP_FLAG_NONE,
+        D3D12_HEAP_FLAG_NONE,   //  特に指定なし
         &temp2,
-        D3D12_RESOURCE_STATE_GENERIC_READ,
+        D3D12_RESOURCE_STATE_GENERIC_READ,  //  Upload設定のHeapPropertiesに合わせる
         nullptr,
         IID_PPV_ARGS(m_materialBuff.ReleaseAndGetAddressOf())
     );
@@ -106,101 +109,113 @@ HRESULT PMDLoader::CreateMaterialData()
         return result;
     }
 
-    //  マップマテリアルにコピー
+    //  MaterialBufferをGPUに渡して、その仮想ポインタをmapMaterialに格納(map)
     char* mapMaterial = nullptr;
     result = m_materialBuff->Map(0, nullptr, (void**)&mapMaterial);
     if (FAILED(result)) {
         assert(SUCCEEDED(result));
         return result;
     }
+    //  実データとアライメントサイズが違うため、次のアライメント位置まで進める処理を行う
     for (auto& m : m_materials) {
         *((MaterialForHlsl*)mapMaterial) = m.material;    //  データコピー
         mapMaterial += materialBuffSize;    //  次のアライメント位置まで進める
     }
+    //  mapMaterialを介して行うMaterialBufferの変更を終了
     m_materialBuff->Unmap(0, nullptr);
 
     return S_OK;
 }
 
-//  マテリアル＆テクスチャのビューを生成
+//  MaterialとTextureのViewを生成
 HRESULT PMDLoader::CreateMaterialAndTextureView()
 {
-    //  マテリアルのディスクリプタヒープ作成
+    //  MaterialのDiscriptorHeap作成
     D3D12_DESCRIPTOR_HEAP_DESC materialDescHeapDesc = {};
-    materialDescHeapDesc.NumDescriptors = m_materials.size() * 5;    //  マテリアル数ぶん(定数1つ、テクスチャ3つ)
-    materialDescHeapDesc.Flags = D3D12_DESCRIPTOR_HEAP_FLAG_SHADER_VISIBLE;
-    materialDescHeapDesc.NodeMask = 0;
-    materialDescHeapDesc.Type = D3D12_DESCRIPTOR_HEAP_TYPE_CBV_SRV_UAV;    //  デスクリプタヒープ種別
-    auto result = m_device.dx12->GetDevice()->CreateDescriptorHeap(&materialDescHeapDesc, IID_PPV_ARGS(m_materialHeap.ReleaseAndGetAddressOf()));   //  生成
+    materialDescHeapDesc.NumDescriptors = m_materials.size() * 5;    //  Material数ぶん(定数1つ、Texture3つ)
+    materialDescHeapDesc.Flags = D3D12_DESCRIPTOR_HEAP_FLAG_SHADER_VISIBLE; //  Shaderから見えるように
+    materialDescHeapDesc.NodeMask = 0;      //  操作するAdoptorは単一
+    materialDescHeapDesc.Type = D3D12_DESCRIPTOR_HEAP_TYPE_CBV_SRV_UAV;    //  DiscriptorHeap種別
+    //  MaterialのDiscriptorHeap生成
+    auto result = m_device.dx12->GetDevice()->CreateDescriptorHeap(&materialDescHeapDesc, IID_PPV_ARGS(m_materialHeap.ReleaseAndGetAddressOf()));
     if (FAILED(result))
     {
         assert(SUCCEEDED(result));
         return result;
     }
 
-    //  マテリアルのバッファービュー作成
+    //  MaterialBufferのサイズは1つあたり256アライメント区切りでまとめる
     auto materialBuffSize = sizeof(MaterialForHlsl);
     materialBuffSize = (materialBuffSize + 0xff) & ~0xff;
+    //  Material用定数BufferViewの設定
     D3D12_CONSTANT_BUFFER_VIEW_DESC matCBVDesc = {};
     matCBVDesc.BufferLocation = m_materialBuff->GetGPUVirtualAddress();
     matCBVDesc.SizeInBytes = materialBuffSize;
 
-    //  通常テクスチャビュー作成
+    //  通常TextureView作成
     D3D12_SHADER_RESOURCE_VIEW_DESC srvDesc = {};
     srvDesc.Shader4ComponentMapping = D3D12_DEFAULT_SHADER_4_COMPONENT_MAPPING;
-    srvDesc.ViewDimension = D3D12_SRV_DIMENSION_TEXTURE2D;    //  2Dテクスチャ
+    srvDesc.ViewDimension = D3D12_SRV_DIMENSION_TEXTURE2D;    //  2DTexture
     srvDesc.Texture2D.MipLevels = 1;    //  ミップマップは使用しないので1
 
-    //  マテリアルのディスクリプタヒープへのポインタを取得
+    //  MaterialのDiscriptorHeapポインタを取得
     CD3DX12_CPU_DESCRIPTOR_HANDLE matDescHeapH(m_materialHeap->GetCPUDescriptorHandleForHeapStart());
     auto incSize = m_device.dx12->GetDevice()->GetDescriptorHandleIncrementSize(D3D12_DESCRIPTOR_HEAP_TYPE_CBV_SRV_UAV);
 
-    //  マテリアルの数だけ処理を行う
+    //  Materialの数だけ処理を行う
     auto materialsSize = m_materials.size();
     for (int i = 0; i < materialsSize; ++i)
     {
-        //  マテリアル固定バッファビュー
+        //  MaterialのBufferView作成
         m_device.dx12->GetDevice()->CreateConstantBufferView(&matCBVDesc, matDescHeapH);
-        //  マテリアルのディスクリプタヒープの指定先を次の情報へ
+        //  Materialのディスクリプタヒープの指定先を次の情報へ
         matDescHeapH.ptr += incSize;
         matCBVDesc.BufferLocation += materialBuffSize;
 
-        //  マテリアル内の情報ごとにシェーダーリソービューを作成
+        //  Material内の情報ごとにShaderResourceViewを作成
+        //  Texture
+        //  Texture情報がない場合は白Textureを指定
         if (m_textureResources[i] == nullptr) {
             srvDesc.Format = m_device.pmdRenderer->m_whiteTex->GetDesc().Format;
             m_device.dx12->GetDevice()->CreateShaderResourceView(m_device.pmdRenderer->m_whiteTex.Get(), &srvDesc, matDescHeapH);
         }
+        //  Texture情報がある場合はそれを指定
         else {
             srvDesc.Format = m_textureResources[i]->GetDesc().Format;
             m_device.dx12->GetDevice()->CreateShaderResourceView(m_textureResources[i].Get(), &srvDesc, matDescHeapH);
         }
         matDescHeapH.Offset(incSize);
-
+        //  sph
+        //  sph情報がない場合は白Textureを指定
         if (m_sphResources[i] == nullptr) {
             srvDesc.Format = m_device.pmdRenderer->m_whiteTex->GetDesc().Format;
             m_device.dx12->GetDevice()->CreateShaderResourceView(m_device.pmdRenderer->m_whiteTex.Get(), &srvDesc, matDescHeapH);
         }
+        //  sph情報がある場合はそれを指定
         else {
             srvDesc.Format = m_sphResources[i]->GetDesc().Format;
             m_device.dx12->GetDevice()->CreateShaderResourceView(m_sphResources[i].Get(), &srvDesc, matDescHeapH);
         }
         matDescHeapH.ptr += incSize;
-
+        //  spa
+        //  spa情報がない場合は黒Textureを指定
         if (m_spaResources[i] == nullptr) {
             srvDesc.Format = m_device.pmdRenderer->m_blackTex->GetDesc().Format;
             m_device.dx12->GetDevice()->CreateShaderResourceView(m_device.pmdRenderer->m_blackTex.Get(), &srvDesc, matDescHeapH);
         }
+        //  spa情報がある場合はそれを指定
         else {
             srvDesc.Format = m_spaResources[i]->GetDesc().Format;
             m_device.dx12->GetDevice()->CreateShaderResourceView(m_spaResources[i].Get(), &srvDesc, matDescHeapH);
         }
         matDescHeapH.ptr += incSize;
-
-
+        //  toon
+        //  toon情報がない場合はグラデーションTextureを指定
         if (m_toonResources[i] == nullptr) {
             srvDesc.Format = m_device.pmdRenderer->m_gradTex->GetDesc().Format;
             m_device.dx12->GetDevice()->CreateShaderResourceView(m_device.pmdRenderer->m_gradTex.Get(), &srvDesc, matDescHeapH);
         }
+        //  toon情報がある場合はそれを指定
         else {
             srvDesc.Format = m_toonResources[i]->GetDesc().Format;
             m_device.dx12->GetDevice()->CreateShaderResourceView(m_toonResources[i].Get(), &srvDesc, matDescHeapH);
@@ -244,7 +259,7 @@ HRESULT PMDLoader::LoadPMDFile(const char* _path)
     fread(&vertNum, sizeof(vertNum), 1, fp);
 
 #pragma pack(1)    //  ここから1バイトパッキング…アライメントは発生しない
-    //  PMDマテリアル構造体
+    //  PMDMaterial構造体
     struct PMDMaterial {
         XMFLOAT3 diffuse;     //  ディフューズ色
         float alpha;          //  ディフューズα
@@ -252,10 +267,10 @@ HRESULT PMDLoader::LoadPMDFile(const char* _path)
         XMFLOAT3 specular;    //  スペキュラ色
         XMFLOAT3 ambient;     //  アンビエント色
         unsigned char toonIdx;    //  トゥーン番号
-        unsigned char edgeFlg;    //  マテリアル毎の輪郭線フラグ
+        unsigned char edgeFlg;    //  Material毎の輪郭線フラグ
         //  2バイトのパディングが発生！！
-        unsigned int indicesNum;    //  このマテリアルが割り当たるインデックス数
-        char texFilePath[20];       //  テクスチャファイル名
+        unsigned int indicesNum;    //  このMaterialが割り当たるIndex数
+        char texFilePath[20];       //  Textureファイル名
     };//  70バイトのはず…でもパディングが発生するため72バイト
 #pragma pack()    //  1バイトパッキング解除
 
@@ -266,37 +281,42 @@ HRESULT PMDLoader::LoadPMDFile(const char* _path)
     //  頂点情報の読み取り
     fread(vertices.data(), vertices.size(), 1, fp);
 
-    //  頂点インデックス数
+    //  頂点Index数
     unsigned int indicesNum;
-    //  頂点インデックス数読み取り
+    //  頂点Index数読み取り
     fread(&indicesNum, sizeof(indicesNum), 1, fp);
 
-    //  頂点バッファの作成と情報の転送
+    //  HeapPropertiesはUploadに
     auto temp1 = CD3DX12_HEAP_PROPERTIES(D3D12_HEAP_TYPE_UPLOAD);
+    //  ResourceDescを設定
     auto temp2 = CD3DX12_RESOURCE_DESC::Buffer(vertices.size());
+    //  頂点Bufferの作成
     auto result = m_device.dx12->GetDevice()->CreateCommittedResource(
         &temp1,
-        D3D12_HEAP_FLAG_NONE,
+        D3D12_HEAP_FLAG_NONE,       //  特に指定なし
         &temp2,
-        D3D12_RESOURCE_STATE_GENERIC_READ,
+        D3D12_RESOURCE_STATE_GENERIC_READ,   //  Upload設定のHeapPropertiesに合わせる
         nullptr,
         IID_PPV_ARGS(m_vb.ReleaseAndGetAddressOf()));
     
-    //  作成したバッファに頂点情報をマップしてコピー
+    //  頂点BufferをGPUに渡して、その仮想アドレスをvertMapに格納(map)
     unsigned char* vertMap = nullptr;
     result = m_vb->Map(0, nullptr, (void**)&vertMap);
     copy(vertices.begin(), vertices.end(), vertMap);
+    //  仮想アドレスを介して頂点Bufferを変更できないように
     m_vb->Unmap(0, nullptr);
-    m_vbView.BufferLocation = m_vb->GetGPUVirtualAddress();    //  バッファの仮想アドレス
+
+    //  頂点BufferViewを設定
+    m_vbView.BufferLocation = m_vb->GetGPUVirtualAddress();    //  Bufferの仮想アドレス
     m_vbView.SizeInBytes = vertices.size();     //  全バイト数
     m_vbView.StrideInBytes = pmdvertex_size;    //  1頂点あたりのバイト数
 
-    //  頂点インデックス情報
+    //  頂点Index情報
     std::vector<unsigned short> indices(indicesNum);
-    //  頂点インデックス情報の読み取り
+    //  頂点Index情報の読み取り
     fread(indices.data(), indices.size() * sizeof(indices[0]), 1, fp);
 
-    //  頂点インデックスバッファの設定と情報の転送
+    //  頂点IndexBufferの設定と情報の転送
     auto temp3 = CD3DX12_HEAP_PROPERTIES(D3D12_HEAP_TYPE_UPLOAD);
     auto temp4 = CD3DX12_RESOURCE_DESC::Buffer(indices.size() * sizeof(indices[0]));
     result = m_device.dx12->GetDevice()->CreateCommittedResource(
@@ -307,32 +327,33 @@ HRESULT PMDLoader::LoadPMDFile(const char* _path)
         nullptr,
         IID_PPV_ARGS(m_ib.ReleaseAndGetAddressOf()));
 
-    //  作成したバッファに頂点インデックス情報をマップしてコピー
+    //  作成したIndexBufferをGPUに渡して、その仮想アドレスをmappedIdxに格納(map)
     unsigned short* mappedIdx = nullptr;
     m_ib->Map(0, nullptr, (void**)&mappedIdx);
     copy(indices.begin(), indices.end(), mappedIdx);
+    //  仮想アドレスを介してIndexBufferを変更できないように
     m_ib->Unmap(0, nullptr);
 
-    //  インデックスバッファビューを作成
+    //  IndexBufferViewを設定
     m_ibView.BufferLocation = m_ib->GetGPUVirtualAddress();
     m_ibView.Format = DXGI_FORMAT_R16_UINT;
     m_ibView.SizeInBytes = indices.size() * sizeof(indices[0]);
 
-    //  マテリアル数
+    //  Material数
     unsigned int materialNum;
-    //  マテリアル数の読み取り
+    //  Material数の読み取り
     fread(&materialNum, sizeof(materialNum), 1, fp);
-    //  マテリアル数に合わせて各データのサイズを変更
+    //  Material数に合わせて各データのサイズを変更
     m_materials.resize(materialNum);
     m_textureResources.resize(materialNum);
     m_sphResources.resize(materialNum);
     m_spaResources.resize(materialNum);
     m_toonResources.resize(materialNum);
 
-    //  マテリアル情報
+    //  Material情報
     std::vector<PMDMaterial> pmdMaterials(materialNum);
     auto pmdMaterialsSize = pmdMaterials.size();
-    //  マテリアル情報の読み取り
+    //  Material情報の読み取り
     fread(pmdMaterials.data(), pmdMaterialsSize * sizeof(PMDMaterial), 1, fp);
     //  読み取った情報をコピー
     for (int i = 0; i < pmdMaterialsSize; ++i) {
@@ -345,20 +366,20 @@ HRESULT PMDLoader::LoadPMDFile(const char* _path)
         m_materials[i].additional.toonIdx = pmdMaterials[i].toonIdx;
     }
 
-    //  マテリアルのサイズ分ループ処理
+    //  Materialのサイズ分ループ処理
     for (int i = 0; i < pmdMaterialsSize; ++i) {
-        //  トゥーンリソースの読み込み
+        //  ToonResourceの読み込み
         char toonFilePath[32];
         sprintf(toonFilePath, "Data/Toon/toon%02d.bmp", pmdMaterials[i].toonIdx + 1);
         m_toonResources[i] = m_device.dx12->GetTextureByPath(toonFilePath);
 
-        //  テクスチャの情報がない場合は処理を飛ばす
+        //  Textureの情報がない場合は処理を飛ばす
         if (strlen(pmdMaterials[i].texFilePath) == 0) {
             m_textureResources[i] = nullptr;
             continue;
         }
 
-        //  テクスチャ、乗算スフィアマップ、加算スフィアマップの読み込み
+        //  Texture、乗算スフィアマップ、加算スフィアマップの読み込み
         std::string texFileName = pmdMaterials[i].texFilePath;
         std::string sphFileName = "";
         std::string spaFileName = "";
@@ -395,7 +416,7 @@ HRESULT PMDLoader::LoadPMDFile(const char* _path)
                 texFileName = pmdMaterials[i].texFilePath;
             }
         }
-        //  モデルとテクスチャパスからアプリケーションからのテクスチャパスを得る
+        //  モデルとTextureパスからアプリケーションからのTextureパスを得る
         if (texFileName != "") {
             auto texFilePath = GetTexturePathFromModelAndTexPath(strModelPath, texFileName.c_str());
             m_textureResources[i] = m_device.dx12->GetTextureByPath(texFilePath.c_str());

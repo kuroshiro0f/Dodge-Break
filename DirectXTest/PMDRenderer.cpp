@@ -8,6 +8,8 @@
 
 #include "Dx12Wrapper.h"
 
+#pragma comment(lib,"d3dcompiler.lib")
+
 using namespace std;
 
 PMDRenderer::PMDRenderer(Dx12Wrapper& _dx12)
@@ -24,29 +26,33 @@ PMDRenderer::~PMDRenderer()
 //  初期化
 void PMDRenderer::Init()
 {
-    //  ルートシグネチャ生成
+    //  RootSignature生成
     CreateRootSignature();
-    //  グラフィックスパイプライン生成
+    //  GraphicsPipelineState生成
     CreateGraphicsPipelineForPMD();
-    //  白テクスチャ生成
+    //  白Texture生成
     m_whiteTex = CreateWhiteTexture();
-    //  黒テクスチャ生成
+    //  黒Texture生成
     m_blackTex = CreateBlackTexture();
-    //  グレーテクスチャ生成
+    //  白から黒へのグラデーションTexture生成
     m_gradTex = CreateGrayGradationTexture();
 }
 
-//  標準のテクスチャの生成
+//  標準Textureの生成
+//  NOTE: Textureを作成する際の共通処理
 ID3D12Resource* PMDRenderer::CreateDefaultTexture(const size_t _width, const size_t _height)
 {
+    //  2DTextureとして設定
     auto resDesc = CD3DX12_RESOURCE_DESC::Tex2D(DXGI_FORMAT_R8G8B8A8_UNORM, _width, _height);
+    //  キャッシュメモリを介してメインメモリに書き込む方式(WriteBack)を設定
     auto texHeapProp = CD3DX12_HEAP_PROPERTIES(D3D12_CPU_PAGE_PROPERTY_WRITE_BACK, D3D12_MEMORY_POOL_L0);
     ID3D12Resource* buff = nullptr;
+    //  標準Textureの生成
     auto result = m_dx12.GetDevice()->CreateCommittedResource(
         &texHeapProp,
         D3D12_HEAP_FLAG_NONE,    //  特に指定なし
         &resDesc,
-        D3D12_RESOURCE_STATE_PIXEL_SHADER_RESOURCE,
+        D3D12_RESOURCE_STATE_PIXEL_SHADER_RESOURCE,     //  PixelShaderが扱うResourceとして設定
         nullptr,
         IID_PPV_ARGS(&buff)
     );
@@ -57,36 +63,50 @@ ID3D12Resource* PMDRenderer::CreateDefaultTexture(const size_t _width, const siz
     return buff;
 }
 
-//  白テクスチャの生成
+//  白Textureの生成
+//  NOTE: TextureがないPixelで色のブレンドに乗算処理を行う場合、
+//        色を変えないために白Textureを指定する
 ID3D12Resource* PMDRenderer::CreateWhiteTexture()
 {
+    //  標準テクスチャを生成
     ID3D12Resource* whiteBuff = CreateDefaultTexture(4, 4);
 
+    //  全ての値を255に
     vector<unsigned char> data(4 * 4 * 4);
     fill(data.begin(), data.end(), 0xff);
 
+    //  TextureのデータをSubresourceにコピー
     auto result = whiteBuff->WriteToSubresource(0, nullptr, data.data(), 4 * 4, data.size());
     assert(SUCCEEDED(result));
     return whiteBuff;
 }
 
-//  黒テクスチャの生成
+//  黒Textureの生成
+//  NOTE: TextureがないPixelで色のブレンドに加算処理を行う場合、
+//        色を変えないために黒Textureを指定する
 ID3D12Resource* PMDRenderer::CreateBlackTexture()
 {
+    //  標準テクスチャを生成
     ID3D12Resource* blackBuff = CreateDefaultTexture(4, 4);
+
+    //  全ての値を0に
     vector<unsigned char> data(4 * 4 * 4);
     fill(data.begin(), data.end(), 0x00);
 
+    //  TextureのデータをSubresourceにコピー
     auto result = blackBuff->WriteToSubresource(0, nullptr, data.data(), 4 * 4, data.size());
     assert(SUCCEEDED(result));
     return blackBuff;
 }
 
-//  グレースケールグラデーションテクスチャの生成
+//  白から黒へのグラデーションTextureの生成
+//  NOTE: ToonShadingを行わないマテリアルにデフォルトのToonTextureとして適用
 ID3D12Resource* PMDRenderer::CreateGrayGradationTexture()
 {
+    //  標準テクスチャを生成
     ID3D12Resource* gradBuff = CreateDefaultTexture(4, 256);
-    //  上が白くて下が黒いテクスチャデータを作成
+
+    //  上が白くて下が黒いTextureデータを作成
     vector<unsigned int> data(4 * 256);
     auto it = data.begin();
     unsigned int c = 0xff;
@@ -96,111 +116,145 @@ ID3D12Resource* PMDRenderer::CreateGrayGradationTexture()
         --c;
     }
 
+    //  TextureのデータをSubresourceにコピー
     auto result = gradBuff->WriteToSubresource(0, nullptr, data.data(), 4 * sizeof(unsigned int), sizeof(unsigned int) * data.size());
     assert(SUCCEEDED(result));
     return gradBuff;
 }
 
-//  PMD用のパイプラインの生成
+//  PMD用のGraphicsPipelineStateの生成
 HRESULT PMDRenderer::CreateGraphicsPipelineForPMD()
 {
-    //  シェーダーの設定
+    //  VertexShader(頂点シェーダー)
     ComPtr<ID3DBlob> vsBlob = nullptr;
+    //  PixelShader(ピクセルシェーダー)
     ComPtr<ID3DBlob> psBlob = nullptr;
+    //  エラーメッセージ取得用
     ComPtr<ID3DBlob> errorBlob = nullptr;
 
-    //  シェーダーをコンパイル
-    auto result = D3DCompileFromFile(L"BasicShader.hlsl",
-        nullptr, nullptr,
-        "BasicVS", "vs_5_0",
+    //  バインドされていない記述子テーブルを有効にする
+    UINT compileFlags = D3DCOMPILE_ENABLE_UNBOUNDED_DESCRIPTOR_TABLES;
+
+    //  VertexShaderをコンパイル
+    auto result = D3DCompileFromFile
+        (L"VertexShader.hlsl",  //  ファイル名
+        nullptr,
+        nullptr,
+        "BasicVS",      //  Shaderのメイン関数名
+        "vs_5_1",       //  Shaderのバージョン
+        compileFlags,
         0,
-        0, &vsBlob, &errorBlob);
+        &vsBlob, 
+        &errorBlob);
+    //  VertexShaderのコンパイルに成功したか確認
     if (!CheckShaderCompileResult(result, errorBlob.Get())) {
         assert(0);
         return result;
     }
-    result = D3DCompileFromFile(L"BasicShader.hlsl",
-        nullptr, nullptr,
-        "BasicPS", "ps_5_0",
+    //  PixelShaderをコンパイル
+    result = D3DCompileFromFile
+        (L"PixelShader.hlsl",
+        nullptr, 
+        nullptr,
+        "BasicPS", 
+        "ps_5_1",
+        compileFlags,
         0,
-        0, &psBlob, &errorBlob);
+        &psBlob,
+        &errorBlob);
+    //  PixelShaderのコンパイルに成功したか確認
     if (!CheckShaderCompileResult(result, errorBlob.Get())) {
         assert(0);
         return result;
     }
+
+    //  頂点Layoutの定義
     D3D12_INPUT_ELEMENT_DESC inputLayout[] = {
         { "POSITION",0,DXGI_FORMAT_R32G32B32_FLOAT,0,D3D12_APPEND_ALIGNED_ELEMENT,D3D12_INPUT_CLASSIFICATION_PER_VERTEX_DATA,0 },
         { "NORMAL",0,DXGI_FORMAT_R32G32B32_FLOAT,0,D3D12_APPEND_ALIGNED_ELEMENT,D3D12_INPUT_CLASSIFICATION_PER_VERTEX_DATA,0 },
         { "TEXCOORD",0,DXGI_FORMAT_R32G32_FLOAT,0,D3D12_APPEND_ALIGNED_ELEMENT,D3D12_INPUT_CLASSIFICATION_PER_VERTEX_DATA,0 },
     };
 
-    //  グラフィックスパイプラインステートの設定
+    //  GraphicsPipelineStateの設定
     D3D12_GRAPHICS_PIPELINE_STATE_DESC gpipeline = {};
+
+    //  RootSignatureのセット
     gpipeline.pRootSignature = m_rootSignature.Get();
+    //  Shaderのセット
     gpipeline.VS = CD3DX12_SHADER_BYTECODE(vsBlob.Get());
     gpipeline.PS = CD3DX12_SHADER_BYTECODE(psBlob.Get());
 
+    //  Sample設定
     gpipeline.SampleMask = D3D12_DEFAULT_SAMPLE_MASK;    //  中身は0xffffffff
+    //  BlendState設定
+    gpipeline.BlendState = CD3DX12_BLEND_DESC(D3D12_DEFAULT);   //  デフォルトの設定
 
-    gpipeline.BlendState = CD3DX12_BLEND_DESC(D3D12_DEFAULT);
-
-    gpipeline.RasterizerState = CD3DX12_RASTERIZER_DESC(D3D12_DEFAULT);
+    //  RasterizerState設定
+    gpipeline.RasterizerState = CD3DX12_RASTERIZER_DESC(D3D12_DEFAULT); //  デフォルトの設定
     gpipeline.RasterizerState.CullMode = D3D12_CULL_MODE_NONE;    //  カリングしない
 
-    gpipeline.DepthStencilState.DepthEnable = true;    //  深度バッファを使う
-    gpipeline.DepthStencilState.DepthWriteMask = D3D12_DEPTH_WRITE_MASK_ALL;    //  全て書き込み
+    //  DepthStencilBuffer設定
+    gpipeline.DepthStencilState.DepthEnable = true;    //  深度テストを有効にする
+    gpipeline.DepthStencilState.DepthWriteMask = D3D12_DEPTH_WRITE_MASK_ALL;   //  全て書き込み
     gpipeline.DepthStencilState.DepthFunc = D3D12_COMPARISON_FUNC_LESS;        //  小さい方を採用
-    gpipeline.DSVFormat = DXGI_FORMAT_D32_FLOAT;
-    gpipeline.DepthStencilState.StencilEnable = false;
+    gpipeline.DSVFormat = DXGI_FORMAT_D32_FLOAT;        //  32ビットの浮動小数点形式
+    gpipeline.DepthStencilState.StencilEnable = false;  //  StencilBufferの使用はしない
+    gpipeline.InputLayout.pInputElementDescs = inputLayout;       //  頂点Layout先頭アドレス
+    gpipeline.InputLayout.NumElements = _countof(inputLayout);    //  頂点Layout配列数
 
-    gpipeline.InputLayout.pInputElementDescs = inputLayout;       //  レイアウト先頭アドレス
-    gpipeline.InputLayout.NumElements = _countof(inputLayout);    //  レイアウト配列数
-
-    gpipeline.IBStripCutValue = D3D12_INDEX_BUFFER_STRIP_CUT_VALUE_DISABLED;     //  ストリップ時のカットなし
+    //  頂点のつなげ方を設定
+    gpipeline.IBStripCutValue = D3D12_INDEX_BUFFER_STRIP_CUT_VALUE_DISABLED;     //  Strip(頂点を結び連続して存在する三角形)同士はカットしない(不連続性を持たせない)。
     gpipeline.PrimitiveTopologyType = D3D12_PRIMITIVE_TOPOLOGY_TYPE_TRIANGLE;    //  三角形で構成
 
-    gpipeline.NumRenderTargets = 1;    //  今は１つのみ
+    //  RenderTargetの設定
+    gpipeline.NumRenderTargets = 1;    //  RenderTargetは1つ
     gpipeline.RTVFormats[0] = DXGI_FORMAT_R8G8B8A8_UNORM;    //  0～1に正規化されたRGBA
 
-    gpipeline.SampleDesc.Count = 1;        //  サンプリングは1ピクセルにつき１
-    gpipeline.SampleDesc.Quality = 0;      //  クオリティは最低
+    //  Samplingの設定
+    gpipeline.SampleDesc.Count = 1;         //  1PixelあたりのMultiSampling数は1
+    gpipeline.SampleDesc.Quality = 0;       //  Qualityを最低にし、パフォーマンスを優先する
 
-    //  グラフィックスパイプラインステートの生成
-    result = m_dx12.GetDevice()->CreateGraphicsPipelineState(&gpipeline, IID_PPV_ARGS(m_pipeline.GetAddressOf()));
+    //  GraphicsPipelineStateの生成
+    result = m_dx12.GetDevice()->CreateGraphicsPipelineState(&gpipeline, IID_PPV_ARGS(m_pipelineState.GetAddressOf()));
     if (FAILED(result)) {
         assert(SUCCEEDED(result));
     }
     return result;
 }
 
-//  ルートシグネチャの生成
+//  RootSignatureの生成
 HRESULT PMDRenderer::CreateRootSignature()
 {
-    //  レンジ
-    CD3DX12_DESCRIPTOR_RANGE  descTblRanges[4] = {};    //  テクスチャと定数の２つ
-    descTblRanges[0].Init(D3D12_DESCRIPTOR_RANGE_TYPE_CBV, 1, 0);    //  定数[b0](ビュープロジェクション用)
-    descTblRanges[1].Init(D3D12_DESCRIPTOR_RANGE_TYPE_CBV, 1, 1);    //  定数[b1](ワールド、ボーン用)
-    descTblRanges[2].Init(D3D12_DESCRIPTOR_RANGE_TYPE_CBV, 1, 2);    //  定数[b2](マテリアル用)
-    descTblRanges[3].Init(D3D12_DESCRIPTOR_RANGE_TYPE_SRV, 4, 0);    //  テクスチャ４つ(基本とsphとspaとトゥーン)
+    //  DiscriptorRangeの設定
+    //  NOTE: Shaderのどのスロット番号に値を設定するか決定する
+    CD3DX12_DESCRIPTOR_RANGE  discriptorRanges[4] = {};    //  Textureと定数3つ
+    discriptorRanges[0].Init(D3D12_DESCRIPTOR_RANGE_TYPE_CBV, 1, 0);    //  定数[b0](ビュープロジェクション行列用)
+    discriptorRanges[1].Init(D3D12_DESCRIPTOR_RANGE_TYPE_CBV, 1, 1);    //  定数[b1](ワールド行列用)
+    discriptorRanges[2].Init(D3D12_DESCRIPTOR_RANGE_TYPE_CBV, 1, 0);    //  定数[b0](マテリアル用)
+    discriptorRanges[3].Init(D3D12_DESCRIPTOR_RANGE_TYPE_SRV, 4, 0);    //  Texture４つ(基本とsphとspaとトゥーン)
 
-    //  ルートパラメータ
+    //  RootParameter
+    //  NOTE: 設定したDiscriptorRangeをどのShaderに紐づけるか設定
     CD3DX12_ROOT_PARAMETER rootParams[3] = {};
-    rootParams[0].InitAsDescriptorTable(1, &descTblRanges[0]);    //  ビュープロジェクション変換
-    rootParams[1].InitAsDescriptorTable(1, &descTblRanges[1]);    //  ワールド・ボーン変換
-    rootParams[2].InitAsDescriptorTable(2, &descTblRanges[2]);    //  マテリアル周り
+    rootParams[0].InitAsDescriptorTable(1, &discriptorRanges[0], D3D12_SHADER_VISIBILITY_VERTEX);  //  ビュープロジェクション行列情報の紐づけ先を頂点シェーダーに設定
+    rootParams[1].InitAsDescriptorTable(1, &discriptorRanges[1], D3D12_SHADER_VISIBILITY_VERTEX);  //  ワールド座標情報の紐づけ先を頂点シェーダーに設定
+    rootParams[2].InitAsDescriptorTable(2, &discriptorRanges[2], D3D12_SHADER_VISIBILITY_PIXEL);   //  MaterialとTextureデータの紐づけ先をピクセルシェーダーに設定
 
-    //  サンプラー
+    //  Sampler
+    //  NOTE: uv値によってTextureデータからどのように色を取り出すか決定
     CD3DX12_STATIC_SAMPLER_DESC samplerDescs[2] = {};
-    samplerDescs[0].Init(0);
-    samplerDescs[1].Init(1, D3D12_FILTER_ANISOTROPIC, D3D12_TEXTURE_ADDRESS_MODE_CLAMP, D3D12_TEXTURE_ADDRESS_MODE_CLAMP);
+    samplerDescs[0].Init(0);        //  PMDモデルのTextureデータ用Sampler
+    samplerDescs[1].Init(1, D3D12_FILTER_ANISOTROPIC, D3D12_TEXTURE_ADDRESS_MODE_CLAMP, D3D12_TEXTURE_ADDRESS_MODE_CLAMP);  //  ToonShading用Sampler
 
-    //  ルートシグネチャの設定
+    //  RootSignatureの設定
     CD3DX12_ROOT_SIGNATURE_DESC rootSignatureDesc = {};
-    rootSignatureDesc.Init(3, rootParams, 2, samplerDescs, D3D12_ROOT_SIGNATURE_FLAG_ALLOW_INPUT_ASSEMBLER_INPUT_LAYOUT);
+    rootSignatureDesc.Init(_countof(rootParams), rootParams, _countof(samplerDescs), samplerDescs, D3D12_ROOT_SIGNATURE_FLAG_ALLOW_INPUT_ASSEMBLER_INPUT_LAYOUT);
 
-    //  ルートシグネチャの生成
+    //  RootSignature
     ComPtr<ID3DBlob> rootSigBlob = nullptr;
+    //  エラーメッセージの取得用
     ComPtr<ID3DBlob> errorBlob = nullptr;
+    //  RootSignatureの生成時に渡す設定をシリアル化
     auto result = D3D12SerializeRootSignature(&rootSignatureDesc, D3D_ROOT_SIGNATURE_VERSION_1, rootSigBlob.GetAddressOf(), errorBlob.GetAddressOf());
     if (FAILED(result)) 
     {
@@ -208,31 +262,18 @@ HRESULT PMDRenderer::CreateRootSignature()
         return result;
     }
 
-    try
+    //  RootSignatureの生成
+    result = m_dx12.GetDevice()->CreateRootSignature(0, rootSigBlob->GetBufferPointer(), rootSigBlob->GetBufferSize(), IID_PPV_ARGS(m_rootSignature.GetAddressOf()));
+    if (FAILED(result))
     {
-        result = m_dx12.GetDevice()->CreateRootSignature(0, rootSigBlob->GetBufferPointer(), rootSigBlob->GetBufferSize(), IID_PPV_ARGS(m_rootSignature.GetAddressOf()));
-        if (FAILED(result))
-        {
-            assert(SUCCEEDED(result));
-            return result;
-        }
-        if (m_dx12.GetDevice() == nullptr)
-        {
-            throw 1;
-        }
-    }
-    catch (int fError)
-    {
-        if (fError == 1)
-        {
-            result = E_FAIL;
-        }
+        assert(SUCCEEDED(result));
+        return result;
     }
 
     return result;
 }
 
-//  シェーダーに渡せたかのチェック
+//  Shaderのコンパイルが成功したか確認
 bool PMDRenderer::CheckShaderCompileResult(HRESULT _result, ID3DBlob* _error)
 {
     if (FAILED(_result)) {

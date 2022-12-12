@@ -9,20 +9,19 @@
 #include "ResultUI.h"
 
 #include "Singleton.h"
-#include "KeyBoard.h"
 #include "SceneController.h"
 #include "Sound.h"
+#include "UserInputHandler.h"
 
 Result::Result()
     :m_sound(Singleton<Sound>::GetInstance())
-    , m_keyboard(Singleton<KeyBoard>::GetInstance())
     , m_sceneController(Singleton<SceneController>::GetInstance())
     , m_ui(new ResultUI())
     , m_mouse(new Mouse())
     , m_string(new StringDrawer())
     , m_waitTimer(new Timer())
     , m_bgmHandle(0)
-    , m_isClick(false)
+    , m_state(ResultState::None)
 {
     //  処理なし
 }
@@ -40,33 +39,26 @@ Result::~Result()
 void Result::Update()
 {
     //  UIの更新
-    m_ui->Update(m_isClick);
+    m_ui->Update(m_state != ResultState::Play);
 
-    //  クリックされたら
-    if (m_isClick)
+    //  ボタンが押されたら
+    if (m_state == ResultState::PressButton)
     {
-        //  一定時間待機したら
-        if (m_waitTimer->GetElapseTime() >= SceneParam::TRANSITION_TIME)
-        {
-            //  BGMを停止
-            m_sound.Stop(SoundType::ResultBGM,m_bgmHandle);
-            //  タイトルへ移行
-            m_sceneController.ChangeScene(SceneType::Title);
-        }
+        //  SEを再生
+        m_sound.Play(SoundType::TransitionTitleSE, false, false);
+        //  シーン移行の準備開始
+        m_state = ResultState::ReadyToChangeScene;
+        //  時間計測の開始
+        m_waitTimer->Start();
+
     }
-    else
+    //  ボタンが押された後、一定時間待機したら
+    if (m_state == ResultState::ReadyToChangeScene)
     {
-        //  決定ボタンが押されたら
-        if (m_keyboard.IsPressKey(m_keyboard.KeyBind::Select))
-        {
-            //  SEを再生
-            m_sound.Play(SoundType::TransitionTitleSE, false, false);
-            //  クリックされた
-            m_isClick = true;
-            //  時間計測の開始
-            m_waitTimer->Start();
-           
-        }
+        //  BGMを停止
+        m_sound.Stop(SoundType::ResultBGM, m_bgmHandle);
+        //  タイトルへ移行
+        m_sceneController.ChangeScene(SceneType::Title);
     }
 }
 
@@ -90,12 +82,29 @@ void Result::StartBGM()
     m_bgmHandle = m_sound.Play(SoundType::ResultBGM, true, true);
 }
 
+//  次へ進む
+void Result::ToNext()
+{
+    if (m_state == ResultState::Play)
+    {
+        m_state = ResultState::PressButton;
+    }
+}
+
 //  リセット
 void Result::Reset()
 {
-    //  クリックはまだされていない
-    m_isClick = false;
+    //  リザルトシーンの再生から
+    m_state = ResultState::Play;
     m_ui->Reset();
+
+    //  入力検知のクラスのシングルトンインスタンスを取得
+    UserInputHandler& userInputHandler = Singleton<UserInputHandler>::GetInstance();
+    //  入力検知のリセット
+    userInputHandler.ResetOperationFunc();
+    //  入力検知時の命令を登録
+    userInputHandler.RegisterOperation(UserInputHandler::OperationType::ToNext, std::bind(&Result::ToNext, this));
+
     //  時間計測クラスのリセット
     m_waitTimer->Reset();
 }

@@ -1,1816 +1,3852 @@
 {
   "EnemyData": [
-  {
-    "WaveNum": 1,
-    "AppearTime": 0,
-    "Type": "AimingShootEnemy",
-    "AttackType": "Straight",
-    "AttackPetternID": 0,
-    "Radius": 3,
-    "AttackNum": 4,
-    "ExitTime": 100,
-    "BurstTime": 0,
-    "BurstNum": 0,
-    "MovePoint": [
-      67
-    ],
-    "ControlPoint": [
-      -1
-    ],
-    "MoveRate": [
-      0
-    ],
-    "AppearMovePoint": [
-      7,
-      67
-    ],
-    "AppearControlPoint": [
-      67
-    ],
-    "AppearMoveRate": [
-      0.006
-    ],
-    "ShootInterval": 250
-  },
-  {
-    "WaveNum": 1,
-    "AppearTime": 200,
-    "Type": "AimingShootEnemy",
-    "AttackType": "Straight",
-    "AttackPetternID": 1,
-    "Radius": 3,
-    "AttackNum": 3,
-    "ExitTime": 100,
-    "BurstTime": 0,
-    "BurstNum": 0,
-    "MovePoint": [
-      68,
-      100
-    ],
-    "ControlPoint": [
-      70,
-      70
-    ],
-    "MoveRate": [
-      0.004,
-      0.004
-    ],
-    "AppearMovePoint": [
-      134,
-      39,
-      68
-    ],
-    "AppearControlPoint": [
-      28,
-      68
-    ],
-    "AppearMoveRate": [
-      0.008,
-      0.008
-    ],
-    "ShootInterval": 250
-  },
-  {
-    "WaveNum": 1,
-    "AppearTime": 200,
-    "Type": "AimingShootEnemy",
-    "AttackType": "Straight",
-    "AttackPetternID": 1,
-    "Radius": 3,
-    "AttackNum": 3,
-    "ExitTime": 100,
-    "BurstTime": 0,
-    "BurstNum": 0,
-    "MovePoint": [
-      66,
-      94
-    ],
-    "ControlPoint": [
-      64,
-      64
-    ],
-    "MoveRate": [
-      0.004,
-      0.004
-    ],
-    "AppearMovePoint": [
-      120,
-      35,
-      66
-    ],
-    "AppearControlPoint": [
-      16,
-      66
-    ],
-    "AppearMoveRate": [
-      0.008,
-      0.008
-    ],
-    "ShootInterval": 250
-  },
-  {
-    "WaveNum": 1,
-    "AppearTime": 550,
-    "Type": "AimingShootEnemy",
-    "AttackType": "Straight",
-    "AttackPetternID": 2,
-    "Radius": 3,
-    "AttackNum": 2,
-    "ExitTime": 50,
-    "BurstTime": 0,
-    "BurstNum": 0,
-    "MovePoint": [
-      160
-    ],
-    "ControlPoint": [
-      -1
-    ],
-    "MoveRate": [
-      0
-    ],
-    "AppearMovePoint": [
-      224,
-      160
-    ],
-    "AppearControlPoint": [
-      160
-    ],
-    "AppearMoveRate": [
-      0.006
-    ],
-    "ShootInterval": 300
-  },
-  {
-    "WaveNum": 1,
-    "AppearTime": 550,
-    "Type": "AimingShootEnemy",
-    "AttackType": "Straight",
-    "AttackPetternID": 2,
-    "Radius": 3,
-    "AttackNum": 2,
-    "ExitTime": 50,
-    "BurstTime": 0,
-    "BurstNum": 0,
-    "MovePoint": [
-      154
-    ],
-    "ControlPoint": [
-      -1
-    ],
-    "MoveRate": [
-      0
-    ],
-    "AppearMovePoint": [
-      210,
-      154
-    ],
-    "AppearControlPoint": [
-      154
-    ],
-    "AppearMoveRate": [
-      0.006
-    ],
-    "ShootInterval": 300
-  },
-  {
-    "WaveNum": 1,
-    "AppearTime": 900,
-    "Type": "NoAimingShootEnemy",
-    "AttackType": "Line",
-    "AttackPetternID": 0,
-    "Radius": 4.5,
-    "AttackNum": 3,
-    "ExitTime": 300,
-    "BurstTime": 0,
-    "BurstNum": 0,
-    "MovePoint": [
-      63
-    ],
-    "ControlPoint": [
-      -1
-    ],
-    "MoveRate": [
-      0
-    ],
-    "AppearMovePoint": [
-      0,
-      48
-    ],
-    "AppearControlPoint": [
-      33
-    ],
-    "AppearMoveRate": [
-      0.008
-    ],
-    "ShootInterval": 400
-  },
-  {
-    "WaveNum": 1,
-    "AppearTime": 1100,
-    "Type": "NoAimingShootEnemy",
-    "AttackType": "Line",
-    "AttackPetternID": 1,
-    "Radius": 4.5,
-    "AttackNum": 2,
-    "ExitTime": 400,
-    "BurstTime": 0,
-    "BurstNum": 0,
-    "MovePoint": [
-      71
-    ],
-    "ControlPoint": [
-      -1
-    ],
-    "MoveRate": [
-      0
-    ],
-    "AppearMovePoint": [
-      14,
-      56
-    ],
-    "AppearControlPoint": [
-      41
-    ],
-    "AppearMoveRate": [
-      0.008
-    ],
-    "ShootInterval": 400
-  },
-  {
-    "WaveNum": 1,
-    "AppearTime": 1500,
-    "Type": "NoAimingShootEnemy",
-    "AttackType": "Zigzag",
-    "AttackPetternID": 0,
-    "Radius": 4.5,
-    "AttackNum": 2,
-    "ExitTime": 100,
-    "BurstTime": 0,
-    "BurstNum": 0,
-    "MovePoint": [
-      65
-    ],
-    "ControlPoint": [
-      -1
-    ],
-    "MoveRate": [
-      0
-    ],
-    "AppearMovePoint": [
-      0,
-      50
-    ],
-    "AppearControlPoint": [
-      35
-    ],
-    "AppearMoveRate": [
-      0.008
-    ],
-    "ShootInterval": 400
-  },
-  {
-    "WaveNum": 1,
-    "AppearTime": 1800,
-    "Type": "NoAimingShootEnemy",
-    "AttackType": "Zigzag",
-    "AttackPetternID": 1,
-    "Radius": 4.5,
-    "AttackNum": 1,
-    "ExitTime": 100,
-    "BurstTime": 0,
-    "BurstNum": 0,
-    "MovePoint": [
-      69
-    ],
-    "ControlPoint": [
-      -1
-    ],
-    "MoveRate": [
-      0
-    ],
-    "AppearMovePoint": [
-      14,
-      54
-    ],
-    "AppearControlPoint": [
-      39
-    ],
-    "AppearMoveRate": [
-      0.008
-    ],
-    "ShootInterval": 400
-  },
-  {
-    "WaveNum": 1,
-    "AppearTime": 2100,
-    "Type": "UniqueShootEnemy",
-    "AttackType": "Spread",
-    "AttackPetternID": 0,
-    "Radius": 4.5,
-    "AttackNum": 3,
-    "ExitTime": 300,
-    "BurstTime": 0,
-    "BurstNum": 0,
-    "MovePoint": [
-      64,
-      154
-    ],
-    "ControlPoint": [
-      -1,
-      -1
-    ],
-    "MoveRate": [
-      0.006,
-      0.006
-    ],
-    "AppearMovePoint": [
-      0,
-      64
-    ],
-    "AppearControlPoint": [
-      64
-    ],
-    "AppearMoveRate": [
-      0.008
-    ],
-    "ShootInterval": 300
-  },
-  {
-    "WaveNum": 1,
-    "AppearTime": 2300,
-    "Type": "UniqueShootEnemy",
-    "AttackType": "Spread",
-    "AttackPetternID": 0,
-    "Radius": 4.5,
-    "AttackNum": 0,
-    "ExitTime": 0,
-    "BurstTime": 0,
-    "BurstNum": 0,
-    "MovePoint": [
-      70,
-      160
-    ],
-    "ControlPoint": [
-      -1,
-      -1
-    ],
-    "MoveRate": [
-      0.006,
-      0.006
-    ],
-    "AppearMovePoint": [
-      14,
-      70
-    ],
-    "AppearControlPoint": [
-      70
-    ],
-    "AppearMoveRate": [
-      0.008
-    ],
-    "ShootInterval": 300
-  },
-  {
-    "WaveNum": 1,
-    "AppearTime": 2500,
-    "Type": "UniqueShootEnemy",
-    "AttackType": "Fannel",
-    "AttackPetternID": 0,
-    "Radius": 4.5,
-    "AttackNum": 1,
-    "ExitTime": 500,
-    "BurstTime": 0,
-    "BurstNum": 0,
-    "MovePoint": [
-      80
-    ],
-    "ControlPoint": [
-      -1
-    ],
-    "MoveRate": [
-      0
-    ],
-    "AppearMovePoint": [
-      0,
-      80
-    ],
-    "AppearControlPoint": [
-      35
-    ],
-    "AppearMoveRate": [
-      0.008
-    ],
-    "ShootInterval": 300
-  },
-  {
-    "WaveNum": 1,
-    "AppearTime": 2700,
-    "Type": "UniqueShootEnemy",
-    "AttackType": "Fannel",
-    "AttackPetternID": 0,
-    "Radius": 4.5,
-    "AttackNum": 0,
-    "ExitTime": 0,
-    "BurstTime": 0,
-    "BurstNum": 0,
-    "MovePoint": [
-      84
-    ],
-    "ControlPoint": [
-      -1
-    ],
-    "MoveRate": [
-      0
-    ],
-    "AppearMovePoint": [
-      14,
-      84
-    ],
-    "AppearControlPoint": [
-      39
-    ],
-    "AppearMoveRate": [
-      0.008
-    ],
-    "ShootInterval": 300
-  },
-  
-  
-  
-  
-  {
-    "WaveNum": 2,
-    "AppearTime": 0,
-    "Type": "NoAimingShootEnemy",
-    "AttackType": "Line",
-    "AttackPetternID": 6,
-    "Radius": 3,
-    "AttackNum": 0,
-    "ExitTime": 0,
-    "BurstTime": 0,
-    "BurstNum": 0,
-    "MovePoint": [
-      79
-    ],
-    "ControlPoint": [
-      -1
-    ],
-    "MoveRate": [
-      0
-    ],
-    "AppearMovePoint": [
-      15,
-      80
-    ],
-    "AppearControlPoint": [
-      77
-    ],
-    "AppearMoveRate": [
-      0.008
-    ],
-    "ShootInterval": 350
-  },
-  {
-    "WaveNum": 2,
-    "AppearTime": 0,
-    "Type": "NoAimingShootEnemy",
-    "AttackType": "Line",
-    "AttackPetternID": 7,
-    "Radius": 3,
-    "AttackNum": 0,
-    "ExitTime": 0,
-    "BurstTime": 0,
-    "BurstNum": 0,
-    "MovePoint": [
-      65
-    ],
-    "ControlPoint": [
-      -1
-    ],
-    "MoveRate": [
-      0
-    ],
-    "AppearMovePoint": [
-      1,
-      80
-    ],
-    "AppearControlPoint": [
-      35
-    ],
-    "AppearMoveRate": [
-      0.008
-    ],
-    "ShootInterval": 350
-  },
-  {
-    "WaveNum": 2,
-    "AppearTime": 0,
-    "Type": "NoAimingShootEnemy",
-    "AttackType": "Line",
-    "AttackPetternID": 8,
-    "Radius": 3,
-    "AttackNum": 0,
-    "ExitTime": 0,
-    "BurstTime": 0,
-    "BurstNum": 0,
-    "MovePoint": [
-      81
-    ],
-    "ControlPoint": [
-      -1
-    ],
-    "MoveRate": [
-      0
-    ],
-    "AppearMovePoint": [
-      1,
-      80
-    ],
-    "AppearControlPoint": [
-      65
-    ],
-    "AppearMoveRate": [
-      0.008
-    ],
-    "ShootInterval": 350
-  },
-  {
-    "WaveNum": 2,
-    "AppearTime": 0,
-    "Type": "NoAimingShootEnemy",
-    "AttackType": "Line",
-    "AttackPetternID": 9,
-    "Radius": 3,
-    "AttackNum": 0,
-    "ExitTime": 0,
-    "BurstTime": 0,
-    "BurstNum": 0,
-    "MovePoint": [
-      95
-    ],
-    "ControlPoint": [
-      -1
-    ],
-    "MoveRate": [
-      0
-    ],
-    "AppearMovePoint": [
-      15,
-      80
-    ],
-    "AppearControlPoint": [
-      79
-    ],
-    "AppearMoveRate": [
-      0.008
-    ],
-    "ShootInterval": 350
-  },
-  {
-    "WaveNum": 2,
-    "AppearTime": 600,
-    "Type": "UniqueShootEnemy",
-    "AttackType": "Fannel",
-    "AttackPetternID": 0,
-    "Radius": 3,
-    "AttackNum": 0,
-    "ExitTime": 0,
-    "BurstTime": 0,
-    "BurstNum": 0,
-    "MovePoint": [
-      115
-    ],
-    "ControlPoint": [
-      -1
-    ],
-    "MoveRate": [
-      0
-    ],
-    "AppearMovePoint": [
-      119,
-      115
-    ],
-    "AppearControlPoint": [
-      115
-    ],
-    "AppearMoveRate": [
-      0.008
-    ],
-    "ShootInterval": 400
-  },
-  {
-    "WaveNum": 2,
-    "AppearTime": 600,
-    "Type": "UniqueShootEnemy",
-    "AttackType": "Spread",
-    "AttackPetternID": 1,
-    "Radius": 3,
-    "AttackNum": 0,
-    "ExitTime": 0,
-    "BurstTime": 0,
-    "BurstNum": 0,
-    "MovePoint": [
-      157
-    ],
-    "ControlPoint": [
-      -1
-    ],
-    "MoveRate": [
-      0
-    ],
-    "AppearMovePoint": [
-      217,
-      157
-    ],
-    "AppearControlPoint": [
-      157
-    ],
-    "AppearMoveRate": [
-      0.008
-    ],
-    "ShootInterval": 400
-  },
-  {
-    "WaveNum": 2,
-    "AppearTime": 1200,
-    "Type": "UniqueShootEnemy",
-    "AttackType": "Fannel",
-    "AttackPetternID": 0,
-    "Radius": 3,
-    "AttackNum": 0,
-    "ExitTime": 0,
-    "BurstTime": 0,
-    "BurstNum": 0,
-    "MovePoint": [
-      109
-    ],
-    "ControlPoint": [
-      -1
-    ],
-    "MoveRate": [
-      0
-    ],
-    "AppearMovePoint": [
-      105,
-      109
-    ],
-    "AppearControlPoint": [
-      109
-    ],
-    "AppearMoveRate": [
-      0.008
-    ],
-    "ShootInterval": 400
-  },
-  {
-    "WaveNum": 2,
-    "AppearTime": 1200,
-    "Type": "UniqueShootEnemy",
-    "AttackType": "Spread",
-    "AttackPetternID": 1,
-    "Radius": 3,
-    "AttackNum": 0,
-    "ExitTime": 0,
-    "BurstTime": 0,
-    "BurstNum": 0,
-    "MovePoint": [
-      157
-    ],
-    "ControlPoint": [
-      -1
-    ],
-    "MoveRate": [
-      0
-    ],
-    "AppearMovePoint": [
-      7,
-      67
-    ],
-    "AppearControlPoint": [
-      67
-    ],
-    "AppearMoveRate": [
-      0.008
-    ],
-    "ShootInterval": 400
-  },
-  
-  
-  
     {
-    "WaveNum": 3,
-    "AppearTime": 0,
-    "Type": "UniqueShootEnemy",
-    "AttackType": "Spread",
-    "AttackPetternID": 2,
-    "Radius": 3,
-    "AttackNum": 0,
-    "ExitTime": 0,
-    "BurstTime": 0,
-    "BurstNum": 0,
-    "MovePoint": [
-      64,
-      154
-    ],
-    "ControlPoint": [
-      -1,
-      -1
-    ],
-    "MoveRate": [
-      0.005,
-      0.005
-    ],
-    "AppearMovePoint": [
-      0,
-      64
-    ],
-    "AppearControlPoint": [
-      64
-    ],
-    "AppearMoveRate": [
-      0.008
-    ],
-    "ShootInterval": 300
-  },
-  {
-    "WaveNum": 3,
-    "AppearTime": 0,
-    "Type": "UniqueShootEnemy",
-    "AttackType": "Spread",
-    "AttackPetternID": 2,
-    "Radius": 3,
-    "AttackNum": 0,
-    "ExitTime": 0,
-    "BurstTime": 0,
-    "BurstNum": 0,
-    "MovePoint": [
-      160,
-      70
-    ],
-    "ControlPoint": [
-      -1,
-      -1
-    ],
-    "MoveRate": [
-      0.005,
-      0.005
-    ],
-    "AppearMovePoint": [
-      224,
-      160
-    ],
-    "AppearControlPoint": [
-      160
-    ],
-    "AppearMoveRate": [
-      0.008
-    ],
-    "ShootInterval": 300
-  },
-  {
-    "WaveNum": 3,
-    "AppearTime": 600,
-    "Type": "AimingShootEnemy",
-    "AttackType": "Straight",
-    "AttackPetternID": 5,
-    "Radius": 3,
-    "AttackNum": 0,
-    "ExitTime": 0,
-    "BurstTime": 0,
-    "BurstNum": 0,
-    "MovePoint": [
-      48,
-      56,
-      176,
-      168
-    ],
-    "ControlPoint": [
-      -1,
-      -1,
-      -1,
-      -1
-    ],
-    "MoveRate": [
-      0.005,
-      0.005,
-      0.005,
-      0.005
-    ],
-    "AppearMovePoint": [
-      0,
-      48
-    ],
-    "AppearControlPoint": [
-      48
-    ],
-    "AppearMoveRate": [
-      0.008
-    ],
-    "ShootInterval": 400
-  },
-  {
-    "WaveNum": 3,
-    "AppearTime": 600,
-    "Type": "UniqueShootEnemy",
-    "AttackType": "Spread",
-    "AttackPetternID": 1,
-    "Radius": 3,
-    "AttackNum": 0,
-    "ExitTime": 0,
-    "BurstTime": 0,
-    "BurstNum": 0,
-    "MovePoint": [
-      56,
-      176,
-      168,
-      48
-    ],
-    "ControlPoint": [
-      -1,
-      -1,
-      -1,
-      -1
-    ],
-    "MoveRate": [
-      0.005,
-      0.005,
-      0.005,
-      0.005
-    ],
-    "AppearMovePoint": [
-      14,
-      56
-    ],
-    "AppearControlPoint": [
-      56
-    ],
-    "AppearMoveRate": [
-      0.008
-    ],
-    "ShootInterval": 400
-  },
-  {
-    "WaveNum": 3,
-    "AppearTime": 1300,
-    "Type": "AimingShootEnemy",
-    "AttackType": "Straight",
-    "AttackPetternID": 5,
-    "Radius": 3,
-    "AttackNum": 0,
-    "ExitTime": 0,
-    "BurstTime": 0,
-    "BurstNum": 0,
-    "MovePoint": [
-      70,
-      64
-    ],
-    "ControlPoint": [
-      -1,
-      -1
-    ],
-    "MoveRate": [
-      0.005,
-      0.005
-    ],
-    "AppearMovePoint": [
-      14,
-      70
-    ],
-    "AppearControlPoint": [
-      70
-    ],
-    "AppearMoveRate": [
-      0.008
-    ],
-    "ShootInterval": 300
-  },
-  {
-    "WaveNum": 3,
-    "AppearTime": 1300,
-    "Type": "AimingShootEnemy",
-    "AttackType": "Straight",
-    "AttackPetternID": 5,
-    "Radius": 3,
-    "AttackNum": 0,
-    "ExitTime": 0,
-    "BurstTime": 0,
-    "BurstNum": 0,
-    "MovePoint": [
-      154,
-      160
-    ],
-    "ControlPoint": [
-      -1,
-      -1
-    ],
-    "MoveRate": [
-      0.005,
-      0.005
-    ],
-    "AppearMovePoint": [
-      210,
-      154
-    ],
-    "AppearControlPoint": [
-      154
-    ],
-    "AppearMoveRate": [
-      0.008
-    ],
-    "ShootInterval": 300
-  },
-  {
-    "WaveNum": 3,
-    "AppearTime": 2000,
-    "Type": "AimingShootEnemy",
-    "AttackType": "Straight",
-    "AttackPetternID": 5,
-    "Radius": 3,
-    "AttackNum": 0,
-    "ExitTime": 0,
-    "BurstTime": 0,
-    "BurstNum": 0,
-    "MovePoint": [
-      176,
-      168,
-      48,
-      56
-    ],
-    "ControlPoint": [
-      -1,
-      -1,
-      -1,
-      -1
-    ],
-    "MoveRate": [
-      0.005,
-      0.005,
-      0.005,
-      0.005
-    ],
-    "AppearMovePoint": [
-      224,
-      176
-    ],
-    "AppearControlPoint": [
-      176
-    ],
-    "AppearMoveRate": [
-      0.008
-    ],
-    "ShootInterval": 400
-  },
-  {
-    "WaveNum": 3,
-    "AppearTime": 2000,
-    "Type": "UniqueShootEnemy",
-    "AttackType": "Spread",
-    "AttackPetternID": 1,
-    "Radius": 3,
-    "AttackNum": 0,
-    "ExitTime": 0,
-    "BurstTime": 0,
-    "BurstNum": 0,
-    "MovePoint": [
-      168,
-      48,
-      56,
-      176
-    ],
-    "ControlPoint": [
-      -1,
-      -1,
-      -1,
-      -1
-    ],
-    "MoveRate": [
-      0.005,
-      0.005,
-      0.005,
-      0.005
-    ],
-    "AppearMovePoint": [
-      210,
-      168
-    ],
-    "AppearControlPoint": [
-      168
-    ],
-    "AppearMoveRate": [
-      0.008
-    ],
-    "ShootInterval": 400
-  },
-  
-  
-  
-  {
-    "WaveNum": 4,
-    "AppearTime": 0,
-    "Type": "AimingShootEnemy",
-    "AttackType": "Straight",
-    "AttackPetternID": 3,
-    "Radius": 3,
-    "AttackNum": 0,
-    "ExitTime": 0,
-    "BurstTime": 0,
-    "BurstNum": 0,
-    "MovePoint": [
-      48,
-      50,
-      80,
-      78
-    ],
-    "ControlPoint": [
-      -1,
-      -1,
-      -1,
-      -1
-    ],
-    "MoveRate": [
-      0.004,
-      0.004,
-      0.004,
-      0.004
-    ],
-    "AppearMovePoint": [
-      0,
-      48
-    ],
-    "AppearControlPoint": [
-      48
-    ],
-    "AppearMoveRate": [
-      0.008
-    ],
-    "ShootInterval": 120
-  },
-  {
-    "WaveNum": 4,
-    "AppearTime": 400,
-    "Type": "AimingShootEnemy",
-    "AttackType": "Straight",
-    "AttackPetternID": 3,
-    "Radius": 3,
-    "AttackNum": 0,
-    "ExitTime": 0,
-    "BurstTime": 0,
-    "BurstNum": 0,
-    "MovePoint": [
-      56,
-      86,
-      84,
-      54
-    ],
-    "ControlPoint": [
-      -1,
-      -1,
-      -1,
-      -1
-    ],
-    "MoveRate": [
-      0.004,
-      0.004,
-      0.004,
-      0.004
-    ],
-    "AppearMovePoint": [
-      14,
-      56
-    ],
-    "AppearControlPoint": [
-      56
-    ],
-    "AppearMoveRate": [
-      0.008
-    ],
-    "ShootInterval": 120
-  },
-  {
-    "WaveNum": 4,
-    "AppearTime": 800,
-    "Type": "NoAimingShootEnemy",
-    "AttackType": "Zigzag",
-    "AttackPetternID": 4,
-    "Radius": 3,
-    "AttackNum": 0,
-    "ExitTime": 0,
-    "BurstTime": 0,
-    "BurstNum": 0,
-    "MovePoint": [
-      65
-    ],
-    "ControlPoint": [
-      -1
-    ],
-    "MoveRate": [
-      0
-    ],
-    "AppearMovePoint": [
-      0,
-      50
-    ],
-    "AppearControlPoint": [
-      35
-    ],
-    "AppearMoveRate": [
-      0.008
-    ],
-    "ShootInterval": 500
-  },
-  {
-    "WaveNum": 4,
-    "AppearTime": 1000,
-    "Type": "NoAimingShootEnemy",
-    "AttackType": "Zigzag",
-    "AttackPetternID": 5,
-    "Radius": 3,
-    "AttackNum": 0,
-    "ExitTime": 0,
-    "BurstTime": 0,
-    "BurstNum": 0,
-    "MovePoint": [
-      69
-    ],
-    "ControlPoint": [
-      -1
-    ],
-    "MoveRate": [
-      0
-    ],
-    "AppearMovePoint": [
-      14,
-      54
-    ],
-    "AppearControlPoint": [
-      39
-    ],
-    "AppearMoveRate": [
-      0.008
-    ],
-    "ShootInterval": 500
-  },
-  {
-    "WaveNum": 4,
-    "AppearTime": 1200,
-    "Type": "AimingShootEnemy",
-    "AttackType": "Straight",
-    "AttackPetternID": 3,
-    "Radius": 3,
-    "AttackNum": 0,
-    "ExitTime": 0,
-    "BurstTime": 0,
-    "BurstNum": 0,
-    "MovePoint": [
-      176,
-      174,
-      144,
-      146
-    ],
-    "ControlPoint": [
-      -1,
-      -1,
-      -1,
-      -1
-    ],
-    "MoveRate": [
-      0.004,
-      0.004,
-      0.004,
-      0.004
-    ],
-    "AppearMovePoint": [
-      224,
-      176
-    ],
-    "AppearControlPoint": [
-      176
-    ],
-    "AppearMoveRate": [
-      0.008
-    ],
-    "ShootInterval": 120
-  },
-  {
-    "WaveNum": 4,
-    "AppearTime": 1600,
-    "Type": "AimingShootEnemy",
-    "AttackType": "Straight",
-    "AttackPetternID": 3,
-    "Radius": 3,
-    "AttackNum": 0,
-    "ExitTime": 0,
-    "BurstTime": 0,
-    "BurstNum": 0,
-    "MovePoint": [
-      168,
-      138,
-      140,
-      170
-    ],
-    "ControlPoint": [
-      -1,
-      -1,
-      -1,
-      -1
-    ],
-    "MoveRate": [
-      0.004,
-      0.004,
-      0.004,
-      0.004
-    ],
-    "AppearMovePoint": [
-      210,
-      168
-    ],
-    "AppearControlPoint": [
-      168
-    ],
-    "AppearMoveRate": [
-      0.008
-    ],
-    "ShootInterval": 120
-  },
-  {
-    "WaveNum": 4,
-    "AppearTime": 2000,
-    "Type": "NoAimingShootEnemy",
-    "AttackType": "Line",
-    "AttackPetternID": 4,
-    "Radius": 3,
-    "AttackNum": 0,
-    "ExitTime": 0,
-    "BurstTime": 0,
-    "BurstNum": 0,
-    "MovePoint": [
-      153
-    ],
-    "ControlPoint": [
-      -1
-    ],
-    "MoveRate": [
-      0
-    ],
-    "AppearMovePoint": [
-      210,
-      168
-    ],
-    "AppearControlPoint": [
-      167
-    ],
-    "AppearMoveRate": [
-      0.008
-    ],
-    "ShootInterval": 500
-  },
-  {
-    "WaveNum": 4,
-    "AppearTime": 2000,
-    "Type": "NoAimingShootEnemy",
-    "AttackType": "Line",
-    "AttackPetternID": 5,
-    "Radius": 3,
-    "AttackNum": 0,
-    "ExitTime": 0,
-    "BurstTime": 0,
-    "BurstNum": 0,
-    "MovePoint": [
-      71
-    ],
-    "ControlPoint": [
-      -1
-    ],
-    "MoveRate": [
-      0
-    ],
-    "AppearMovePoint": [
-      14,
-      56
-    ],
-    "AppearControlPoint": [
-      57
-    ],
-    "AppearMoveRate": [
-      0.008
-    ],
-    "ShootInterval": 500
-  },
-  {
-    "WaveNum": 4,
-    "AppearTime": 2200,
-    "Type": "AimingShootEnemy",
-    "AttackType": "Straight",
-    "AttackPetternID": 4,
-    "Radius": 3,
-    "AttackNum": 0,
-    "ExitTime": 0,
-    "BurstTime": 0,
-    "BurstNum": 0,
-    "MovePoint": [
-      112
-    ],
-    "ControlPoint": [
-      -1
-    ],
-    "MoveRate": [
-      0
-    ],
-    "AppearMovePoint": [
-      22,
-      112
-    ],
-    "AppearControlPoint": [
-      112
-    ],
-    "AppearMoveRate": [
-      0.005
-    ],
-    "ShootInterval": 100
-  },
+      "WaveNum": 1,
+      "AppearTime": 0,
+      "Type": "AimingShootEnemy",
+      "AttackType": "Straight",
+      "AttackPetternID": 0,
+      "Radius": 3,
+      "AttackNum": 3,
+      "ExitTime": 100,
+      "BurstTime": 0,
+      "BurstNum": 0,
+      "MovePoint": [
+        67
+      ],
+      "ControlPoint": [
+        -1
+      ],
+      "MoveRate": [
+        0
+      ],
+      "AppearMovePoint": [
+        7,
+        67
+      ],
+      "AppearControlPoint": [
+        67
+      ],
+      "AppearMoveRate": [
+        0.006
+      ],
+      "ShootInterval": 250
+    },
+    {
+      "WaveNum": 1,
+      "AppearTime": 200,
+      "Type": "AimingShootEnemy",
+      "AttackType": "Straight",
+      "AttackPetternID": 1,
+      "Radius": 3,
+      "AttackNum": 2,
+      "ExitTime": 100,
+      "BurstTime": 0,
+      "BurstNum": 0,
+      "MovePoint": [
+        68,
+        100
+      ],
+      "ControlPoint": [
+        70,
+        70
+      ],
+      "MoveRate": [
+        0.004,
+        0.004
+      ],
+      "AppearMovePoint": [
+        14,
+        68
+      ],
+      "AppearControlPoint": [
+        38
+      ],
+      "AppearMoveRate": [
+        0.006
+      ],
+      "ShootInterval": 250
+    },
+    {
+      "WaveNum": 1,
+      "AppearTime": 200,
+      "Type": "AimingShootEnemy",
+      "AttackType": "Straight",
+      "AttackPetternID": 1,
+      "Radius": 3,
+      "AttackNum": 2,
+      "ExitTime": 100,
+      "BurstTime": 0,
+      "BurstNum": 0,
+      "MovePoint": [
+        66,
+        94
+      ],
+      "ControlPoint": [
+        64,
+        64
+      ],
+      "MoveRate": [
+        0.004,
+        0.004
+      ],
+      "AppearMovePoint": [
+        0,
+        66
+      ],
+      "AppearControlPoint": [
+        36
+      ],
+      "AppearMoveRate": [
+        0.006
+      ],
+      "ShootInterval": 250
+    },
+    {
+      "WaveNum": 1,
+      "AppearTime": 500,
+      "Type": "AimingShootEnemy",
+      "AttackType": "Straight",
+      "AttackPetternID": 2,
+      "Radius": 3,
+      "AttackNum": 2,
+      "ExitTime": 50,
+      "BurstTime": 0,
+      "BurstNum": 0,
+      "MovePoint": [
+        160
+      ],
+      "ControlPoint": [
+        -1
+      ],
+      "MoveRate": [
+        0
+      ],
+      "AppearMovePoint": [
+        224,
+        160
+      ],
+      "AppearControlPoint": [
+        160
+      ],
+      "AppearMoveRate": [
+        0.006
+      ],
+      "ShootInterval": 300
+    },
+    {
+      "WaveNum": 1,
+      "AppearTime": 500,
+      "Type": "AimingShootEnemy",
+      "AttackType": "Straight",
+      "AttackPetternID": 2,
+      "Radius": 3,
+      "AttackNum": 2,
+      "ExitTime": 50,
+      "BurstTime": 0,
+      "BurstNum": 0,
+      "MovePoint": [
+        154
+      ],
+      "ControlPoint": [
+        -1
+      ],
+      "MoveRate": [
+        0
+      ],
+      "AppearMovePoint": [
+        210,
+        154
+      ],
+      "AppearControlPoint": [
+        154
+      ],
+      "AppearMoveRate": [
+        0.006
+      ],
+      "ShootInterval": 300
+    },
+    {
+      "WaveNum": 1,
+      "AppearTime": 1100,
+      "Type": "UniqueShootEnemy",
+      "AttackType": "Spread",
+      "AttackPetternID": 0,
+      "Radius": 4.5,
+      "AttackNum": 2,
+      "ExitTime": 300,
+      "BurstTime": 0,
+      "BurstNum": 0,
+      "MovePoint": [
+        64,
+        154
+      ],
+      "ControlPoint": [
+        -1,
+        -1
+      ],
+      "MoveRate": [
+        0.006,
+        0.006
+      ],
+      "AppearMovePoint": [
+        0,
+        64
+      ],
+      "AppearControlPoint": [
+        64
+      ],
+      "AppearMoveRate": [
+        0.008
+      ],
+      "ShootInterval": 300
+    },
+    {
+      "WaveNum": 1,
+      "AppearTime": 1300,
+      "Type": "UniqueShootEnemy",
+      "AttackType": "Spread",
+      "AttackPetternID": 0,
+      "Radius": 4.5,
+      "AttackNum": 2,
+      "ExitTime": 300,
+      "BurstTime": 0,
+      "BurstNum": 0,
+      "MovePoint": [
+        70,
+        160
+      ],
+      "ControlPoint": [
+        -1,
+        -1
+      ],
+      "MoveRate": [
+        0.006,
+        0.006
+      ],
+      "AppearMovePoint": [
+        14,
+        70
+      ],
+      "AppearControlPoint": [
+        70
+      ],
+      "AppearMoveRate": [
+        0.008
+      ],
+      "ShootInterval": 300
+    },
+    {
+      "WaveNum": 1,
+      "AppearTime": 1500,
+      "Type": "UniqueShootEnemy",
+      "AttackType": "Fannel",
+      "AttackPetternID": 0,
+      "Radius": 4.5,
+      "AttackNum": 1,
+      "ExitTime": 300,
+      "BurstTime": 0,
+      "BurstNum": 0,
+      "MovePoint": [
+        80
+      ],
+      "ControlPoint": [
+        -1
+      ],
+      "MoveRate": [
+        0
+      ],
+      "AppearMovePoint": [
+        0,
+        80
+      ],
+      "AppearControlPoint": [
+        35
+      ],
+      "AppearMoveRate": [
+        0.008
+      ],
+      "ShootInterval": 300
+    },
+    {
+      "WaveNum": 1,
+      "AppearTime": 1700,
+      "Type": "UniqueShootEnemy",
+      "AttackType": "Fannel",
+      "AttackPetternID": 0,
+      "Radius": 4.5,
+      "AttackNum": 1,
+      "ExitTime": 300,
+      "BurstTime": 0,
+      "BurstNum": 0,
+      "MovePoint": [
+        84
+      ],
+      "ControlPoint": [
+        -1
+      ],
+      "MoveRate": [
+        0
+      ],
+      "AppearMovePoint": [
+        14,
+        84
+      ],
+      "AppearControlPoint": [
+        39
+      ],
+      "AppearMoveRate": [
+        0.008
+      ],
+      "ShootInterval": 300
+    },
+    {
+      "WaveNum": 1,
+      "AppearTime": 2000,
+      "Type": "NoAimingShootEnemy",
+      "AttackType": "Line",
+      "AttackPetternID": 0,
+      "Radius": 4.5,
+      "AttackNum": 2,
+      "ExitTime": 300,
+      "BurstTime": 0,
+      "BurstNum": 0,
+      "MovePoint": [
+        63
+      ],
+      "ControlPoint": [
+        -1
+      ],
+      "MoveRate": [
+        0
+      ],
+      "AppearMovePoint": [
+        0,
+        48
+      ],
+      "AppearControlPoint": [
+        33
+      ],
+      "AppearMoveRate": [
+        0.008
+      ],
+      "ShootInterval": 400
+    },
+    {
+      "WaveNum": 1,
+      "AppearTime": 2200,
+      "Type": "NoAimingShootEnemy",
+      "AttackType": "Line",
+      "AttackPetternID": 1,
+      "Radius": 4.5,
+      "AttackNum": 2,
+      "ExitTime": 400,
+      "BurstTime": 0,
+      "BurstNum": 0,
+      "MovePoint": [
+        71
+      ],
+      "ControlPoint": [
+        -1
+      ],
+      "MoveRate": [
+        0
+      ],
+      "AppearMovePoint": [
+        14,
+        56
+      ],
+      "AppearControlPoint": [
+        41
+      ],
+      "AppearMoveRate": [
+        0.008
+      ],
+      "ShootInterval": 400
+    },
+    {
+      "WaveNum": 1,
+      "AppearTime": 2500,
+      "Type": "NoAimingShootEnemy",
+      "AttackType": "Zigzag",
+      "AttackPetternID": 0,
+      "Radius": 4.5,
+      "AttackNum": 1,
+      "ExitTime": 100,
+      "BurstTime": 0,
+      "BurstNum": 0,
+      "MovePoint": [
+        65
+      ],
+      "ControlPoint": [
+        -1
+      ],
+      "MoveRate": [
+        0
+      ],
+      "AppearMovePoint": [
+        0,
+        50
+      ],
+      "AppearControlPoint": [
+        35
+      ],
+      "AppearMoveRate": [
+        0.008
+      ],
+      "ShootInterval": 400
+    },
+    {
+      "WaveNum": 1,
+      "AppearTime": 2700,
+      "Type": "NoAimingShootEnemy",
+      "AttackType": "Zigzag",
+      "AttackPetternID": 1,
+      "Radius": 4.5,
+      "AttackNum": 1,
+      "ExitTime": 100,
+      "BurstTime": 0,
+      "BurstNum": 0,
+      "MovePoint": [
+        69
+      ],
+      "ControlPoint": [
+        -1
+      ],
+      "MoveRate": [
+        0
+      ],
+      "AppearMovePoint": [
+        14,
+        54
+      ],
+      "AppearControlPoint": [
+        39
+      ],
+      "AppearMoveRate": [
+        0.008
+      ],
+      "ShootInterval": 400
+    },
+    {
+      "WaveNum": 1,
+      "AppearTime": 3100,
+      "Type": "NoAimingShootEnemy",
+      "AttackType": "Beam",
+      "AttackPetternID": 0,
+      "Radius": 3,
+      "AttackNum": 1,
+      "ExitTime": 500,
+      "BurstTime": 0,
+      "BurstNum": 0,
+      "MovePoint": [
+        65
+      ],
+      "ControlPoint": [
+        -1
+      ],
+      "MoveRate": [
+        0
+      ],
+      "AppearMovePoint": [
+        5,
+        50
+      ],
+      "AppearControlPoint": [
+        50
+      ],
+      "AppearMoveRate": [
+        0.006
+      ],
+      "ShootInterval": 500
+    },
+    {
+      "WaveNum": 1,
+      "AppearTime": 3100,
+      "Type": "NoAimingShootEnemy",
+      "AttackType": "Beam",
+      "AttackPetternID": 0,
+      "Radius": 3,
+      "AttackNum": 1,
+      "ExitTime": 500,
+      "BurstTime": 0,
+      "BurstNum": 0,
+      "MovePoint": [
+        69
+      ],
+      "ControlPoint": [
+        -1
+      ],
+      "MoveRate": [
+        0
+      ],
+      "AppearMovePoint": [
+        9,
+        54
+      ],
+      "AppearControlPoint": [
+        54
+      ],
+      "AppearMoveRate": [
+        0.006
+      ],
+      "ShootInterval": 500
+    },
+    {
+      "WaveNum": 1,
+      "AppearTime": 3300,
+      "Type": "NoAimingShootEnemy",
+      "AttackType": "Beam",
+      "AttackPetternID": 2,
+      "Radius": 3,
+      "AttackNum": 1,
+      "ExitTime": 500,
+      "BurstTime": 0,
+      "BurstNum": 0,
+      "MovePoint": [
+        64
+      ],
+      "ControlPoint": [
+        -1
+      ],
+      "MoveRate": [
+        0
+      ],
+      "AppearMovePoint": [
+        0,
+        48
+      ],
+      "AppearControlPoint": [
+        48
+      ],
+      "AppearMoveRate": [
+        0.006
+      ],
+      "ShootInterval": 500
+    },
+    {
+      "WaveNum": 1,
+      "AppearTime": 3300,
+      "Type": "NoAimingShootEnemy",
+      "AttackType": "Beam",
+      "AttackPetternID": 1,
+      "Radius": 3,
+      "AttackNum": 1,
+      "ExitTime": 500,
+      "BurstTime": 0,
+      "BurstNum": 0,
+      "MovePoint": [
+        70
+      ],
+      "ControlPoint": [
+        -1
+      ],
+      "MoveRate": [
+        0
+      ],
+      "AppearMovePoint": [
+        14,
+        56
+      ],
+      "AppearControlPoint": [
+        56
+      ],
+      "AppearMoveRate": [
+        0.006
+      ],
+      "ShootInterval": 500
+    },
+	{
+      "WaveNum": 1,
+      "AppearTime": 4000,
+      "Type": "AimingShootEnemy",
+      "AttackType": "Straight",
+      "AttackPetternID": 7,
+      "Radius": 3,
+      "AttackNum": 0,
+      "ExitTime": 0,
+      "BurstTime": 100,
+      "BurstNum": 10,
+      "MovePoint": [
+        64
+      ],
+      "ControlPoint": [
+        -1
+      ],
+      "MoveRate": [
+        0
+      ],
+      "AppearMovePoint": [
+        0,
+        48
+      ],
+      "AppearControlPoint": [
+        48
+      ],
+      "AppearMoveRate": [
+        0.006
+      ],
+      "ShootInterval": 10
+    },
+    {
+      "WaveNum": 1,
+      "AppearTime": 4000,
+      "Type": "AimingShootEnemy",
+      "AttackType": "Straight",
+      "AttackPetternID": 7,
+      "Radius": 3,
+      "AttackNum": 0,
+      "ExitTime": 0,
+      "BurstTime": 100,
+      "BurstNum": 10,
+      "MovePoint": [
+        70
+      ],
+      "ControlPoint": [
+        -1
+      ],
+      "MoveRate": [
+        0
+      ],
+      "AppearMovePoint": [
+        14,
+        56
+      ],
+      "AppearControlPoint": [
+        56
+      ],
+      "AppearMoveRate": [
+        0.006
+      ],
+      "ShootInterval": 10
+    },
   
   
   
   
+      {
+      "WaveNum": 2,
+      "AppearTime": 0,
+      "Type": "NoAimingShootEnemy",
+      "AttackType": "Line",
+      "AttackPetternID": 6,
+      "Radius": 3,
+      "AttackNum": 1,
+      "ExitTime": 700,
+      "BurstTime": 0,
+      "BurstNum": 0,
+      "MovePoint": [
+        63
+      ],
+      "ControlPoint": [
+        -1
+      ],
+      "MoveRate": [
+        0
+      ],
+      "AppearMovePoint": [
+        15,
+        64
+      ],
+      "AppearControlPoint": [
+        62
+      ],
+      "AppearMoveRate": [
+        0.008
+      ],
+      "ShootInterval": 800
+    },
+    {
+      "WaveNum": 2,
+      "AppearTime": 0,
+      "Type": "NoAimingShootEnemy",
+      "AttackType": "Line",
+      "AttackPetternID": 7,
+      "Radius": 3,
+      "AttackNum": 1,
+      "ExitTime": 700,
+      "BurstTime": 0,
+      "BurstNum": 0,
+      "MovePoint": [
+        49
+      ],
+      "ControlPoint": [
+        -1
+      ],
+      "MoveRate": [
+        0
+      ],
+      "AppearMovePoint": [
+        1,
+        64
+      ],
+      "AppearControlPoint": [
+        34
+      ],
+      "AppearMoveRate": [
+        0.008
+      ],
+      "ShootInterval": 800
+    },
+    {
+      "WaveNum": 2,
+      "AppearTime": 0,
+      "Type": "NoAimingShootEnemy",
+      "AttackType": "Line",
+      "AttackPetternID": 8,
+      "Radius": 3,
+      "AttackNum": 1,
+      "ExitTime": 700,
+      "BurstTime": 0,
+      "BurstNum": 0,
+      "MovePoint": [
+        65
+      ],
+      "ControlPoint": [
+        -1
+      ],
+      "MoveRate": [
+        0
+      ],
+      "AppearMovePoint": [
+        1,
+        64
+      ],
+      "AppearControlPoint": [
+        49
+      ],
+      "AppearMoveRate": [
+        0.008
+      ],
+      "ShootInterval": 800
+    },
+    {
+      "WaveNum": 2,
+      "AppearTime": 0,
+      "Type": "NoAimingShootEnemy",
+      "AttackType": "Line",
+      "AttackPetternID": 9,
+      "Radius": 3,
+      "AttackNum": 1,
+      "ExitTime": 700,
+      "BurstTime": 0,
+      "BurstNum": 0,
+      "MovePoint": [
+        79
+      ],
+      "ControlPoint": [
+        -1
+      ],
+      "MoveRate": [
+        0
+      ],
+      "AppearMovePoint": [
+        15,
+        64
+      ],
+      "AppearControlPoint": [
+        63
+      ],
+      "AppearMoveRate": [
+        0.008
+      ],
+      "ShootInterval": 800
+    },
+    {
+      "WaveNum": 2,
+      "AppearTime": 0,
+      "Type": "NoAimingShootEnemy",
+      "AttackType": "Line",
+      "AttackPetternID": 22,
+      "Radius": 3,
+      "AttackNum": 1,
+      "ExitTime": 700,
+      "BurstTime": 0,
+      "BurstNum": 0,
+      "MovePoint": [
+        159
+      ],
+      "ControlPoint": [
+        -1
+      ],
+      "MoveRate": [
+        0
+      ],
+      "AppearMovePoint": [
+        209,
+        160
+      ],
+      "AppearControlPoint": [
+        162
+      ],
+      "AppearMoveRate": [
+        0.008
+      ],
+      "ShootInterval": 800
+    },
+    {
+      "WaveNum": 2,
+      "AppearTime": 0,
+      "Type": "NoAimingShootEnemy",
+      "AttackType": "Line",
+      "AttackPetternID": 23,
+      "Radius": 3,
+      "AttackNum": 1,
+      "ExitTime": 700,
+      "BurstTime": 0,
+      "BurstNum": 0,
+      "MovePoint": [
+        145
+      ],
+      "ControlPoint": [
+        -1
+      ],
+      "MoveRate": [
+        0
+      ],
+      "AppearMovePoint": [
+        223,
+        160
+      ],
+      "AppearControlPoint": [
+        190
+      ],
+      "AppearMoveRate": [
+        0.008
+      ],
+      "ShootInterval": 800
+    },
+    {
+      "WaveNum": 2,
+      "AppearTime": 0,
+      "Type": "NoAimingShootEnemy",
+      "AttackType": "Line",
+      "AttackPetternID": 24,
+      "Radius": 3,
+      "AttackNum": 1,
+      "ExitTime": 700,
+      "BurstTime": 0,
+      "BurstNum": 0,
+      "MovePoint": [
+        161
+      ],
+      "ControlPoint": [
+        -1
+      ],
+      "MoveRate": [
+        0
+      ],
+      "AppearMovePoint": [
+        223,
+        160
+      ],
+      "AppearControlPoint": [
+        175
+      ],
+      "AppearMoveRate": [
+        0.008
+      ],
+      "ShootInterval": 800
+    },
+    {
+      "WaveNum": 2,
+      "AppearTime": 0,
+      "Type": "NoAimingShootEnemy",
+      "AttackType": "Line",
+      "AttackPetternID": 25,
+      "Radius": 3,
+      "AttackNum": 1,
+      "ExitTime": 700,
+      "BurstTime": 0,
+      "BurstNum": 0,
+      "MovePoint": [
+        175
+      ],
+      "ControlPoint": [
+        -1
+      ],
+      "MoveRate": [
+        0
+      ],
+      "AppearMovePoint": [
+        209,
+        160
+      ],
+      "AppearControlPoint": [
+        161
+      ],
+      "AppearMoveRate": [
+        0.008
+      ],
+      "ShootInterval": 800
+    },
+    {
+      "WaveNum": 2,
+      "AppearTime": 400,
+      "Type": "UniqueShootEnemy",
+      "AttackType": "Spread",
+      "AttackPetternID": 1,
+      "Radius": 3,
+      "AttackNum": 0,
+      "ExitTime": 0,
+      "BurstTime": 380,
+      "BurstNum": 3,
+      "MovePoint": [
+        56
+      ],
+      "ControlPoint": [
+        -1
+      ],
+      "MoveRate": [
+        0
+      ],
+      "AppearMovePoint": [
+        14,
+        56
+      ],
+      "AppearControlPoint": [
+        56
+      ],
+      "AppearMoveRate": [
+        0.008
+      ],
+      "ShootInterval": 10
+    },
+	{
+      "WaveNum": 2,
+      "AppearTime": 900,
+      "Type": "NoAimingShootEnemy",
+      "AttackType": "Line",
+      "AttackPetternID": 11,
+      "Radius": 3,
+      "AttackNum": 1,
+      "ExitTime": 300,
+      "BurstTime": 0,
+      "BurstNum": 0,
+      "MovePoint": [
+        98
+      ],
+      "ControlPoint": [
+        -1
+      ],
+      "MoveRate": [
+        0
+      ],
+      "AppearMovePoint": [
+        210,
+        112
+      ],
+      "AppearControlPoint": [
+        112
+      ],
+      "AppearMoveRate": [
+        0.003
+      ],
+      "ShootInterval": 600
+    },
+    {
+      "WaveNum": 2,
+      "AppearTime": 900,
+      "Type": "NoAimingShootEnemy",
+      "AttackType": "Line",
+      "AttackPetternID": 12,
+      "Radius": 3,
+      "AttackNum": 1,
+      "ExitTime": 300,
+      "BurstTime": 0,
+      "BurstNum": 0,
+      "MovePoint": [
+        128
+      ],
+      "ControlPoint": [
+        -1
+      ],
+      "MoveRate": [
+        0
+      ],
+      "AppearMovePoint": [
+        0,
+        112
+      ],
+      "AppearControlPoint": [
+        112
+      ],
+      "AppearMoveRate": [
+        0.003
+      ],
+      "ShootInterval": 600
+    },
+    {
+      "WaveNum": 2,
+      "AppearTime": 900,
+      "Type": "NoAimingShootEnemy",
+      "AttackType": "Line",
+      "AttackPetternID": 13,
+      "Radius": 3,
+      "AttackNum": 1,
+      "ExitTime": 300,
+      "BurstTime": 0,
+      "BurstNum": 0,
+      "MovePoint": [
+        126
+      ],
+      "ControlPoint": [
+        -1
+      ],
+      "MoveRate": [
+        0
+      ],
+      "AppearMovePoint": [
+        14,
+        112
+      ],
+      "AppearControlPoint": [
+        112
+      ],
+      "AppearMoveRate": [
+        0.003
+      ],
+      "ShootInterval": 600
+    },
+    {
+      "WaveNum": 2,
+      "AppearTime": 900,
+      "Type": "NoAimingShootEnemy",
+      "AttackType": "Line",
+      "AttackPetternID": 10,
+      "Radius": 3,
+      "AttackNum": 1,
+      "ExitTime": 300,
+      "BurstTime": 0,
+      "BurstNum": 0,
+      "MovePoint": [
+        96
+      ],
+      "ControlPoint": [
+        -1
+      ],
+      "MoveRate": [
+        0
+      ],
+      "AppearMovePoint": [
+        224,
+        112
+      ],
+      "AppearControlPoint": [
+        112
+      ],
+      "AppearMoveRate": [
+        0.003
+      ],
+      "ShootInterval": 600
+    },
+    {
+      "WaveNum": 2,
+      "AppearTime": 1200,
+      "Type": "UniqueShootEnemy",
+      "AttackType": "Spread",
+      "AttackPetternID": 1,
+      "Radius": 3,
+      "AttackNum": 0,
+      "ExitTime": 0,
+      "BurstTime": 380,
+      "BurstNum": 3,
+      "MovePoint": [
+        48
+      ],
+      "ControlPoint": [
+        -1
+      ],
+      "MoveRate": [
+        0
+      ],
+      "AppearMovePoint": [
+        0,
+        48
+      ],
+      "AppearControlPoint": [
+        48
+      ],
+      "AppearMoveRate": [
+        0.008
+      ],
+      "ShootInterval": 10
+    },
+    {
+      "WaveNum": 2,
+      "AppearTime": 1400,
+      "Type": "NoAimingShootEnemy",
+      "AttackType": "Line",
+      "AttackPetternID": 21,
+      "Radius": 3,
+      "AttackNum": 0,
+      "ExitTime": 0,
+      "BurstTime": 0,
+      "BurstNum": 0,
+      "MovePoint": [
+        68
+      ],
+      "ControlPoint": [
+        -1
+      ],
+      "MoveRate": [
+        0
+      ],
+      "AppearMovePoint": [
+        7,
+        52
+      ],
+      "AppearControlPoint": [
+        52
+      ],
+      "AppearMoveRate": [
+        0.008
+      ],
+      "ShootInterval": 2000
+    },
+    {
+      "WaveNum": 2,
+      "AppearTime": 1450,
+      "Type": "NoAimingShootEnemy",
+      "AttackType": "Line",
+      "AttackPetternID": 20,
+      "Radius": 3,
+      "AttackNum": 0,
+      "ExitTime": 0,
+      "BurstTime": 0,
+      "BurstNum": 0,
+      "MovePoint": [
+        130
+      ],
+      "ControlPoint": [
+        -1
+      ],
+      "MoveRate": [
+        0
+      ],
+      "AppearMovePoint": [
+        119,
+        116
+      ],
+      "AppearControlPoint": [
+        116
+      ],
+      "AppearMoveRate": [
+        0.008
+      ],
+      "ShootInterval": 2000
+    },
+    {
+      "WaveNum": 2,
+      "AppearTime": 1500,
+      "Type": "NoAimingShootEnemy",
+      "AttackType": "Line",
+      "AttackPetternID": 18,
+      "Radius": 3,
+      "AttackNum": 0,
+      "ExitTime": 0,
+      "BurstTime": 0,
+      "BurstNum": 0,
+      "MovePoint": [
+        156
+      ],
+      "ControlPoint": [
+        -1
+      ],
+      "MoveRate": [
+        0
+      ],
+      "AppearMovePoint": [
+        217,
+        172
+      ],
+      "AppearControlPoint": [
+        172
+      ],
+      "AppearMoveRate": [
+        0.008
+      ],
+      "ShootInterval": 2000
+    },
+	{
+      "WaveNum": 2,
+      "AppearTime": 1550,
+      "Type": "NoAimingShootEnemy",
+      "AttackType": "Line",
+      "AttackPetternID": 19,
+      "Radius": 3,
+      "AttackNum": 0,
+      "ExitTime": 0,
+      "BurstTime": 0,
+      "BurstNum": 0,
+      "MovePoint": [
+        94
+      ],
+      "ControlPoint": [
+        -1
+      ],
+      "MoveRate": [
+        0
+      ],
+      "AppearMovePoint": [
+        105,
+        108
+      ],
+      "AppearControlPoint": [
+        108
+      ],
+      "AppearMoveRate": [
+        0.008
+      ],
+      "ShootInterval": 2000
+    },
+    {
+      "WaveNum": 2,
+      "AppearTime": 1600,
+      "Type": "NoAimingShootEnemy",
+      "AttackType": "Line",
+      "AttackPetternID": 16,
+      "Radius": 3,
+      "AttackNum": 0,
+      "ExitTime": 0,
+      "BurstTime": 0,
+      "BurstNum": 0,
+      "MovePoint": [
+        49
+      ],
+      "ControlPoint": [
+        -1
+      ],
+      "MoveRate": [
+        0
+      ],
+      "AppearMovePoint": [
+        45,
+        48
+      ],
+      "AppearControlPoint": [
+        48
+      ],
+      "AppearMoveRate": [
+        0.008
+      ],
+      "ShootInterval": 2000
+    },
+    {
+      "WaveNum": 2,
+      "AppearTime": 1700,
+      "Type": "NoAimingShootEnemy",
+      "AttackType": "Line",
+      "AttackPetternID": 14,
+      "Radius": 3,
+      "AttackNum": 0,
+      "ExitTime": 0,
+      "BurstTime": 0,
+      "BurstNum": 0,
+      "MovePoint": [
+        71
+      ],
+      "ControlPoint": [
+        -1
+      ],
+      "MoveRate": [
+        0
+      ],
+      "AppearMovePoint": [
+        14,
+        56
+      ],
+      "AppearControlPoint": [
+        56
+      ],
+      "AppearMoveRate": [
+        0.008
+      ],
+      "ShootInterval": 2000
+    },
+    {
+      "WaveNum": 2,
+      "AppearTime": 1800,
+      "Type": "NoAimingShootEnemy",
+      "AttackType": "Line",
+      "AttackPetternID": 17,
+      "Radius": 3,
+      "AttackNum": 0,
+      "ExitTime": 0,
+      "BurstTime": 0,
+      "BurstNum": 0,
+      "MovePoint": [
+        175
+      ],
+      "ControlPoint": [
+        -1
+      ],
+      "MoveRate": [
+        0
+      ],
+      "AppearMovePoint": [
+        224,
+        176
+      ],
+      "AppearControlPoint": [
+        176
+      ],
+      "AppearMoveRate": [
+        0.008
+      ],
+      "ShootInterval": 2000
+    },
+    {
+      "WaveNum": 2,
+      "AppearTime": 1900,
+      "Type": "NoAimingShootEnemy",
+      "AttackType": "Line",
+      "AttackPetternID": 15,
+      "Radius": 3,
+      "AttackNum": 0,
+      "ExitTime": 0,
+      "BurstTime": 0,
+      "BurstNum": 0,
+      "MovePoint": [
+        153
+      ],
+      "ControlPoint": [
+        -1
+      ],
+      "MoveRate": [
+        0
+      ],
+      "AppearMovePoint": [
+        210,
+        168
+      ],
+      "AppearControlPoint": [
+        168
+      ],
+      "AppearMoveRate": [
+        0.008
+      ],
+      "ShootInterval": 2000
+    },
   
-  {
-    "WaveNum": 5,
-    "AppearTime": 0,
-    "Type": "AimingShootEnemy",
-    "AttackType": "Straight",
-    "AttackPetternID": 2,
-    "Radius": 3,
-    "AttackNum": 0,
-    "ExitTime": 0,
-    "BurstTime": 0,
-    "BurstNum": 0,
-    "MovePoint": [
-      52,
-      56,
-      176,
-      168,
-      48
-    ],
-    "ControlPoint": [
-      -1,
-      -1,
-      -1,
-      -1,
-      -1
-    ],
-    "MoveRate": [
-      0.007,
-      0.0035,
-      0.0035,
-      0.0035,
-      0.007
-    ],
-    "AppearMovePoint": [
-      0,
-      52
-    ],
-    "AppearControlPoint": [
-      37
-    ],
-    "AppearMoveRate": [
-      0.008
-    ],
-    "ShootInterval": 300
-  },
-  {
-    "WaveNum": 5,
-    "AppearTime": 300,
-    "Type": "UniqueShootEnemy",
-    "AttackType": "Fannel",
-    "AttackPetternID": 0,
-    "Radius": 3,
-    "AttackNum": 0,
-    "ExitTime": 0,
-    "BurstTime": 0,
-    "BurstNum": 0,
-    "MovePoint": [
-      79
-    ],
-    "ControlPoint": [
-      -1
-    ],
-    "MoveRate": [
-      0
-    ],
-    "AppearMovePoint": [
-      0,
-      79
-    ],
-    "AppearControlPoint": [
-      64
-    ],
-    "AppearMoveRate": [
-      0.008
-    ],
-    "ShootInterval": 300
-  },
-  {
-    "WaveNum": 5,
-    "AppearTime": 300,
-    "Type": "UniqueShootEnemy",
-    "AttackType": "Fannel",
-    "AttackPetternID": 0,
-    "Radius": 3,
-    "AttackNum": 0,
-    "ExitTime": 0,
-    "BurstTime": 0,
-    "BurstNum": 0,
-    "MovePoint": [
-      85
-    ],
-    "ControlPoint": [
-      -1
-    ],
-    "MoveRate": [
-      0
-    ],
-    "AppearMovePoint": [
-      14,
-      85
-    ],
-    "AppearControlPoint": [
-      70
-    ],
-    "AppearMoveRate": [
-      0.008
-    ],
-    "ShootInterval": 300
-  },
-  {
-    "WaveNum": 5,
-    "AppearTime": 580,
-    "Type": "AimingShootEnemy",
-    "AttackType": "Straight",
-    "AttackPetternID": 2,
-    "Radius": 3,
-    "AttackNum": 0,
-    "ExitTime": 0,
-    "BurstTime": 0,
-    "BurstNum": 0,
-    "MovePoint": [
-      52,
-      56,
-      176,
-      168,
-      48
-    ],
-    "ControlPoint": [
-      -1,
-      -1,
-      -1,
-      -1,
-      -1
-    ],
-    "MoveRate": [
-      0.007,
-      0.0035,
-      0.0035,
-      0.0035,
-      0.007
-    ],
-    "AppearMovePoint": [
-      0,
-      52
-    ],
-    "AppearControlPoint": [
-      37
-    ],
-    "AppearMoveRate": [
-      0.008
-    ],
-    "ShootInterval": 300
-  },
-  {
-    "WaveNum": 5,
-    "AppearTime": 900,
-    "Type": "UniqueShootEnemy",
-    "AttackType": "Fannel",
-    "AttackPetternID": 0,
-    "Radius": 3,
-    "AttackNum": 0,
-    "ExitTime": 0,
-    "BurstTime": 0,
-    "BurstNum": 0,
-    "MovePoint": [
-      154,
-      160
-    ],
-    "ControlPoint": [
-      -1,
-      -1
-    ],
-    "MoveRate": [
-      0.005,
-      0.005
-    ],
-    "AppearMovePoint": [
-      210,
-      154
-    ],
-    "AppearControlPoint": [
-      154
-    ],
-    "AppearMoveRate": [
-      0.008
-    ],
-    "ShootInterval": 300
-  },
-  {
-    "WaveNum": 5,
-    "AppearTime": 900,
-    "Type": "UniqueShootEnemy",
-    "AttackType": "Fannel",
-    "AttackPetternID": 0,
-    "Radius": 3,
-    "AttackNum": 0,
-    "ExitTime": 0,
-    "BurstTime": 0,
-    "BurstNum": 0,
-    "MovePoint": [
-      160,
-      154
-    ],
-    "ControlPoint": [
-      -1,
-      -1
-    ],
-    "MoveRate": [
-      0.005,
-      0.005
-    ],
-    "AppearMovePoint": [
-      224,
-      160
-    ],
-    "AppearControlPoint": [
-      160
-    ],
-    "AppearMoveRate": [
-      0.008
-    ],
-    "ShootInterval": 300
-  },
-  {
-    "WaveNum": 5,
-    "AppearTime": 1200,
-    "Type": "NoAimingShootEnemy",
-    "AttackType": "Line",
-    "AttackPetternID": 12,
-    "Radius": 3,
-    "AttackNum": 0,
-    "ExitTime": 0,
-    "BurstTime": 0,
-    "BurstNum": 0,
-    "MovePoint": [
-      93
-    ],
-    "ControlPoint": [
-      -1
-    ],
-    "MoveRate": [
-      0
-    ],
-    "AppearMovePoint": [
-      0,
-      78
-    ],
-    "AppearControlPoint": [
-      48
-    ],
-    "AppearMoveRate": [
-      0.008
-    ],
-    "ShootInterval": 800
-  },
-  {
-    "WaveNum": 5,
-    "AppearTime": 1300,
-    "Type": "NoAimingShootEnemy",
-    "AttackType": "Line",
-    "AttackPetternID": 13,
-    "Radius": 3,
-    "AttackNum": 0,
-    "ExitTime": 0,
-    "BurstTime": 0,
-    "BurstNum": 0,
-    "MovePoint": [
-      171
-    ],
-    "ControlPoint": [
-      -1
-    ],
-    "MoveRate": [
-      0
-    ],
-    "AppearMovePoint": [
-      210,
-      170
-    ],
-    "AppearControlPoint": [
-      168
-    ],
-    "AppearMoveRate": [
-      0.008
-    ],
-    "ShootInterval": 800
-  },
-  {
-    "WaveNum": 5,
-    "AppearTime": 1500,
-    "Type": "NoAimingShootEnemy",
-    "AttackType": "Line",
-    "AttackPetternID": 10,
-    "Radius": 3,
-    "AttackNum": 0,
-    "ExitTime": 0,
-    "BurstTime": 0,
-    "BurstNum": 0,
-    "MovePoint": [
-      131
-    ],
-    "ControlPoint": [
-      -1
-    ],
-    "MoveRate": [
-      0
-    ],
-    "AppearMovePoint": [
-      224,
-      146
-    ],
-    "AppearControlPoint": [
-      176
-    ],
-    "AppearMoveRate": [
-      0.008
-    ],
-    "ShootInterval": 800
-  },
-  {
-    "WaveNum": 5,
-    "AppearTime": 1700,
-    "Type": "NoAimingShootEnemy",
-    "AttackType": "Line",
-    "AttackPetternID": 11,
-    "Radius": 3,
-    "AttackNum": 0,
-    "ExitTime": 0,
-    "BurstTime": 0,
-    "BurstNum": 0,
-    "MovePoint": [
-      53
-    ],
-    "ControlPoint": [
-      -1
-    ],
-    "MoveRate": [
-      0
-    ],
-    "AppearMovePoint": [
-      14,
-      54
-    ],
-    "AppearControlPoint": [
-      56
-    ],
-    "AppearMoveRate": [
-      0.008
-    ],
-    "ShootInterval": 800
-  },
-  {
-    "WaveNum": 5,
-    "AppearTime": 2100,
-    "Type": "AimingShootEnemy",
-    "AttackType": "Straight",
-    "AttackPetternID": 6,
-    "Radius": 3,
-    "AttackNum": 0,
-    "ExitTime": 0,
-    "BurstTime": 0,
-    "BurstNum": 0,
-    "MovePoint": [
-      116
-    ],
-    "ControlPoint": [
-      -1
-    ],
-    "MoveRate": [
-      0
-    ],
-    "AppearMovePoint": [
-      119,
-      116
-    ],
-    "AppearControlPoint": [
-      116
-    ],
-    "AppearMoveRate": [
-      0.008
-    ],
-    "ShootInterval": 400
-  },
-  {
-    "WaveNum": 5,
-    "AppearTime": 2100,
-    "Type": "AimingShootEnemy",
-    "AttackType": "Straight",
-    "AttackPetternID": 6,
-    "Radius": 3,
-    "AttackNum": 0,
-    "ExitTime": 0,
-    "BurstTime": 0,
-    "BurstNum": 0,
-    "MovePoint": [
-      108
-    ],
-    "ControlPoint": [
-      -1
-    ],
-    "MoveRate": [
-      0
-    ],
-    "AppearMovePoint": [
-      105,
-      108
-    ],
-    "AppearControlPoint": [
-      108
-    ],
-    "AppearMoveRate": [
-      0.008
-    ],
-    "ShootInterval": 400
-  },
-  {
-    "WaveNum": 5,
-    "AppearTime": 2600,
-    "Type": "NoAimingShootEnemy",
-    "AttackType": "Zigzag",
-    "AttackPetternID": 2,
-    "Radius": 3,
-    "AttackNum": 0,
-    "ExitTime": 0,
-    "BurstTime": 0,
-    "BurstNum": 0,
-    "MovePoint": [
-      65
-    ],
-    "ControlPoint": [
-      -1
-    ],
-    "MoveRate": [
-      0
-    ],
-    "AppearMovePoint": [
-      0,
-      49
-    ],
-    "AppearControlPoint": [
-      34
-    ],
-    "AppearMoveRate": [
-      0.008
-    ],
-    "ShootInterval": 400
-  },
-  {
-    "WaveNum": 5,
-    "AppearTime": 2600,
-    "Type": "NoAimingShootEnemy",
-    "AttackType": "Zigzag",
-    "AttackPetternID": 3,
-    "Radius": 3,
-    "AttackNum": 0,
-    "ExitTime": 0,
-    "BurstTime": 0,
-    "BurstNum": 0,
-    "MovePoint": [
-      69
-    ],
-    "ControlPoint": [
-      -1
-    ],
-    "MoveRate": [
-      0
-    ],
-    "AppearMovePoint": [
-      14,
-      55
-    ],
-    "AppearControlPoint": [
-      40
-    ],
-    "AppearMoveRate": [
-      0.008
-    ],
-    "ShootInterval": 400
-  }
+  
+  
+        {
+      "WaveNum": 3,
+      "AppearTime": 0,
+      "Type": "UniqueShootEnemy",
+      "AttackType": "Spread",
+      "AttackPetternID": 2,
+      "Radius": 3,
+      "AttackNum": 0,
+      "ExitTime": 0,
+      "BurstTime": 330,
+      "BurstNum": 3,
+      "MovePoint": [
+        65
+      ],
+      "ControlPoint": [
+        -1
+      ],
+      "MoveRate": [
+        0
+      ],
+      "AppearMovePoint": [
+        0,
+        65
+      ],
+      "AppearControlPoint": [
+        35
+      ],
+      "AppearMoveRate": [
+        0.008
+      ],
+      "ShootInterval": 10
+    },
+    {
+      "WaveNum": 3,
+      "AppearTime": 175,
+      "Type": "UniqueShootEnemy",
+      "AttackType": "Spread",
+      "AttackPetternID": 2,
+      "Radius": 3,
+      "AttackNum": 0,
+      "ExitTime": 0,
+      "BurstTime": 330,
+      "BurstNum": 3,
+      "MovePoint": [
+        69
+      ],
+      "ControlPoint": [
+        -1
+      ],
+      "MoveRate": [
+        0
+      ],
+      "AppearMovePoint": [
+        14,
+        69
+      ],
+      "AppearControlPoint": [
+        40
+      ],
+      "AppearMoveRate": [
+        0.008
+      ],
+      "ShootInterval": 10
+    },
+    {
+      "WaveNum": 3,
+      "AppearTime": 400,
+      "Type": "NoAimingShootEnemy",
+      "AttackType": "Zigzag",
+      "AttackPetternID": 0,
+      "Radius": 3,
+      "AttackNum": 0,
+      "ExitTime": 0,
+      "BurstTime": 0,
+      "BurstNum": 0,
+      "MovePoint": [
+        67
+      ],
+      "ControlPoint": [
+        -1
+      ],
+      "MoveRate": [
+        0
+      ],
+      "AppearMovePoint": [
+        7,
+        52
+      ],
+      "AppearControlPoint": [
+        52
+      ],
+      "AppearMoveRate": [
+        0.008
+      ],
+      "ShootInterval": 300
+    },
+    {
+      "WaveNum": 3,
+      "AppearTime": 800,
+      "Type": "UniqueShootEnemy",
+      "AttackType": "Spread",
+      "AttackPetternID": 4,
+      "Radius": 3,
+      "AttackNum": 0,
+      "ExitTime": 0,
+      "BurstTime": 190,
+      "BurstNum": 2,
+      "MovePoint": [
+        48,
+        168,
+        213,
+        3
+      ],
+      "ControlPoint": [
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "MoveRate": [
+        0.002,
+        0.01,
+        1,
+        0.01
+      ],
+      "AppearMovePoint": [
+        3,
+        48
+      ],
+      "AppearControlPoint": [
+        48
+      ],
+      "AppearMoveRate": [
+        0.01
+      ],
+      "ShootInterval": 10
+    },
+    {
+      "WaveNum": 3,
+      "AppearTime": 900,
+      "Type": "UniqueShootEnemy",
+      "AttackType": "Spread",
+      "AttackPetternID": 4,
+      "Radius": 3,
+      "AttackNum": 0,
+      "ExitTime": 0,
+      "BurstTime": 190,
+      "BurstNum": 2,
+      "MovePoint": [
+        56,
+        176,
+        221,
+        11
+      ],
+      "ControlPoint": [
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "MoveRate": [
+        0.002,
+        0.01,
+        1,
+        0.01
+      ],
+      "AppearMovePoint": [
+        11,
+        56
+      ],
+      "AppearControlPoint": [
+        56
+      ],
+      "AppearMoveRate": [
+        0.01
+      ],
+      "ShootInterval": 10
+    },
+    {
+      "WaveNum": 3,
+      "AppearTime": 1100,
+      "Type": "NoAimingShootEnemy",
+      "AttackType": "Zigzag",
+      "AttackPetternID": 0,
+      "Radius": 3,
+      "AttackNum": 0,
+      "ExitTime": 0,
+      "BurstTime": 0,
+      "BurstNum": 0,
+      "MovePoint": [
+        65
+      ],
+      "ControlPoint": [
+        -1
+      ],
+      "MoveRate": [
+        0
+      ],
+      "AppearMovePoint": [
+        5,
+        50
+      ],
+      "AppearControlPoint": [
+        50
+      ],
+      "AppearMoveRate": [
+        0.008
+      ],
+      "ShootInterval": 300
+    },
+    {
+      "WaveNum": 3,
+      "AppearTime": 1200,
+      "Type": "NoAimingShootEnemy",
+      "AttackType": "Zigzag",
+      "AttackPetternID": 0,
+      "Radius": 3,
+      "AttackNum": 0,
+      "ExitTime": 0,
+      "BurstTime": 0,
+      "BurstNum": 0,
+      "MovePoint": [
+        69
+      ],
+      "ControlPoint": [
+        -1
+      ],
+      "MoveRate": [
+        0
+      ],
+      "AppearMovePoint": [
+        9,
+        54
+      ],
+      "AppearControlPoint": [
+        54
+      ],
+      "AppearMoveRate": [
+        0.008
+      ],
+      "ShootInterval": 300
+    },
+    {
+      "WaveNum": 3,
+      "AppearTime": 1500,
+      "Type": "UniqueShootEnemy",
+      "AttackType": "Spread",
+      "AttackPetternID": 4,
+      "Radius": 3,
+      "AttackNum": 0,
+      "ExitTime": 0,
+      "BurstTime": 210,
+      "BurstNum": 4,
+      "MovePoint": [
+        112
+      ],
+      "ControlPoint": [
+        -1
+      ],
+      "MoveRate": [
+        0
+      ],
+      "AppearMovePoint": [
+        7,
+        112
+      ],
+      "AppearControlPoint": [
+        112
+      ],
+      "AppearMoveRate": [
+        0.008
+      ],
+      "ShootInterval": 10
+    },
+    {
+      "WaveNum": 3,
+      "AppearTime": 1800,
+      "Type": "UniqueShootEnemy",
+      "AttackType": "Spread",
+      "AttackPetternID": 4,
+      "Radius": 3,
+      "AttackNum": 0,
+      "ExitTime": 0,
+      "BurstTime": 190,
+      "BurstNum": 2,
+      "MovePoint": [
+        48,
+        56,
+        59,
+        45
+      ],
+      "ControlPoint": [
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "MoveRate": [
+        0.002,
+        0.01,
+        1,
+        0.01
+      ],
+      "AppearMovePoint": [
+        45,
+        48
+      ],
+      "AppearControlPoint": [
+        48
+      ],
+      "AppearMoveRate": [
+        0.01
+      ],
+      "ShootInterval": 10
+    },
+    {
+      "WaveNum": 3,
+      "AppearTime": 1900,
+      "Type": "UniqueShootEnemy",
+      "AttackType": "Spread",
+      "AttackPetternID": 4,
+      "Radius": 3,
+      "AttackNum": 0,
+      "ExitTime": 0,
+      "BurstTime": 190,
+      "BurstNum": 2,
+      "MovePoint": [
+        176,
+        168,
+        165,
+        179
+      ],
+      "ControlPoint": [
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "MoveRate": [
+        0.002,
+        0.01,
+        1,
+        0.01
+      ],
+      "AppearMovePoint": [
+        179,
+        176
+      ],
+      "AppearControlPoint": [
+        176
+      ],
+      "AppearMoveRate": [
+        0.01
+      ],
+      "ShootInterval": 10
+    },
+  
+  
+  
+      {
+      "WaveNum": 4,
+      "AppearTime": 0,
+      "Type": "AimingShootEnemy",
+      "AttackType": "Straight",
+      "AttackPetternID": 3,
+      "Radius": 3,
+      "AttackNum": 0,
+      "ExitTime": 0,
+      "BurstTime": 130,
+      "BurstNum": 2,
+      "MovePoint": [
+        67
+      ],
+      "ControlPoint": [
+        -1
+      ],
+      "MoveRate": [
+        0
+      ],
+      "AppearMovePoint": [
+        7,
+        67
+      ],
+      "AppearControlPoint": [
+        67
+      ],
+      "AppearMoveRate": [
+        0.008
+      ],
+      "ShootInterval": 12
+    },
+    {
+      "WaveNum": 4,
+      "AppearTime": 400,
+      "Type": "AimingShootEnemy",
+      "AttackType": "Straight",
+      "AttackPetternID": 3,
+      "Radius": 3,
+      "AttackNum": 0,
+      "ExitTime": 0,
+      "BurstTime": 130,
+      "BurstNum": 2,
+      "MovePoint": [
+        172
+      ],
+      "ControlPoint": [
+        -1
+      ],
+      "MoveRate": [
+        0
+      ],
+      "AppearMovePoint": [
+        217,
+        172
+      ],
+      "AppearControlPoint": [
+        172
+      ],
+      "AppearMoveRate": [
+        0.008
+      ],
+      "ShootInterval": 12
+    },
+    {
+      "WaveNum": 4,
+      "AppearTime": 600,
+      "Type": "NoAimingShootEnemy",
+      "AttackType": "Beam",
+      "AttackPetternID": 0,
+      "Radius": 3,
+      "AttackNum": 1,
+      "ExitTime": 450,
+      "BurstTime": 0,
+      "BurstNum": 0,
+      "MovePoint": [
+        67
+      ],
+      "ControlPoint": [
+        -1
+      ],
+      "MoveRate": [
+        0
+      ],
+      "AppearMovePoint": [
+        7,
+        52
+      ],
+      "AppearControlPoint": [
+        52
+      ],
+      "AppearMoveRate": [
+        0.008
+      ],
+      "ShootInterval": 500
+    },
+    {
+      "WaveNum": 4,
+      "AppearTime": 1000,
+      "Type": "AimingShootEnemy",
+      "AttackType": "Straight",
+      "AttackPetternID": 3,
+      "Radius": 3,
+      "AttackNum": 0,
+      "ExitTime": 0,
+      "BurstTime": 130,
+      "BurstNum": 2,
+      "MovePoint": [
+        48,
+        50,
+        80,
+        78
+      ],
+      "ControlPoint": [
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "MoveRate": [
+        0.004,
+        0.004,
+        0.004,
+        0.004
+      ],
+      "AppearMovePoint": [
+        0,
+        48
+      ],
+      "AppearControlPoint": [
+        48
+      ],
+      "AppearMoveRate": [
+        0.008
+      ],
+      "ShootInterval": 12
+    },
+    {
+      "WaveNum": 4,
+      "AppearTime": 1100,
+      "Type": "NoAimingShootEnemy",
+      "AttackType": "Beam",
+      "AttackPetternID": 2,
+      "Radius": 3,
+      "AttackNum": 1,
+      "ExitTime": 450,
+      "BurstTime": 0,
+      "BurstNum": 0,
+      "MovePoint": [
+        64
+      ],
+      "ControlPoint": [
+        -1
+      ],
+      "MoveRate": [
+        0
+      ],
+      "AppearMovePoint": [
+        0,
+        48
+      ],
+      "AppearControlPoint": [
+        48
+      ],
+      "AppearMoveRate": [
+        0.008
+      ],
+      "ShootInterval": 500
+    },
+    {
+      "WaveNum": 4,
+      "AppearTime": 1100,
+      "Type": "NoAimingShootEnemy",
+      "AttackType": "Beam",
+      "AttackPetternID": 1,
+      "Radius": 3,
+      "AttackNum": 1,
+      "ExitTime": 450,
+      "BurstTime": 0,
+      "BurstNum": 0,
+      "MovePoint": [
+        70
+      ],
+      "ControlPoint": [
+        -1
+      ],
+      "MoveRate": [
+        0
+      ],
+      "AppearMovePoint": [
+        14,
+        56
+      ],
+      "AppearControlPoint": [
+        56
+      ],
+      "AppearMoveRate": [
+        0.008
+      ],
+      "ShootInterval": 500
+    },
+    {
+      "WaveNum": 4,
+      "AppearTime": 1400,
+      "Type": "NoAimingShootEnemy",
+      "AttackType": "Beam",
+      "AttackPetternID": 4,
+      "Radius": 3,
+      "AttackNum": 1,
+      "ExitTime": 450,
+      "BurstTime": 0,
+      "BurstNum": 0,
+      "MovePoint": [
+        66
+      ],
+      "ControlPoint": [
+        -1
+      ],
+      "MoveRate": [
+        0
+      ],
+      "AppearMovePoint": [
+        7,
+        51
+      ],
+      "AppearControlPoint": [
+        36
+      ],
+      "AppearMoveRate": [
+        0.008
+      ],
+      "ShootInterval": 600
+    },
+    {
+      "WaveNum": 4,
+      "AppearTime": 1400,
+      "Type": "NoAimingShootEnemy",
+      "AttackType": "Beam",
+      "AttackPetternID": 4,
+      "Radius": 3,
+      "AttackNum": 1,
+      "ExitTime": 450,
+      "BurstTime": 0,
+      "BurstNum": 0,
+      "MovePoint": [
+        67
+      ],
+      "ControlPoint": [
+        -1
+      ],
+      "MoveRate": [
+        0
+      ],
+      "AppearMovePoint": [
+        7,
+        52
+      ],
+      "AppearControlPoint": [
+        52
+      ],
+      "AppearMoveRate": [
+        0.008
+      ],
+      "ShootInterval": 600
+    },
+    {
+      "WaveNum": 4,
+      "AppearTime": 1400,
+      "Type": "NoAimingShootEnemy",
+      "AttackType": "Beam",
+      "AttackPetternID": 4,
+      "Radius": 3,
+      "AttackNum": 1,
+      "ExitTime": 450,
+      "BurstTime": 0,
+      "BurstNum": 0,
+      "MovePoint": [
+        68
+      ],
+      "ControlPoint": [
+        -1
+      ],
+      "MoveRate": [
+        0
+      ],
+      "AppearMovePoint": [
+        7,
+        53
+      ],
+      "AppearControlPoint": [
+        38
+      ],
+      "AppearMoveRate": [
+        0.008
+      ],
+      "ShootInterval": 600
+    },
+    {
+      "WaveNum": 4,
+      "AppearTime": 1800,
+      "Type": "AimingShootEnemy",
+      "AttackType": "Straight",
+      "AttackPetternID": 3,
+      "Radius": 3,
+      "AttackNum": 0,
+      "ExitTime": 0,
+      "BurstTime": 130,
+      "BurstNum": 2,
+      "MovePoint": [
+        176,
+        174,
+        144,
+        146
+      ],
+      "ControlPoint": [
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "MoveRate": [
+        0.004,
+        0.004,
+        0.004,
+        0.004
+      ],
+      "AppearMovePoint": [
+        224,
+        176
+      ],
+      "AppearControlPoint": [
+        176
+      ],
+      "AppearMoveRate": [
+        0.008
+      ],
+      "ShootInterval": 12
+    },
+    {
+      "WaveNum": 4,
+      "AppearTime": 2000,
+      "Type": "NoAimingShootEnemy",
+      "AttackType": "Beam",
+      "AttackPetternID": 3,
+      "Radius": 3,
+      "AttackNum": 1,
+      "ExitTime": 450,
+      "BurstTime": 0,
+      "BurstNum": 0,
+      "MovePoint": [
+        64
+      ],
+      "ControlPoint": [
+        -1
+      ],
+      "MoveRate": [
+        0
+      ],
+      "AppearMovePoint": [
+        60,
+        63
+      ],
+      "AppearControlPoint": [
+        63
+      ],
+      "AppearMoveRate": [
+        0.008
+      ],
+      "ShootInterval": 500
+    },
+    {
+      "WaveNum": 4,
+      "AppearTime": 2000,
+      "Type": "NoAimingShootEnemy",
+      "AttackType": "Beam",
+      "AttackPetternID": 3,
+      "Radius": 3,
+      "AttackNum": 1,
+      "ExitTime": 450,
+      "BurstTime": 0,
+      "BurstNum": 0,
+      "MovePoint": [
+        79
+      ],
+      "ControlPoint": [
+        -1
+      ],
+      "MoveRate": [
+        0
+      ],
+      "AppearMovePoint": [
+        75,
+        78
+      ],
+      "AppearControlPoint": [
+        78
+      ],
+      "AppearMoveRate": [
+        0.008
+      ],
+      "ShootInterval": 500
+    },
+    {
+      "WaveNum": 4,
+      "AppearTime": 2000,
+      "Type": "NoAimingShootEnemy",
+      "AttackType": "Beam",
+      "AttackPetternID": 3,
+      "Radius": 3,
+      "AttackNum": 1,
+      "ExitTime": 450,
+      "BurstTime": 0,
+      "BurstNum": 0,
+      "MovePoint": [
+        139
+      ],
+      "ControlPoint": [
+        -1
+      ],
+      "MoveRate": [
+        0
+      ],
+      "AppearMovePoint": [
+        135,
+        138
+      ],
+      "AppearControlPoint": [
+        138
+      ],
+      "AppearMoveRate": [
+        0.008
+      ],
+      "ShootInterval": 500
+    },
+    {
+      "WaveNum": 4,
+      "AppearTime": 2000,
+      "Type": "NoAimingShootEnemy",
+      "AttackType": "Beam",
+      "AttackPetternID": 3,
+      "Radius": 3,
+      "AttackNum": 1,
+      "ExitTime": 450,
+      "BurstTime": 0,
+      "BurstNum": 0,
+      "MovePoint": [
+        154
+      ],
+      "ControlPoint": [
+        -1
+      ],
+      "MoveRate": [
+        0
+      ],
+      "AppearMovePoint": [
+        150,
+        153
+      ],
+      "AppearControlPoint": [
+        153
+      ],
+      "AppearMoveRate": [
+        0.008
+      ],
+      "ShootInterval": 500
+    },
+    {
+      "WaveNum": 4,
+      "AppearTime": 2000,
+      "Type": "AimingShootEnemy",
+      "AttackType": "Straight",
+      "AttackPetternID": 3,
+      "Radius": 3,
+      "AttackNum": 0,
+      "ExitTime": 0,
+      "BurstTime": 130,
+      "BurstNum": 2,
+      "MovePoint": [
+        56,
+        86,
+        84,
+        54
+      ],
+      "ControlPoint": [
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "MoveRate": [
+        0.004,
+        0.004,
+        0.004,
+        0.004
+      ],
+      "AppearMovePoint": [
+        14,
+        56
+      ],
+      "AppearControlPoint": [
+        56
+      ],
+      "AppearMoveRate": [
+        0.008
+      ],
+      "ShootInterval": 12
+    },
+    {
+      "WaveNum": 4,
+      "AppearTime": 2500,
+      "Type": "NoAimingShootEnemy",
+      "AttackType": "Beam",
+      "AttackPetternID": 2,
+      "Radius": 3,
+      "AttackNum": 1,
+      "ExitTime": 450,
+      "BurstTime": 0,
+      "BurstNum": 0,
+      "MovePoint": [
+        64
+      ],
+      "ControlPoint": [
+        -1
+      ],
+      "MoveRate": [
+        0
+      ],
+      "AppearMovePoint": [
+        0,
+        48
+      ],
+      "AppearControlPoint": [
+        48
+      ],
+      "AppearMoveRate": [
+        0.008
+      ],
+      "ShootInterval": 500
+    },
+    {
+      "WaveNum": 4,
+      "AppearTime": 2500,
+      "Type": "NoAimingShootEnemy",
+      "AttackType": "Beam",
+      "AttackPetternID": 0,
+      "Radius": 3,
+      "AttackNum": 1,
+      "ExitTime": 450,
+      "BurstTime": 0,
+      "BurstNum": 0,
+      "MovePoint": [
+        67
+      ],
+      "ControlPoint": [
+        -1
+      ],
+      "MoveRate": [
+        0
+      ],
+      "AppearMovePoint": [
+        7,
+        52
+      ],
+      "AppearControlPoint": [
+        52
+      ],
+      "AppearMoveRate": [
+        0.008
+      ],
+      "ShootInterval": 500
+    },
+    {
+      "WaveNum": 4,
+      "AppearTime": 2500,
+      "Type": "NoAimingShootEnemy",
+      "AttackType": "Beam",
+      "AttackPetternID": 1,
+      "Radius": 3,
+      "AttackNum": 1,
+      "ExitTime": 450,
+      "BurstTime": 0,
+      "BurstNum": 0,
+      "MovePoint": [
+        70
+      ],
+      "ControlPoint": [
+        -1
+      ],
+      "MoveRate": [
+        0
+      ],
+      "AppearMovePoint": [
+        14,
+        56
+      ],
+      "AppearControlPoint": [
+        56
+      ],
+      "AppearMoveRate": [
+        0.008
+      ],
+      "ShootInterval": 500
+    },
+    {
+      "WaveNum": 4,
+      "AppearTime": 2500,
+      "Type": "NoAimingShootEnemy",
+      "AttackType": "Beam",
+      "AttackPetternID": 3,
+      "Radius": 3,
+      "AttackNum": 1,
+      "ExitTime": 450,
+      "BurstTime": 0,
+      "BurstNum": 0,
+      "MovePoint": [
+        79
+      ],
+      "ControlPoint": [
+        -1
+      ],
+      "MoveRate": [
+        0
+      ],
+      "AppearMovePoint": [
+        75,
+        78
+      ],
+      "AppearControlPoint": [
+        78
+      ],
+      "AppearMoveRate": [
+        0.008
+      ],
+      "ShootInterval": 500
+    },
+    {
+      "WaveNum": 4,
+      "AppearTime": 2500,
+      "Type": "NoAimingShootEnemy",
+      "AttackType": "Beam",
+      "AttackPetternID": 3,
+      "Radius": 3,
+      "AttackNum": 1,
+      "ExitTime": 450,
+      "BurstTime": 0,
+      "BurstNum": 0,
+      "MovePoint": [
+        139
+      ],
+      "ControlPoint": [
+        -1
+      ],
+      "MoveRate": [
+        0
+      ],
+      "AppearMovePoint": [
+        135,
+        138
+      ],
+      "AppearControlPoint": [
+        138
+      ],
+      "AppearMoveRate": [
+        0.008
+      ],
+      "ShootInterval": 500
+    },
+    {
+      "WaveNum": 4,
+      "AppearTime": 2500,
+      "Type": "AimingShootEnemy",
+      "AttackType": "Straight",
+      "AttackPetternID": 3,
+      "Radius": 3,
+      "AttackNum": 0,
+      "ExitTime": 0,
+      "BurstTime": 130,
+      "BurstNum": 2,
+      "MovePoint": [
+        168,
+        138,
+        140,
+        170
+      ],
+      "ControlPoint": [
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "MoveRate": [
+        0.004,
+        0.004,
+        0.004,
+        0.004
+      ],
+      "AppearMovePoint": [
+        210,
+        168
+      ],
+      "AppearControlPoint": [
+        168
+      ],
+      "AppearMoveRate": [
+        0.008
+      ],
+      "ShootInterval": 12
+    },
+  
+  
+  
+  
+  
+      {
+      "WaveNum": 5,
+      "AppearTime": 0,
+      "Type": "AimingShootEnemy",
+      "AttackType": "Straight",
+      "AttackPetternID": 5,
+      "Radius": 3,
+      "AttackNum": 15,
+      "ExitTime": 200,
+      "BurstTime": 280,
+      "BurstNum": 3,
+      "MovePoint": [
+        67
+      ],
+      "ControlPoint": [
+        -1
+      ],
+      "MoveRate": [
+        0
+      ],
+      "AppearMovePoint": [
+        7,
+        52
+      ],
+      "AppearControlPoint": [
+        52
+      ],
+      "AppearMoveRate": [
+        0.008
+      ],
+      "ShootInterval": 10
+    },
+    {
+      "WaveNum": 5,
+      "AppearTime": 200,
+      "Type": "UniqueShootEnemy",
+      "AttackType": "Spread",
+      "AttackPetternID": 2,
+      "Radius": 3,
+      "AttackNum": 15,
+      "ExitTime": 200,
+      "BurstTime": 280,
+      "BurstNum": 3,
+      "MovePoint": [
+        108
+      ],
+      "ControlPoint": [
+        -1
+      ],
+      "MoveRate": [
+        0
+      ],
+      "AppearMovePoint": [
+        105,
+        108
+      ],
+      "AppearControlPoint": [
+        108
+      ],
+      "AppearMoveRate": [
+        0.008
+      ],
+      "ShootInterval": 10
+    },
+    {
+      "WaveNum": 5,
+      "AppearTime": 400,
+      "Type": "AimingShootEnemy",
+      "AttackType": "Straight",
+      "AttackPetternID": 5,
+      "Radius": 3,
+      "AttackNum": 12,
+      "ExitTime": 200,
+      "BurstTime": 280,
+      "BurstNum": 3,
+      "MovePoint": [
+        176
+      ],
+      "ControlPoint": [
+        -1
+      ],
+      "MoveRate": [
+        0
+      ],
+      "AppearMovePoint": [
+        224,
+        176
+      ],
+      "AppearControlPoint": [
+        176
+      ],
+      "AppearMoveRate": [
+        0.008
+      ],
+      "ShootInterval": 10
+    },
+    {
+      "WaveNum": 5,
+      "AppearTime": 600,
+      "Type": "UniqueShootEnemy",
+      "AttackType": "Spread",
+      "AttackPetternID": 2,
+      "Radius": 3,
+      "AttackNum": 9,
+      "ExitTime": 200,
+      "BurstTime": 280,
+      "BurstNum": 3,
+      "MovePoint": [
+        56
+      ],
+      "ControlPoint": [
+        -1
+      ],
+      "MoveRate": [
+        0
+      ],
+      "AppearMovePoint": [
+        14,
+        56
+      ],
+      "AppearControlPoint": [
+        56
+      ],
+      "AppearMoveRate": [
+        0.008
+      ],
+      "ShootInterval": 10
+    },
+    {
+      "WaveNum": 5,
+      "AppearTime": 800,
+      "Type": "AimingShootEnemy",
+      "AttackType": "Straight",
+      "AttackPetternID": 5,
+      "Radius": 3,
+      "AttackNum": 6,
+      "ExitTime": 200,
+      "BurstTime": 280,
+      "BurstNum": 3,
+      "MovePoint": [
+        168
+      ],
+      "ControlPoint": [
+        -1
+      ],
+      "MoveRate": [
+        0
+      ],
+      "AppearMovePoint": [
+        210,
+        168
+      ],
+      "AppearControlPoint": [
+        168
+      ],
+      "AppearMoveRate": [
+        0.008
+      ],
+      "ShootInterval": 10
+    },
+    {
+      "WaveNum": 5,
+      "AppearTime": 1000,
+      "Type": "UniqueShootEnemy",
+      "AttackType": "Spread",
+      "AttackPetternID": 2,
+      "Radius": 3,
+      "AttackNum": 3,
+      "ExitTime": 200,
+      "BurstTime": 280,
+      "BurstNum": 3,
+      "MovePoint": [
+        48
+      ],
+      "ControlPoint": [
+        -1
+      ],
+      "MoveRate": [
+        0
+      ],
+      "AppearMovePoint": [
+        0,
+        48
+      ],
+      "AppearControlPoint": [
+        48
+      ],
+      "AppearMoveRate": [
+        0.008
+      ],
+      "ShootInterval": 10
+    },
+    {
+      "WaveNum": 5,
+      "AppearTime": 1200,
+      "Type": "AimingShootEnemy",
+      "AttackType": "Straight",
+      "AttackPetternID": 5,
+      "Radius": 3,
+      "AttackNum": 3,
+      "ExitTime": 300,
+      "BurstTime": 100,
+      "BurstNum": 3,
+      "MovePoint": [
+        56,
+        45
+      ],
+      "ControlPoint": [
+        -1
+      ],
+      "MoveRate": [
+        0.006,
+        0
+      ],
+      "AppearMovePoint": [
+        59,
+        56
+      ],
+      "AppearControlPoint": [
+        -1
+      ],
+      "AppearMoveRate": [
+        0.01
+      ],
+      "ShootInterval": 5
+    },
+    {
+      "WaveNum": 5,
+      "AppearTime": 1200,
+      "Type": "UniqueShootEnemy",
+      "AttackType": "Spread",
+      "AttackPetternID": 5,
+      "Radius": 3,
+      "AttackNum": 3,
+      "ExitTime": 200,
+      "BurstTime": 100,
+      "BurstNum": 3,
+      "MovePoint": [
+        168,
+        179
+      ],
+      "ControlPoint": [
+        -1
+      ],
+      "MoveRate": [
+        0.006,
+        0
+      ],
+      "AppearMovePoint": [
+        165,
+        168
+      ],
+      "AppearControlPoint": [
+        -1
+      ],
+      "AppearMoveRate": [
+        0.01
+      ],
+      "ShootInterval": 5
+    },
+	    {
+      "WaveNum": 5,
+      "AppearTime": 1600,
+      "Type": "NoAimingShootEnemy",
+      "AttackType": "Beam",
+      "AttackPetternID": 12,
+      "Radius": 3,
+      "AttackNum": 1,
+      "ExitTime": 250,
+      "BurstTime": 0,
+      "BurstNum": 0,
+      "MovePoint": [
+        67
+      ],
+      "ControlPoint": [
+        -1
+      ],
+      "MoveRate": [
+        0
+      ],
+      "AppearMovePoint": [
+        7,
+        52
+      ],
+      "AppearControlPoint": [
+        52
+      ],
+      "AppearMoveRate": [
+        0.015
+      ],
+      "ShootInterval": 500
+    },
+    {
+      "WaveNum": 5,
+      "AppearTime": 1700,
+      "Type": "NoAimingShootEnemy",
+      "AttackType": "Beam",
+      "AttackPetternID": 10,
+      "Radius": 3,
+      "AttackNum": 1,
+      "ExitTime": 250,
+      "BurstTime": 0,
+      "BurstNum": 0,
+      "MovePoint": [
+        109
+      ],
+      "ControlPoint": [
+        -1
+      ],
+      "MoveRate": [
+        0
+      ],
+      "AppearMovePoint": [
+        105,
+        108
+      ],
+      "AppearControlPoint": [
+        108
+      ],
+      "AppearMoveRate": [
+        0.015
+      ],
+      "ShootInterval": 500
+    },
+    {
+      "WaveNum": 5,
+      "AppearTime": 1800,
+      "Type": "NoAimingShootEnemy",
+      "AttackType": "Beam",
+      "AttackPetternID": 13,
+      "Radius": 3,
+      "AttackNum": 1,
+      "ExitTime": 250,
+      "BurstTime": 0,
+      "BurstNum": 0,
+      "MovePoint": [
+        66
+      ],
+      "ControlPoint": [
+        -1
+      ],
+      "MoveRate": [
+        0
+      ],
+      "AppearMovePoint": [
+        10,
+        52
+      ],
+      "AppearControlPoint": [
+        52
+      ],
+      "AppearMoveRate": [
+        0.015
+      ],
+      "ShootInterval": 500
+    },
+    {
+      "WaveNum": 5,
+      "AppearTime": 1800,
+      "Type": "NoAimingShootEnemy",
+      "AttackType": "Beam",
+      "AttackPetternID": 13,
+      "Radius": 3,
+      "AttackNum": 1,
+      "ExitTime": 250,
+      "BurstTime": 0,
+      "BurstNum": 0,
+      "MovePoint": [
+        130
+      ],
+      "ControlPoint": [
+        -1
+      ],
+      "MoveRate": [
+        0
+      ],
+      "AppearMovePoint": [
+        74,
+        116
+      ],
+      "AppearControlPoint": [
+        116
+      ],
+      "AppearMoveRate": [
+        0.015
+      ],
+      "ShootInterval": 500
+    },
+    {
+      "WaveNum": 5,
+      "AppearTime": 1800,
+      "Type": "NoAimingShootEnemy",
+      "AttackType": "Beam",
+      "AttackPetternID": 10,
+      "Radius": 3,
+      "AttackNum": 1,
+      "ExitTime": 250,
+      "BurstTime": 0,
+      "BurstNum": 0,
+      "MovePoint": [
+        79
+      ],
+      "ControlPoint": [
+        -1
+      ],
+      "MoveRate": [
+        0
+      ],
+      "AppearMovePoint": [
+        75,
+        78
+      ],
+      "AppearControlPoint": [
+        78
+      ],
+      "AppearMoveRate": [
+        0.015
+      ],
+      "ShootInterval": 500
+    },
+    {
+      "WaveNum": 5,
+      "AppearTime": 1900,
+      "Type": "NoAimingShootEnemy",
+      "AttackType": "Beam",
+      "AttackPetternID": 11,
+      "Radius": 3,
+      "AttackNum": 1,
+      "ExitTime": 250,
+      "BurstTime": 0,
+      "BurstNum": 0,
+      "MovePoint": [
+        68
+      ],
+      "ControlPoint": [
+        -1
+      ],
+      "MoveRate": [
+        0
+      ],
+      "AppearMovePoint": [
+        4,
+        52
+      ],
+      "AppearControlPoint": [
+        52
+      ],
+      "AppearMoveRate": [
+        0.015
+      ],
+      "ShootInterval": 500
+    },
+    {
+      "WaveNum": 5,
+      "AppearTime": 1900,
+      "Type": "NoAimingShootEnemy",
+      "AttackType": "Beam",
+      "AttackPetternID": 11,
+      "Radius": 3,
+      "AttackNum": 1,
+      "ExitTime": 250,
+      "BurstTime": 0,
+      "BurstNum": 0,
+      "MovePoint": [
+        124
+      ],
+      "ControlPoint": [
+        -1
+      ],
+      "MoveRate": [
+        0
+      ],
+      "AppearMovePoint": [
+        60,
+        108
+      ],
+      "AppearControlPoint": [
+        108
+      ],
+      "AppearMoveRate": [
+        0.015
+      ],
+      "ShootInterval": 500
+    },
+    {
+      "WaveNum": 5,
+      "AppearTime": 1900,
+      "Type": "NoAimingShootEnemy",
+      "AttackType": "Beam",
+      "AttackPetternID": 14,
+      "Radius": 3,
+      "AttackNum": 1,
+      "ExitTime": 250,
+      "BurstTime": 0,
+      "BurstNum": 0,
+      "MovePoint": [
+        160
+      ],
+      "ControlPoint": [
+        -1
+      ],
+      "MoveRate": [
+        0
+      ],
+      "AppearMovePoint": [
+        164,
+        161
+      ],
+      "AppearControlPoint": [
+        161
+      ],
+      "AppearMoveRate": [
+        0.015
+      ],
+      "ShootInterval": 500
+    },
+    {
+      "WaveNum": 5,
+      "AppearTime": 2000,
+      "Type": "NoAimingShootEnemy",
+      "AttackType": "Beam",
+      "AttackPetternID": 11,
+      "Radius": 3,
+      "AttackNum": 1,
+      "ExitTime": 250,
+      "BurstTime": 0,
+      "BurstNum": 0,
+      "MovePoint": [
+        64
+      ],
+      "ControlPoint": [
+        -1
+      ],
+      "MoveRate": [
+        0
+      ],
+      "AppearMovePoint": [
+        0,
+        48
+      ],
+      "AppearControlPoint": [
+        48
+      ],
+      "AppearMoveRate": [
+        0.015
+      ],
+      "ShootInterval": 500
+    },
+    {
+      "WaveNum": 5,
+      "AppearTime": 2000,
+      "Type": "NoAimingShootEnemy",
+      "AttackType": "Beam",
+      "AttackPetternID": 13,
+      "Radius": 3,
+      "AttackNum": 1,
+      "ExitTime": 250,
+      "BurstTime": 0,
+      "BurstNum": 0,
+      "MovePoint": [
+        70
+      ],
+      "ControlPoint": [
+        -1
+      ],
+      "MoveRate": [
+        0
+      ],
+      "AppearMovePoint": [
+        14,
+        56
+      ],
+      "AppearControlPoint": [
+        56
+      ],
+      "AppearMoveRate": [
+        0.015
+      ],
+      "ShootInterval": 500
+    },
+    {
+      "WaveNum": 5,
+      "AppearTime": 2000,
+      "Type": "NoAimingShootEnemy",
+      "AttackType": "Beam",
+      "AttackPetternID": 12,
+      "Radius": 3,
+      "AttackNum": 1,
+      "ExitTime": 250,
+      "BurstTime": 0,
+      "BurstNum": 0,
+      "MovePoint": [
+        67
+      ],
+      "ControlPoint": [
+        -1
+      ],
+      "MoveRate": [
+        0
+      ],
+      "AppearMovePoint": [
+        7,
+        52
+      ],
+      "AppearControlPoint": [
+        52
+      ],
+      "AppearMoveRate": [
+        0.015
+      ],
+      "ShootInterval": 500
+    },
+    {
+      "WaveNum": 5,
+      "AppearTime": 2100,
+      "Type": "NoAimingShootEnemy",
+      "AttackType": "Beam",
+      "AttackPetternID": 11,
+      "Radius": 3,
+      "AttackNum": 1,
+      "ExitTime": 250,
+      "BurstTime": 0,
+      "BurstNum": 0,
+      "MovePoint": [
+        66
+      ],
+      "ControlPoint": [
+        -1
+      ],
+      "MoveRate": [
+        0
+      ],
+      "AppearMovePoint": [
+        2,
+        50
+      ],
+      "AppearControlPoint": [
+        50
+      ],
+      "AppearMoveRate": [
+        0.015
+      ],
+      "ShootInterval": 500
+    },
+    {
+      "WaveNum": 5,
+      "AppearTime": 2100,
+      "Type": "NoAimingShootEnemy",
+      "AttackType": "Beam",
+      "AttackPetternID": 12,
+      "Radius": 3,
+      "AttackNum": 1,
+      "ExitTime": 250,
+      "BurstTime": 0,
+      "BurstNum": 0,
+      "MovePoint": [
+        68
+      ],
+      "ControlPoint": [
+        -1
+      ],
+      "MoveRate": [
+        0
+      ],
+      "AppearMovePoint": [
+        8,
+        53
+      ],
+      "AppearControlPoint": [
+        53
+      ],
+      "AppearMoveRate": [
+        0.015
+      ],
+      "ShootInterval": 500
+    },
+    {
+      "WaveNum": 5,
+      "AppearTime": 2185,
+      "Type": "NoAimingShootEnemy",
+      "AttackType": "Beam",
+      "AttackPetternID": 9,
+      "Radius": 3,
+      "AttackNum": 1,
+      "ExitTime": 250,
+      "BurstTime": 0,
+      "BurstNum": 0,
+      "MovePoint": [
+        109
+      ],
+      "ControlPoint": [
+        -1
+      ],
+      "MoveRate": [
+        0
+      ],
+      "AppearMovePoint": [
+        165,
+        123
+      ],
+      "AppearControlPoint": [
+        123
+      ],
+      "AppearMoveRate": [
+        0.015
+      ],
+      "ShootInterval": 500
+    },
+    {
+      "WaveNum": 5,
+      "AppearTime": 2185,
+      "Type": "NoAimingShootEnemy",
+      "AttackType": "Beam",
+      "AttackPetternID": 13,
+      "Radius": 3,
+      "AttackNum": 1,
+      "ExitTime": 250,
+      "BurstTime": 0,
+      "BurstNum": 0,
+      "MovePoint": [
+        85
+      ],
+      "ControlPoint": [
+        -1
+      ],
+      "MoveRate": [
+        0
+      ],
+      "AppearMovePoint": [
+        29,
+        71
+      ],
+      "AppearControlPoint": [
+        71
+      ],
+      "AppearMoveRate": [
+        0.015
+      ],
+      "ShootInterval": 500
+    },
+    {
+      "WaveNum": 5,
+      "AppearTime": 2270,
+      "Type": "NoAimingShootEnemy",
+      "AttackType": "Beam",
+      "AttackPetternID": 14,
+      "Radius": 3,
+      "AttackNum": 1,
+      "ExitTime": 250,
+      "BurstTime": 0,
+      "BurstNum": 0,
+      "MovePoint": [
+        160
+      ],
+      "ControlPoint": [
+        -1
+      ],
+      "MoveRate": [
+        0
+      ],
+      "AppearMovePoint": [
+        164,
+        161
+      ],
+      "AppearControlPoint": [
+        161
+      ],
+      "AppearMoveRate": [
+        0.015
+      ],
+      "ShootInterval": 500
+    },
+    {
+      "WaveNum": 5,
+      "AppearTime": 2270,
+      "Type": "NoAimingShootEnemy",
+      "AttackType": "Beam",
+      "AttackPetternID": 10,
+      "Radius": 3,
+      "AttackNum": 1,
+      "ExitTime": 250,
+      "BurstTime": 0,
+      "BurstNum": 0,
+      "MovePoint": [
+        79
+      ],
+      "ControlPoint": [
+        -1
+      ],
+      "MoveRate": [
+        0
+      ],
+      "AppearMovePoint": [
+        75,
+        78
+      ],
+      "AppearControlPoint": [
+        78
+      ],
+      "AppearMoveRate": [
+        0.015
+      ],
+      "ShootInterval": 500
+    },
+    {
+      "WaveNum": 5,
+      "AppearTime": 2355,
+      "Type": "NoAimingShootEnemy",
+      "AttackType": "Beam",
+      "AttackPetternID": 15,
+      "Radius": 3,
+      "AttackNum": 1,
+      "ExitTime": 250,
+      "BurstTime": 0,
+      "BurstNum": 0,
+      "MovePoint": [
+        159
+      ],
+      "ControlPoint": [
+        -1
+      ],
+      "MoveRate": [
+        0
+      ],
+      "AppearMovePoint": [
+        223,
+        175
+      ],
+      "AppearControlPoint": [
+        175
+      ],
+      "AppearMoveRate": [
+        0.015
+      ],
+      "ShootInterval": 500
+    },
+    {
+      "WaveNum": 5,
+      "AppearTime": 2355,
+      "Type": "NoAimingShootEnemy",
+      "AttackType": "Beam",
+      "AttackPetternID": 12,
+      "Radius": 3,
+      "AttackNum": 1,
+      "ExitTime": 250,
+      "BurstTime": 0,
+      "BurstNum": 0,
+      "MovePoint": [
+        66
+      ],
+      "ControlPoint": [
+        -1
+      ],
+      "MoveRate": [
+        0
+      ],
+      "AppearMovePoint": [
+        6,
+        51
+      ],
+      "AppearControlPoint": [
+        51
+      ],
+      "AppearMoveRate": [
+        0.015
+      ],
+      "ShootInterval": 500
+    },
+    {
+      "WaveNum": 5,
+      "AppearTime": 2355,
+      "Type": "NoAimingShootEnemy",
+      "AttackType": "Beam",
+      "AttackPetternID": 12,
+      "Radius": 3,
+      "AttackNum": 1,
+      "ExitTime": 250,
+      "BurstTime": 0,
+      "BurstNum": 0,
+      "MovePoint": [
+        64
+      ],
+      "ControlPoint": [
+        -1
+      ],
+      "MoveRate": [
+        0
+      ],
+      "AppearMovePoint": [
+        4,
+        49
+      ],
+      "AppearControlPoint": [
+        49
+      ],
+      "AppearMoveRate": [
+        0.015
+      ],
+      "ShootInterval": 500
+    },
+    {
+      "WaveNum": 5,
+      "AppearTime": 2430,
+      "Type": "NoAimingShootEnemy",
+      "AttackType": "Beam",
+      "AttackPetternID": 21,
+      "Radius": 3,
+      "AttackNum": 1,
+      "ExitTime": 250,
+      "BurstTime": 0,
+      "BurstNum": 0,
+      "MovePoint": [
+        115
+      ],
+      "ControlPoint": [
+        -1
+      ],
+      "MoveRate": [
+        0
+      ],
+      "AppearMovePoint": [
+        59,
+        101
+      ],
+      "AppearControlPoint": [
+        101
+      ],
+      "AppearMoveRate": [
+        0.015
+      ],
+      "ShootInterval": 500
+    },
+    {
+      "WaveNum": 5,
+      "AppearTime": 2430,
+      "Type": "NoAimingShootEnemy",
+      "AttackType": "Beam",
+      "AttackPetternID": 23,
+      "Radius": 3,
+      "AttackNum": 1,
+      "ExitTime": 250,
+      "BurstTime": 0,
+      "BurstNum": 0,
+      "MovePoint": [
+        115
+      ],
+      "ControlPoint": [
+        -1
+      ],
+      "MoveRate": [
+        0
+      ],
+      "AppearMovePoint": [
+        179,
+        131
+      ],
+      "AppearControlPoint": [
+        131
+      ],
+      "AppearMoveRate": [
+        0.015
+      ],
+      "ShootInterval": 500
+    },
+    {
+      "WaveNum": 5,
+      "AppearTime": 2430,
+      "Type": "NoAimingShootEnemy",
+      "AttackType": "Beam",
+      "AttackPetternID": 22,
+      "Radius": 3,
+      "AttackNum": 1,
+      "ExitTime": 250,
+      "BurstTime": 0,
+      "BurstNum": 0,
+      "MovePoint": [
+        115
+      ],
+      "ControlPoint": [
+        -1
+      ],
+      "MoveRate": [
+        0
+      ],
+      "AppearMovePoint": [
+        119,
+        116
+      ],
+      "AppearControlPoint": [
+        116
+      ],
+      "AppearMoveRate": [
+        0.015
+      ],
+      "ShootInterval": 500
+    },
+    {
+      "WaveNum": 5,
+      "AppearTime": 2500,
+      "Type": "NoAimingShootEnemy",
+      "AttackType": "Beam",
+      "AttackPetternID": 19,
+      "Radius": 3,
+      "AttackNum": 1,
+      "ExitTime": 250,
+      "BurstTime": 0,
+      "BurstNum": 0,
+      "MovePoint": [
+        64
+      ],
+      "ControlPoint": [
+        -1
+      ],
+      "MoveRate": [
+        0
+      ],
+      "AppearMovePoint": [
+        0,
+        48
+      ],
+      "AppearControlPoint": [
+        48
+      ],
+      "AppearMoveRate": [
+        0.015
+      ],
+      "ShootInterval": 500
+    },
+    {
+      "WaveNum": 5,
+      "AppearTime": 2500,
+      "Type": "NoAimingShootEnemy",
+      "AttackType": "Beam",
+      "AttackPetternID": 19,
+      "Radius": 3,
+      "AttackNum": 1,
+      "ExitTime": 250,
+      "BurstTime": 0,
+      "BurstNum": 0,
+      "MovePoint": [
+        79
+      ],
+      "ControlPoint": [
+        -1
+      ],
+      "MoveRate": [
+        0
+      ],
+      "AppearMovePoint": [
+        15,
+        63
+      ],
+      "AppearControlPoint": [
+        63
+      ],
+      "AppearMoveRate": [
+        0.015
+      ],
+      "ShootInterval": 500
+    },
+    {
+      "WaveNum": 5,
+      "AppearTime": 2500,
+      "Type": "NoAimingShootEnemy",
+      "AttackType": "Beam",
+      "AttackPetternID": 18,
+      "Radius": 3,
+      "AttackNum": 1,
+      "ExitTime": 250,
+      "BurstTime": 0,
+      "BurstNum": 0,
+      "MovePoint": [
+        49
+      ],
+      "ControlPoint": [
+        -1
+      ],
+      "MoveRate": [
+        0
+      ],
+      "AppearMovePoint": [
+        45,
+        48
+      ],
+      "AppearControlPoint": [
+        48
+      ],
+      "AppearMoveRate": [
+        0.015
+      ],
+      "ShootInterval": 500
+    },
+    {
+      "WaveNum": 5,
+      "AppearTime": 2500,
+      "Type": "NoAimingShootEnemy",
+      "AttackType": "Beam",
+      "AttackPetternID": 18,
+      "Radius": 3,
+      "AttackNum": 1,
+      "ExitTime": 250,
+      "BurstTime": 0,
+      "BurstNum": 0,
+      "MovePoint": [
+        64
+      ],
+      "ControlPoint": [
+        -1
+      ],
+      "MoveRate": [
+        0
+      ],
+      "AppearMovePoint": [
+        60,
+        63
+      ],
+      "AppearControlPoint": [
+        63
+      ],
+      "AppearMoveRate": [
+        0.015
+      ],
+      "ShootInterval": 500
+    },
+    {
+      "WaveNum": 5,
+      "AppearTime": 2570,
+      "Type": "NoAimingShootEnemy",
+      "AttackType": "Beam",
+      "AttackPetternID": 20,
+      "Radius": 3,
+      "AttackNum": 1,
+      "ExitTime": 250,
+      "BurstTime": 0,
+      "BurstNum": 0,
+      "MovePoint": [
+        64
+      ],
+      "ControlPoint": [
+        -1
+      ],
+      "MoveRate": [
+        0
+      ],
+      "AppearMovePoint": [
+        4,
+        49
+      ],
+      "AppearControlPoint": [
+        49
+      ],
+      "AppearMoveRate": [
+        0.015
+      ],
+      "ShootInterval": 500
+    },
+    {
+      "WaveNum": 5,
+      "AppearTime": 2570,
+      "Type": "NoAimingShootEnemy",
+      "AttackType": "Beam",
+      "AttackPetternID": 20,
+      "Radius": 3,
+      "AttackNum": 1,
+      "ExitTime": 250,
+      "BurstTime": 0,
+      "BurstNum": 0,
+      "MovePoint": [
+        65
+      ],
+      "ControlPoint": [
+        -1
+      ],
+      "MoveRate": [
+        0
+      ],
+      "AppearMovePoint": [
+        5,
+        50
+      ],
+      "AppearControlPoint": [
+        50
+      ],
+      "AppearMoveRate": [
+        0.015
+      ],
+      "ShootInterval": 500
+    },
+    {
+      "WaveNum": 5,
+      "AppearTime": 2640,
+      "Type": "NoAimingShootEnemy",
+      "AttackType": "Beam",
+      "AttackPetternID": 20,
+      "Radius": 3,
+      "AttackNum": 1,
+      "ExitTime": 250,
+      "BurstTime": 0,
+      "BurstNum": 0,
+      "MovePoint": [
+        67
+      ],
+      "ControlPoint": [
+        -1
+      ],
+      "MoveRate": [
+        0
+      ],
+      "AppearMovePoint": [
+        7,
+        52
+      ],
+      "AppearControlPoint": [
+        52
+      ],
+      "AppearMoveRate": [
+        0.015
+      ],
+      "ShootInterval": 500
+    },
+    {
+      "WaveNum": 5,
+      "AppearTime": 2640,
+      "Type": "NoAimingShootEnemy",
+      "AttackType": "Beam",
+      "AttackPetternID": 21,
+      "Radius": 3,
+      "AttackNum": 1,
+      "ExitTime": 250,
+      "BurstTime": 0,
+      "BurstNum": 0,
+      "MovePoint": [
+        70
+      ],
+      "ControlPoint": [
+        -1
+      ],
+      "MoveRate": [
+        0
+      ],
+      "AppearMovePoint": [
+        14,
+        56
+      ],
+      "AppearControlPoint": [
+        56
+      ],
+      "AppearMoveRate": [
+        0.015
+      ],
+      "ShootInterval": 500
+    },
+    {
+      "WaveNum": 5,
+      "AppearTime": 2640,
+      "Type": "NoAimingShootEnemy",
+      "AttackType": "Beam",
+      "AttackPetternID": 22,
+      "Radius": 3,
+      "AttackNum": 1,
+      "ExitTime": 250,
+      "BurstTime": 0,
+      "BurstNum": 0,
+      "MovePoint": [
+        115
+      ],
+      "ControlPoint": [
+        -1
+      ],
+      "MoveRate": [
+        0
+      ],
+      "AppearMovePoint": [
+        119,
+        116
+      ],
+      "AppearControlPoint": [
+        116
+      ],
+      "AppearMoveRate": [
+        0.015
+      ],
+      "ShootInterval": 500
+    },
+    {
+      "WaveNum": 5,
+      "AppearTime": 2640,
+      "Type": "NoAimingShootEnemy",
+      "AttackType": "Beam",
+      "AttackPetternID": 19,
+      "Radius": 3,
+      "AttackNum": 1,
+      "ExitTime": 250,
+      "BurstTime": 0,
+      "BurstNum": 0,
+      "MovePoint": [
+        64
+      ],
+      "ControlPoint": [
+        -1
+      ],
+      "MoveRate": [
+        0
+      ],
+      "AppearMovePoint": [
+        0,
+        48
+      ],
+      "AppearControlPoint": [
+        48
+      ],
+      "AppearMoveRate": [
+        0.015
+      ],
+      "ShootInterval": 500
+    },
+    {
+      "WaveNum": 5,
+      "AppearTime": 2640,
+      "Type": "NoAimingShootEnemy",
+      "AttackType": "Beam",
+      "AttackPetternID": 18,
+      "Radius": 3,
+      "AttackNum": 1,
+      "ExitTime": 250,
+      "BurstTime": 0,
+      "BurstNum": 0,
+      "MovePoint": [
+        49
+      ],
+      "ControlPoint": [
+        -1
+      ],
+      "MoveRate": [
+        0
+      ],
+      "AppearMovePoint": [
+        45,
+        48
+      ],
+      "AppearControlPoint": [
+        48
+      ],
+      "AppearMoveRate": [
+        0.015
+      ],
+      "ShootInterval": 500
+    },
+    {
+      "WaveNum": 5,
+      "AppearTime": 2640,
+      "Type": "NoAimingShootEnemy",
+      "AttackType": "Beam",
+      "AttackPetternID": 18,
+      "Radius": 3,
+      "AttackNum": 1,
+      "ExitTime": 250,
+      "BurstTime": 0,
+      "BurstNum": 0,
+      "MovePoint": [
+        169
+      ],
+      "ControlPoint": [
+        -1
+      ],
+      "MoveRate": [
+        0
+      ],
+      "AppearMovePoint": [
+        165,
+        168
+      ],
+      "AppearControlPoint": [
+        168
+      ],
+      "AppearMoveRate": [
+        0.015
+      ],
+      "ShootInterval": 500
+    },
+    {
+      "WaveNum": 5,
+      "AppearTime": 2640,
+      "Type": "NoAimingShootEnemy",
+      "AttackType": "Beam",
+      "AttackPetternID": 20,
+      "Radius": 3,
+      "AttackNum": 1,
+      "ExitTime": 250,
+      "BurstTime": 0,
+      "BurstNum": 0,
+      "MovePoint": [
+        63
+      ],
+      "ControlPoint": [
+        -1
+      ],
+      "MoveRate": [
+        0
+      ],
+      "AppearMovePoint": [
+        3,
+        48
+      ],
+      "AppearControlPoint": [
+        48
+      ],
+      "AppearMoveRate": [
+        0.015
+      ],
+      "ShootInterval": 500
+    },
+    {
+      "WaveNum": 5,
+      "AppearTime": 2640,
+      "Type": "NoAimingShootEnemy",
+      "AttackType": "Beam",
+      "AttackPetternID": 20,
+      "Radius": 3,
+      "AttackNum": 1,
+      "ExitTime": 250,
+      "BurstTime": 0,
+      "BurstNum": 0,
+      "MovePoint": [
+        71
+      ],
+      "ControlPoint": [
+        -1
+      ],
+      "MoveRate": [
+        0
+      ],
+      "AppearMovePoint": [
+        11,
+        56
+      ],
+      "AppearControlPoint": [
+        52
+      ],
+      "AppearMoveRate": [
+        0.015
+      ],
+      "ShootInterval": 500
+    }
   
   
   ],

@@ -24,8 +24,6 @@ namespace EnemyData
 
     //  最初に発射し始めるまでの追加時間
     const float FIRST_SHOOT_TIME_ADD = 50.0f;
-    //  再開時に発射し始めるまでの追加時間
-    const float RESTART_SHOOT_TIME_ADD = 50.0f;
 
     //  角度計算の基準となる角度
     //  NOTE: オブジェクトがZ平面の正の方向を向いている角度を基準としているので、その方向の単位ベクトルとして{0,0,1.0f}を使用

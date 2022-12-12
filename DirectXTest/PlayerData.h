@@ -4,7 +4,7 @@
 namespace PlayerData
 {
     //  ステージのサイズ
-    static const float MAP_SIZE = 160.0f;
+    static const float MAP_SIZE = 144.0f;
 
     //  無敵時の点滅間隔
     static const float INVINCIBLE_FLASHING_INTERVAL = 8.0f;

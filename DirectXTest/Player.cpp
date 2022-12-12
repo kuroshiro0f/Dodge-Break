@@ -1,6 +1,7 @@
 #include "Player.h"
 
 #include "CollisionType.h"
+#include "ObjectTagName.h"
 #include "PlayerData.h"
 #include "EnemyType.h"
 #include "Energy.h"
@@ -23,6 +24,7 @@
 #include "EffekseerManager.h"
 #include "Sound.h"
 #include "LoadJson.h"
+#include "UserInputHandler.h"
 
 #if _DEBUG
 #include "DataReLoader.h"
@@ -36,6 +38,7 @@ Player::Player()
     , m_effect(Singleton<EffekseerManager>::GetInstance())
     , m_sound(Singleton<Sound>::GetInstance())
     , m_model(Singleton<PMDModel>::GetInstance())
+    , m_userInputHandler(Singleton<UserInputHandler>::GetInstance())
     , m_mouse(new Mouse())
     , m_appearTimer(new Timer())
     , m_invincibleTimer(new Timer())
@@ -88,7 +91,10 @@ Player::~Player()
 void Player::Init(const std::function <void()> _gameOver, const std::shared_ptr<class EventNotificator> _eventClass, const std::shared_ptr<class EnemyDefeaterMapper> _enemyDefeaterMapperClass)
 {
     //  衝突判定に登録
-    CollisionObject::Init(CollisionType::Player);
+    CollisionObject::Init(CollisionType::Sphere, ObjectTagName::Player);
+
+    //  球状オブジェクトであるため、球状オブジェクトのデータを使用
+    m_sphereData = new SphereData();
 
     //  イベント通知クラスのインスタンスを取得
     m_eventClass = _eventClass;
@@ -121,11 +127,8 @@ void Player::Init(const std::function <void()> _gameOver, const std::shared_ptr<
     //  マウスの初期化
     m_mouse->Init();
 
-    //  モデルを描画するための設定
-    m_model.SetUp(2);
-
     //  半径の初期化
-    m_radius = m_param.radius;
+    m_sphereData->radius = m_param.radius;
 }
 
 //  値のリセット
@@ -154,6 +157,9 @@ void Player::Reset()
     m_dodgeEffectHandle = 0;
     m_damageEffectHandle = 0;
     m_exitEffectHandle = 0;
+
+    //  入力検知時の命令を登録
+    m_userInputHandler.RegisterOperation(UserInputHandler::OperationType::MovePlayer, std::bind(&Player::Move, this));
 
     //  回避回数カウントのリセット
     m_dodgeNum = 0;
@@ -218,13 +224,19 @@ void Player::Restart()
 void Player::OnCollisionEnter(const CollisionObject& _class)
 {
     //  衝突相手のタイプによって処理を分岐
-    switch (_class.GetType())
+    switch (_class.GetObjectTagName())
     {
-    case CollisionType::Enemy:
+    case ObjectTagName::Enemy:
         //  残機を減らす
         ReduceLife();
         break;
-    case CollisionType::EnemyAttack:
+    case ObjectTagName::EnemyAttack:
+        //  残機を減らす
+        ReduceLife();
+        //  回避失敗
+        m_dodgeRange->DodgeFailed(_class);
+        break;
+    case ObjectTagName::BeamAttack:
         //  残機を減らす
         ReduceLife();
         //  回避失敗
@@ -251,16 +263,11 @@ void Player::Update(const XMFLOAT3& _mapSize, const float _deltaTime)
 {
     //  デルタタイムを更新
     m_deltaTime = _deltaTime;
+
     if (m_isDisplay)
     {
         //  マウスの更新
         m_mouse->Update();
-
-        if (m_deltaTime != 0)
-        {
-            //  移動
-            Move();
-        }
 
         //  無敵時間の判定を行う
         UpdateInvincibleTime();
@@ -419,45 +426,31 @@ void Player::Exit(const float _deltaTime)
 //  移動
 void Player::Move()
 {
-    //  使いまわす変数を格納
-    float mousePosX = m_mouse->GetMouseWorldPos().x;
-    float actualRadius = m_param.actualRadius;
-    float moveSpeed = m_param.maxSpeed;
-
-    //  最高速度を決定
-    if (XMFLOATHelper::XMFLOAT3Distance(m_pos, m_mouse->GetMouseWorldPos()) >= moveSpeed + actualRadius)
+    //  出現中かつ移動を行う場合のみ処理を行う
+    if (m_isDisplay && m_deltaTime != 0 && (m_userInputHandler.GetInputStrengthX() != 0 || m_userInputHandler.GetInputStrengthY() != 0))
     {
-        //  プレイヤーからマウスへの単位ベクトル
-        m_vec = XMFLOATHelper::XMFLOAT3Normalize(m_pos, m_mouse->GetMouseWorldPos());
+        //  進行方向の座標を得る
+        XMFLOAT3 destinationPos = XMFLOATHelper::XMFLOAT3Add(m_pos, { m_userInputHandler.GetInputStrengthX(),0,m_userInputHandler.GetInputStrengthY() });
+        //  進行方向の正規化されたベクトルを取得
+        m_vec = XMFLOATHelper::XMFLOAT3Normalize(m_pos, destinationPos);
 
+        //  使いまわす変数を格納
+        float moveSpeed = m_param.maxSpeed;
+        float vecX = m_vec.x;
+        float vecZ = m_vec.z;
+ 
         //  速度をもとに座標を変更する
-        m_pos.x += m_vec.x * moveSpeed * m_deltaTime;
-        m_pos.z += m_vec.z * moveSpeed * m_deltaTime;
+        m_pos.x += vecX * moveSpeed * m_deltaTime;
+        m_pos.z += vecZ * moveSpeed * m_deltaTime;
+
+        //if (m_pos.x == -nan(ind))
+        //{
+        //    float a = 0;
+        //}
 
         //  プレイヤーの角度の計算
         //  NOTE: オブジェクトがZ平面の正の方向を向いている角度を基準としているので、その方向の単位ベクトルとして{0,0,1.0f}を使用
-        if (mousePosX >= m_pos.x)
-        {
-            m_angle = XMFLOATHelper::XMFLOAT3Angle({ 0,0,1.0f }, m_vec);
-        }
-        else
-        {
-            m_angle = -XMFLOATHelper::XMFLOAT3Angle({ 0,0,1.0f }, m_vec);
-        }
-    }
-    //  プレイヤーの先端がマウスポインタの位置に置かれるように移動
-    else if (XMFLOATHelper::XMFLOAT3Distance(m_pos, m_mouse->GetMouseWorldPos()) >= actualRadius)
-    {
-        //  プレイヤーからマウスへの単位ベクトル
-        m_vec = XMFLOATHelper::XMFLOAT3Normalize(m_pos, m_mouse->GetMouseWorldPos());
-
-        //  マウスポインタの位置にプレイヤーの先端が位置するように、プレイヤーの座標を調整
-        m_pos.x = mousePosX - m_vec.x * actualRadius;
-        m_pos.z = m_mouse->GetMouseWorldPos().z - m_vec.z * actualRadius;
-
-        //  プレイヤーの角度の計算
-        //  NOTE: オブジェクトがZ平面の正の方向を向いている角度を基準としているので、その方向の単位ベクトルとして{0,0,1.0f}を使用
-        if (mousePosX >= m_pos.x)
+        if (vecX > 0)
         {
             m_angle = XMFLOATHelper::XMFLOAT3Angle({ 0,0,1.0f }, m_vec);
         }

@@ -45,8 +45,6 @@ public:
 
     //  攻撃の停止
     void StopAttack();
-    //  攻撃の再開
-    void RestartAttack();
 
     //  エネミーの種類のゲッター
     EnemyType GetEnemyType()const;

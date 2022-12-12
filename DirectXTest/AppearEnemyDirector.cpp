@@ -10,7 +10,6 @@
 #include "MapChipType.h"
 #include "StageData.h"
 #include "Timer.h"
-#include "RestartData.h"
 #include "EventNotificator.h"
 #include "EventType.h"
 
@@ -26,8 +25,6 @@ AppearEnemyDirector::AppearEnemyDirector()
     :m_json(Singleton<LoadJson>::GetInstance())
     , m_appearTimer(new Timer())
     , m_appearWaveNum(0)
-    , m_extendCount(0)
-    , m_extendTime(0)
     , m_activateEnemyDefeater(nullptr)
     , m_appearEnemy(nullptr)
     , m_appearCount(0)
@@ -67,10 +64,6 @@ void AppearEnemyDirector::Init(const std::function <void(const std::vector<struc
 
     //  データをロード
     Load();
-
-    //  プレイヤーの被弾時にエネミーの出現時間を延長するように関数を登録
-    _eventClass->Register(EventType::DamagePlayer, std::bind(&AppearEnemyDirector::ExtendAppearTime, this));
-
     //  ファイルをロードする関数を、
     //  データの再読み込みを行うクラスに渡す
 #if _DEBUG
@@ -89,10 +82,6 @@ void AppearEnemyDirector::Reset()
     m_appearTimer->Reset();
     //  出現予定エネミーのリセット
     m_appearEnemyData.clear();
-    //  延長回数をリセット
-    m_extendCount = 0;
-    //  延長時間をリセット
-    m_extendTime = 0;
 #if _DEBUG
     //  再開時間のリセット
     m_restartTime = 0;
@@ -121,10 +110,6 @@ void AppearEnemyDirector::Start(int _groupNum)
         m_appearCount++;
     }
 #endif
-    //  延長回数をリセット
-    m_extendCount = 0;
-    //  延長時間をリセット
-    m_extendTime = 0;
 }
 
 //  更新
@@ -138,13 +123,8 @@ void AppearEnemyDirector::Update()
         m_appearEnemy(m_appearEnemyData);
         m_appearEnemyData.clear();
     }
-}
-
-//  出現時間の延長
-void AppearEnemyDirector::ExtendAppearTime()
-{
-    m_extendCount++;
-    m_extendTime = m_extendCount * (RestartData::RETURN_TIME + RestartData::RESTART_TIME);
+    //  塔を起動させる
+    m_activateEnemyDefeater();
 }
 
 #if _DEBUG
@@ -239,7 +219,7 @@ void AppearEnemyDirector::DecideAppearEnemy()
         return;
     }
 #if _DEBUG
-    if (m_appearTimer->GetElapseTime() + m_restartTime >= m_enemyData[m_appearCount]->appearTime + m_extendTime && m_enemyData[m_appearCount]->waveNum == m_appearWaveNum)
+    if (m_appearTimer->GetElapseTime() + m_restartTime >= m_enemyData[m_appearCount]->appearTime && m_enemyData[m_appearCount]->waveNum == m_appearWaveNum)
     {
         auto a = m_appearTimer->GetElapseTime();
         m_appearEnemyData.emplace_back(m_enemyData[m_appearCount++]);
@@ -247,7 +227,7 @@ void AppearEnemyDirector::DecideAppearEnemy()
         DecideAppearEnemy();
     }
 #else
-    if (m_appearTimer->GetElapseTime() >= m_enemyData[m_appearCount]->appearTime + m_extendTime && m_enemyData[m_appearCount]->waveNum == m_appearWaveNum)
+    if (m_appearTimer->GetElapseTime() >= m_enemyData[m_appearCount]->appearTime && m_enemyData[m_appearCount]->waveNum == m_appearWaveNum)
     {
         auto a = m_appearTimer->GetElapseTime();
         m_appearEnemyData.emplace_back(m_enemyData[m_appearCount++]);
@@ -255,8 +235,6 @@ void AppearEnemyDirector::DecideAppearEnemy()
         DecideAppearEnemy();
     }
 #endif
-    //  塔を起動させる
-    m_activateEnemyDefeater();
 }
 
 //  出現させるエネミーのデータを設定する
@@ -305,6 +283,10 @@ AppearEnemyData AppearEnemyDirector::SetUpEnemyData(int _enemyNum)
     else if (attackTypeString == "Line")
     {
         retData.enemyAttackType = EnemyAttackType::Line;
+    }
+    else if (attackTypeString == "Beam")
+    {
+        retData.enemyAttackType = EnemyAttackType::Beam;
     }
 
     //  攻撃のパターンIDを設定

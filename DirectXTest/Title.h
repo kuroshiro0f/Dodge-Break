@@ -21,9 +21,20 @@ public:
 
     //  BGMの再生開始
     void StartBGM();
+
+    //  次へ進む
+    void ToNext();
 private:
-    //  クリックされたか
-    bool m_isClick;
+    //  タイトルシーンの状態
+    enum class TitleState
+    {
+        Play,       //  タイトルシーン再生中
+        PressButton,        //  ボタンが押された
+        ReadyToChangeScene, //  シーン遷移の準備
+
+        None
+    };
+    TitleState m_state;
 
     //  再生するBGMのハンドル
     int m_bgmHandle;
@@ -37,5 +48,4 @@ private:
     //  シングルトンクラスへの参照
     class SceneController& m_sceneController;   //  シーンの管理  
     class Sound& m_sound;       //  音の管理
-    class KeyBoard& m_keyboard; //  キーの入力検知
 };

@@ -1,0 +1,245 @@
+{
+  "TotalNum": 20,
+  "BeamAttackData": [
+    {
+      "ID": 0,
+      "AliveTime": 400,
+	  "PlaySpeed": 1,
+      "ChargeTime": 140,
+      "ShootAngle": 1,
+      "Speed": 0,
+      "LengthMax": 600,
+      "Thickness": 6.5
+    },
+	{
+      "ID": 1,
+      "AliveTime": 400,
+	  "PlaySpeed": 1,
+      "ChargeTime": 140,
+      "ShootAngle": 0.75,
+      "Speed": 0,
+      "LengthMax": 600,
+      "Thickness": 6.5
+    },
+	{
+      "ID": 2,
+      "AliveTime": 400,
+	  "PlaySpeed": 1,
+      "ChargeTime": 140,
+      "ShootAngle": 1.25,
+      "Speed": 0,
+      "LengthMax": 600,
+      "Thickness": 6.5
+    },
+	{
+      "ID": 3,
+      "AliveTime": 400,
+	  "PlaySpeed": 1,
+      "ChargeTime": 140,
+      "ShootAngle": 1.5,
+      "Speed": 0,
+      "LengthMax": 600,
+      "Thickness": 6.5
+    },
+	{
+      "ID": 4,
+      "AliveTime": 600,
+	  "PlaySpeed": 0.5,
+      "ChargeTime": 280,
+      "ShootAngle": 1,
+      "Speed": 0,
+      "LengthMax": 600,
+      "Thickness": 6.5
+    },
+	{
+      "ID": 5,
+      "AliveTime": 300,
+	  "PlaySpeed": 1.5,
+      "ChargeTime": 105,
+      "ShootAngle": 1,
+      "Speed": 0,
+      "LengthMax": 600,
+      "Thickness": 6.5
+    },
+	{
+      "ID": 6,
+      "AliveTime": 400,
+	  "PlaySpeed": 1,
+      "ChargeTime": 140,
+      "ShootAngle": 0.75,
+      "Speed": 0,
+      "LengthMax": 600,
+      "Thickness": 6.5
+    },
+	{
+      "ID": 7,
+      "AliveTime": 400,
+	  "PlaySpeed": 1,
+      "ChargeTime": 140,
+      "ShootAngle": 1.25,
+      "Speed": 0,
+      "LengthMax": 600,
+      "Thickness": 6.5
+    },
+	{
+      "ID": 8,
+      "AliveTime": 300,
+	  "PlaySpeed": 1.5,
+      "ChargeTime": 105,
+      "ShootAngle": 0,
+      "Speed": 0,
+      "LengthMax": 600,
+      "Thickness": 6.5
+    },
+	{
+      "ID": 9,
+      "AliveTime": 300,
+	  "PlaySpeed": 1.5,
+      "ChargeTime": 105,
+      "ShootAngle": 1.75,
+      "Speed": 0,
+      "LengthMax": 600,
+      "Thickness": 6.5
+    },
+	{
+      "ID": 10,
+      "AliveTime": 300,
+	  "PlaySpeed": 1.5,
+      "ChargeTime": 105,
+      "ShootAngle": 1.5,
+      "Speed": 0,
+      "LengthMax": 600,
+      "Thickness": 6.5
+    },
+	{
+      "ID": 11,
+      "AliveTime": 300,
+	  "PlaySpeed": 1.5,
+      "ChargeTime": 105,
+      "ShootAngle": 1.25,
+      "Speed": 0,
+      "LengthMax": 600,
+      "Thickness": 6.5
+    },
+	{
+      "ID": 12,
+      "AliveTime": 300,
+	  "PlaySpeed": 1.5,
+      "ChargeTime": 105,
+      "ShootAngle": 1,
+      "Speed": 0,
+      "LengthMax": 600,
+      "Thickness": 6.5
+    },
+	{
+      "ID": 13,
+      "AliveTime": 300,
+	  "PlaySpeed": 1.5,
+      "ChargeTime": 105,
+      "ShootAngle": 0.75,
+      "Speed": 0,
+      "LengthMax": 600,
+      "Thickness": 6.5
+    },
+	{
+      "ID": 14,
+      "AliveTime": 300,
+	  "PlaySpeed": 1.5,
+      "ChargeTime": 105,
+      "ShootAngle": 0.5,
+      "Speed": 0,
+      "LengthMax": 600,
+      "Thickness": 6.5
+    },
+	{
+      "ID": 15,
+      "AliveTime": 300,
+	  "PlaySpeed": 1.5,
+      "ChargeTime": 105,
+      "ShootAngle": 0.25,
+      "Speed": 0,
+      "LengthMax": 600,
+      "Thickness": 6.5
+    },
+	{
+      "ID": 16,
+      "AliveTime": 250,
+	  "PlaySpeed": 1.7,
+      "ChargeTime": 91,
+      "ShootAngle": 0,
+      "Speed": 0,
+      "LengthMax": 600,
+      "Thickness": 6.5
+    },
+	{
+      "ID": 17,
+      "AliveTime": 250,
+	  "PlaySpeed": 1.7,
+      "ChargeTime": 91,
+      "ShootAngle": 1.75,
+      "Speed": 0,
+      "LengthMax": 600,
+      "Thickness": 6.5
+    },
+	{
+      "ID": 18,
+      "AliveTime": 250,
+	  "PlaySpeed": 1.7,
+      "ChargeTime": 91,
+      "ShootAngle": 1.5,
+      "Speed": 0,
+      "LengthMax": 600,
+      "Thickness": 6.5
+    },
+	{
+      "ID": 19,
+      "AliveTime": 250,
+	  "PlaySpeed": 1.7,
+      "ChargeTime": 91,
+      "ShootAngle": 1.25,
+      "Speed": 0,
+      "LengthMax": 600,
+      "Thickness": 6.5
+    },
+	{
+      "ID": 20,
+      "AliveTime": 250,
+	  "PlaySpeed": 1.7,
+      "ChargeTime": 91,
+      "ShootAngle": 1,
+      "Speed": 0,
+      "LengthMax": 600,
+      "Thickness": 6.5
+    },
+	{
+      "ID": 21,
+      "AliveTime": 250,
+	  "PlaySpeed": 1.7,
+      "ChargeTime": 91,
+      "ShootAngle": 0.75,
+      "Speed": 0,
+      "LengthMax": 600,
+      "Thickness": 6.5
+    },
+	{
+      "ID": 22,
+      "AliveTime": 250,
+	  "PlaySpeed": 1.7,
+      "ChargeTime": 91,
+      "ShootAngle": 0.5,
+      "Speed": 0,
+      "LengthMax": 600,
+      "Thickness": 6.5
+    },
+	{
+      "ID": 23,
+      "AliveTime": 250,
+	  "PlaySpeed": 1.7,
+      "ChargeTime": 91,
+      "ShootAngle": 0.25,
+      "Speed": 0,
+      "LengthMax": 600,
+      "Thickness": 6.5
+    }
+  ]
+}

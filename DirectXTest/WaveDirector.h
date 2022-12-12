@@ -24,9 +24,6 @@ public:
     //  更新
     void Update();
 
-    //  ウェーブを延長する
-    void ExtendWave();
-
     //  生存時間を得る
     float GetAliveTime();
 
@@ -44,10 +41,6 @@ private:
     //  ウェーブ間のインターバル中か
     bool m_isInterval;
 
-    //  今回のウェーブの延長回数
-    int m_extendNum;
-    //  ウェーブの延長時間
-    float m_extendTime;
     //  生存時間
     //  NOTE: 延長時間とインターバルを除いた値をカウント
     float m_aliveTime;

@@ -29,6 +29,34 @@ public:
     //  BGMの再生開始
     void StartBGM();
 
+    //  タイトルへ移行
+    //  NOTE: ゲームオーバー時の処理
+    void ChangeTitle();
+    //  ゲームシーンへ移行
+    //  NOTE: ゲームオーバー時の処理
+    void RetryGameScene();
+
+#if _DEBUG
+    //  ゲームの一時停止
+    //  NOTE: 現在の仕様ではゲーム内のオブジェクトの動きを止めるだけで、
+    //        ゲームそのものの経過時間を止めることはできないため、
+    //        一時停止しても、時間が経過すれば新しいエネミーが登場します。
+    //        そのため、デバッグ専用の機能としております。
+    void Pause();
+
+    //  一時停止中にRestartボタンを押したらゲームを再開
+    void Restart();
+
+    //  チェックポイントからゲームシーンを再開
+    //  次のチェックポイントへ
+    void RestartNextCheckPoint();
+    //  前のチェックポイントへ
+    void RestartPrevCheckPoint();
+
+    //  jsonファイルの再読み込み
+    void ReloadFile();
+#endif
+
     //  スコアを得るためのクラスのインスタンスを返す
     class IScoreGetter* GetScoreGetter();
 private:
@@ -44,15 +72,16 @@ private:
     //  ゲームオーバー時の処理
     void GameOver();
 
-#if _DEBUG
-    //  デバッグ用の更新処理を行う
-    //  NOTE: デバッグ時に行う処理のみをまとめて、
-    //        Update関数で呼ぶ
-    void DebugUpdate();
-    //  チェックポイントからゲームシーンを再開
-    void RestartNextCheckPoint();
-    void RestartPrevCheckPoint();
-#endif
+    //  ゲームオーバー時の処理の状態
+    enum class GameOverState
+    {
+        DisplayScore,   //  スコア表示
+        ChangeTitle,    //  タイトルへ移行
+        RetryGameScene, //  ゲームシーンやり直し
+
+        None
+    };
+    GameOverState m_gameOverState;
 
     //  再生するBGMのハンドル
     int m_bgmHandle;
@@ -104,6 +133,6 @@ private:
     class SceneController& m_sceneController;   //  シーンの管理を行う
     class Sound& m_sound;       //  音の管理を行う
     class CollisionManager& m_collision;    //  衝突判定を行う
+    class UserInputHandler& m_userInputHandler; //  入力検知
     class GameSpeedOperator& m_speedOperator;
-    class KeyBoard& m_keyboard;
 };

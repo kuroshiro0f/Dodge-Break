@@ -1,5 +1,5 @@
 {
-  "TotalNum": 150,
+  "TotalNum": 400,
   "Radius": 1,
   "StraightAttackData": [
     {
@@ -25,10 +25,10 @@
     },
     {
 	  "ID": 3,
-      "WayNum": 3,
+      "WayNum": 5,
       "AliveTime": 2000,
       "ShootAngle": 0.4,
-      "Speed": 0.3
+      "Speed": 0.22
     },
     {
 	  "ID": 4,
@@ -39,7 +39,7 @@
     },
 	{
 	  "ID": 5,
-      "WayNum": 3,
+      "WayNum": 5,
       "AliveTime": 800,
       "ShootAngle": 0.25,
       "Speed": 0.4
@@ -50,6 +50,13 @@
       "AliveTime": 800,
       "ShootAngle": 0.25,
       "Speed": 0.4
+    },
+	{
+	  "ID": 7,
+      "WayNum": 3,
+      "AliveTime": 700,
+      "ShootAngle": 0.35,
+      "Speed": 0.7
     }
   ]
 }

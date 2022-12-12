@@ -12,6 +12,8 @@
 #include "Device.h"
 #include "EffekseerManager.h"
 
+#include "PMDModel.h"
+
 SceneController::SceneController()
     :m_device(Singleton<Device>::GetInstance())
     , m_effect(Singleton<EffekseerManager>::GetInstance())
@@ -93,6 +95,9 @@ void SceneController::DrawModel()
     default:
         break;
     }
+
+    PMDModel& model = Singleton<PMDModel>::GetInstance();
+    model.IssueAllDrawCommand();
 }
 
 //  画像の描画

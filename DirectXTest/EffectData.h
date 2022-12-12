@@ -21,6 +21,8 @@ namespace EffectData
         {EffectType::DefeatNoAimEnemy, L"Data/Effect/Enemy/DefeatNoAimEnemy.efk"},
         {EffectType::DefeatUniqueShootEnemy, L"Data/Effect/Enemy/DefeatUniqueShootEnemy.efk"},
 
+        {EffectType::BeamAttack,L"Data/Effect/Enemy/Beam.efk"},
+
         {EffectType::HitAimEnemyTower, L"Data/Effect/Obstacle/HitAimEnemyTower.efk"},
         {EffectType::HitNoAimEnemyTower, L"Data/Effect/Obstacle/HitNoAimEnemyTower.efk"},
         {EffectType::HitUniqueShootEnemyTower, L"Data/Effect/Obstacle/HitUniqueShootEnemyTower.efk"},
@@ -45,6 +47,8 @@ namespace EffectData
         {EffectType::DefeatAimEnemy, L"Data/Effect/Enemy"},
         {EffectType::DefeatNoAimEnemy, L"Data/Effect/Enemy"},
         {EffectType::DefeatUniqueShootEnemy, L"Data/Effect/Enemy"},
+
+        {EffectType::BeamAttack,L"Data/Effect/Enemy"},
         
         {EffectType::HitAimEnemyTower, L"Data/Effect/Obstacle"},
         {EffectType::HitNoAimEnemyTower, L"Data/Effect/Obstacle"},
@@ -70,6 +74,8 @@ namespace EffectData
         {EffectType::DefeatAimEnemy, 2.0f},
         {EffectType::DefeatNoAimEnemy, 2.0f},
         {EffectType::DefeatUniqueShootEnemy, 2.0f},
+
+        {EffectType::BeamAttack, 4.0f},
         
         {EffectType::HitAimEnemyTower, 1.2f},
         {EffectType::HitNoAimEnemyTower, 1.2f},

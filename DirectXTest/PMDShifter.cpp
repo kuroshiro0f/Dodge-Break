@@ -15,6 +15,7 @@ PMDShifter::PMDShifter()
     , m_mappedTransform(nullptr)
     , m_transformBuff(nullptr)
 {
+    //  処理なし
 }
 
 PMDShifter::~PMDShifter()
@@ -26,16 +27,13 @@ PMDShifter::~PMDShifter()
 void PMDShifter::Init()
 {
     //  座標変換用ポインタの初期化
-    m_transform.world = XMMatrixIdentity();
+    for (int i = 0; i < IncetancedDrawData::num; i++)
+    {
+        m_transform.world[i] = XMMatrixIdentity();
+    }
+
     //  座標変換用ビューの生成
     CreateTransformView();
-}
-
-//  内部に持ってるXMMATRIXメンバが16バイトアライメントであるため
-//  Transformをnewする際には16バイト境界に確保する
-void* PMDShifter::Transform::operator new(size_t _size)
-{
-    return _aligned_malloc(_size, 16);
 }
 
 //  座標変換用ビューの生成

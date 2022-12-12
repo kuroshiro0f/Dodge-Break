@@ -3,6 +3,7 @@
 #include <functional>
 
 #include "CollisionType.h"
+#include "ObjectTagName.h"
 #include "EnemyAttackType.h"
 #include "PMDModelType.h"
 
@@ -38,7 +39,10 @@ EnemyAttackBase::EnemyAttackBase(const EnemyAttackType _type)
 void EnemyAttackBase::Init()
 {
     //  衝突判定に登録
-    CollisionObject::Init(CollisionType::EnemyAttack);
+    CollisionObject::Init(CollisionType::Sphere, ObjectTagName::EnemyAttack);
+
+    //  球状オブジェクトであるため、球状オブジェクトのデータを使用
+    m_sphereData = new SphereData();
 
     //  外部ファイルから読み取ったデータをロード
     LoadFileData();
@@ -51,15 +55,6 @@ void EnemyAttackBase::Init()
     m_attackEndPosData.downEndPos = fileData.GetXMFLOAT3Data(JsonDataType::Stage, "AttackSurvivableRangeEndPos").z;
     m_attackEndPosData.leftEndPos = fileData.GetXMFLOAT3Data(JsonDataType::Stage, "AttackSurvivableRangeStartPos").x;
     m_attackEndPosData.rightEndPos = fileData.GetXMFLOAT3Data(JsonDataType::Stage, "AttackSurvivableRangeEndPos").x;
-
-    //  モデルを使用するための設定
-    //  NOTE: ジグザグ攻撃の影のモデルは攻撃自体のモデルと一緒のデータになっているため、
-    //        影のモデルの設定は行わない
-    if (m_attackType != EnemyAttackType::Zigzag)
-    {
-        m_shadow.SetUp();
-    }
-    m_bulletModel.SetUp();
 
 #if _DEBUG
     //  ファイルをロードする関数を、

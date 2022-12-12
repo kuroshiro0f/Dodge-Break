@@ -11,7 +11,6 @@
 #include "Singleton.h"
 #include "CheckError.h"
 #include "Device.h"
-#include "KeyBoard.h"
 #include "PMDModel.h"
 #include "SpriteDrawer.h"
 #include "Sound.h"
@@ -20,15 +19,17 @@
 #include "SceneController.h"
 #include "SingletonFinalizer.h"
 #include "EnemyAttackPool.h"
+#include "UserInputHandler.h"
 
 GameLoop::GameLoop()
     :m_device(Singleton<Device>::GetInstance())
     , m_effect(Singleton<EffekseerManager>::GetInstance())
-    , m_keyBoard(Singleton<KeyBoard>::GetInstance())
+    , m_userInputHandler(Singleton<UserInputHandler>::GetInstance())
     , m_error(Singleton<CheckError>::GetInstance())
     , m_deltaTime(0)
     , m_string(nullptr)
     , m_gameLoopTimer(nullptr)
+    , m_isFinishRun(false)
 {
 }
 
@@ -54,6 +55,11 @@ void GameLoop::Init()
 
     //  Effekseer関連初期化
     m_effect.Init();
+
+    //  入力処理の初期化
+    m_userInputHandler.Init();
+    //  ループ終了用の関数を登録
+    m_userInputHandler.RegisterOperation(UserInputHandler::OperationType::FinishGame, std::bind(&GameLoop::FinishRun, this));
 
     //  PMDモデルクラスのシングルトンインスタンス生成
     PMDModel& model = Singleton<PMDModel>::GetInstance();
@@ -96,7 +102,8 @@ void GameLoop::Run()
     m_gameLoopTimer->Start();
 
     //  ESCキーが押されるまでループ
-    while (!m_keyBoard.IsPressKey(m_keyBoard.KeyBind::End)) {
+    while (!m_isFinishRun) 
+    {
         if (PeekMessage(&msg, nullptr, 0, 0, PM_REMOVE)) {
             TranslateMessage(&msg);
             DispatchMessage(&msg);
@@ -112,8 +119,8 @@ void GameLoop::Run()
             return;
         }
 
-        //  キーボードの更新
-        m_keyBoard.UpdateInput();
+        //  入力の更新
+        m_userInputHandler.UpdateInput();
     
         //  全体の描画準備
         m_device.dx12->BeginDraw();
@@ -127,9 +134,6 @@ void GameLoop::Run()
 
         //  シーンの更新
         sceneController.Update(m_deltaTime);
-
-        //  PMDモデルクラスの更新
-        model.Update();
 
         //  描画の終了
         m_device.dx12->EndDraw();
@@ -146,4 +150,10 @@ void GameLoop::Run()
     //  ゲーム終了処理
     m_device.Finalize();
     SingletonFinalizer::Finalize();
+}
+
+//  ループの終了
+void GameLoop::FinishRun()
+{
+    m_isFinishRun = true;
 }

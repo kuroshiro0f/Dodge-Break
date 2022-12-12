@@ -9,6 +9,7 @@
 #include "ZigzagAttack.h"
 #include "SpreadAttack.h"
 #include "LineAttack.h"
+#include "BeamAttack.h"
 #include "EnumIterator.h"
 
 #include "Singleton.h"
@@ -25,10 +26,12 @@ EnemyAttackPool::EnemyAttackPool()
     , m_zigzagAttack({})
     , m_spreadAttack({})
     , m_lineAttack({})
+    , m_beamAttack({})
 #if _DEBUG
     , m_debugAttack({})
 #endif
 {
+    //  処理なし
 }
 
 EnemyAttackPool::~EnemyAttackPool()
@@ -67,6 +70,13 @@ EnemyAttackPool::~EnemyAttackPool()
     }
     m_lineAttack.clear();
     m_lineAttack.shrink_to_fit();
+
+    for (auto itr : m_beamAttack)
+    {
+        delete itr;
+    }
+    m_beamAttack.clear();
+    m_beamAttack.shrink_to_fit();
 
 #if _DEBUG
     for (auto itr : m_debugAttack)
@@ -152,6 +162,16 @@ void EnemyAttackPool::RegisterPool(const EnemyAttackType _type)
         {
             m_lineAttack.emplace_back(new LineAttack());
             m_lineAttack.back()->Init();
+        }
+        break;
+    case EnemyAttackType::Beam:
+        //  外部ファイルを読み取ってロード数を設定
+        attackNum = fileData.GetIntData(JsonDataType::BeamAttack, "TotalNum");
+        //  指定された種類の攻撃クラスのインスタンスをコンテナに格納していく
+        for (int i = 0; i < attackNum; i++)
+        {
+            m_beamAttack.emplace_back(new BeamAttack());
+            m_beamAttack.back()->Init();
         }
         break;
 #if _DEBUG
@@ -278,6 +298,22 @@ EnemyAttackBase* EnemyAttackPool::GetEnemyAttack(const EnemyAttackType _type)
         break;
     }
 }
+//  ビーム攻撃クラスのインスタンスを返す
+BeamAttack* EnemyAttackPool::GetBeamAttack()
+{
+    //  格納しているビーム攻撃が全て使用されているなら、エラーメッセージを出してゲームを停止
+    if (m_beamAttack.empty())
+    {
+        CheckError& error = Singleton<CheckError>::GetInstance();
+        std::string errorMassage = "EnemyAttackPool内に格納しているエネミーの攻撃が足りませんでした。";
+        error.CreateErrorMessage(errorMassage);
+    }
+
+    //  返すインスタンスを決定しつつ、次のインスタンスをセット
+    auto retEnemyAttack = m_beamAttack.front();
+    m_beamAttack.pop_front();
+    return retEnemyAttack;
+}
 
 //  使用されなくなったインスタンスを待機中として再登録
 void EnemyAttackPool::RegisterStandByEnemyAttack(EnemyAttackBase* _class)
@@ -307,4 +343,9 @@ void EnemyAttackPool::RegisterStandByEnemyAttack(EnemyAttackBase* _class)
     default:
         break;
     }
+}
+//  使用されなくなったビーム攻撃クラスのインスタンスを待機中として再登録
+void EnemyAttackPool::RegisterStandByEnemyAttack(BeamAttack* _beamAttackClass)
+{
+    m_beamAttack.emplace_back(_beamAttackClass);
 }

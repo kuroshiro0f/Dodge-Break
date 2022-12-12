@@ -31,10 +31,13 @@ public:
     void Delete();
 
     //  画面上に攻撃があるか
-    bool IsDisplay() { return !m_enemyAttack.empty(); }
+    bool IsDisplay() { return m_isAttack; }
 
     //  使用中の攻撃を、プール内に戻す
     void ReturnPool(class EnemyAttackBase* _class);
+
+    //  使用中のビーム攻撃をプール内に戻す
+    void ReturnPoolForBeamAttack(class BeamAttack* _beamAttackClass);
 private:
     //  直線攻撃の発射
     void ShootStraightAttack(const int _attackPetternID, const XMFLOAT3& _pos,const XMFLOAT3& _targetPos, float _deltaTime);
@@ -46,19 +49,29 @@ private:
     void ShootSpreadAttack(const int _attackPetternID, const XMFLOAT3& _pos, const XMFLOAT3& _targetPos, float _deltaTime);
     //  弾を並べて転がす攻撃の発射
     void ShootLineAttack(const int _attackPetternID, const XMFLOAT3& _pos, float _deltaTime);
+    //  ビーム攻撃の発射
+    void ShootBeamAttack(const int _attackPetternID, const XMFLOAT3& _pos);
     
 #if _DEBUG
     //  攻撃の実験用関数
     void ShootDebugAttack(const XMFLOAT3& _pos, float _deltaTime);
 #endif
+    //  攻撃中か
+    bool m_isAttack;
 
     //  RegisterPool関数へのポインタ
     std::function<void(EnemyAttackBase*)> m_returnPoolFunc;
+    std::function<void(BeamAttack*)> m_returnPoolForBeamAttackFunc;
 
     //  エネミー攻撃クラスを格納する変数
     std::list<EnemyAttackBase*> m_enemyAttack;
     //  m_enemyAttackのlistから削除されるエネミー攻撃クラスを保持する変数
     std::list<EnemyAttackBase*> m_deleteAttack;
+
+    //  発射中のビーム攻撃クラスのリスト
+    std::list<BeamAttack*> m_beamAttackList;
+    //  m_beamAttackListから削除されるビーム攻撃クラスのリスト
+    std::list<BeamAttack*> m_deleteBeamAttackList;
 
     //  Poolを管理するクラスをシングルトンとしてインスタンスを保持する変数
     class EnemyAttackPool& m_pool;
